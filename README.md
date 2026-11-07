@@ -2,16 +2,18 @@
 
 | Dosya | Ne işe yarar |
 |---|---|
-| `kilavuz.pdf` / `kilavuz.tex` | Adım adım proje kılavuzu (50 sayfa). `.tex` tek dosyadır; Overleaf'e yapıştır, `sekiller/` klasörünü yükle. |
-| `TUBITAK_2209A_form_metinleri.md` | Word formuna kopyala-yapıştır metinleri (Özet, Bilimsel Nitelik, Yöntem, Proje Yönetimi, Yaygın Etki, Kaynaklar). |
-| `sekiller/sekil1_WASP-12b_OC.png`, `sekil2_dort_hedef_OC.png` | Forma konacak ön çalışma şekilleri. |
-| `kod/` | `oc_diyagrami.py`, `tess_zaman.py`, `rv_analiz.py`, `fizik_testleri.py`, `zaman_donusum.py`, `secim_tablosu.py` |
-| `veri/` | Bu projede ölçülen yeni TESS geçiş zamanları (`tess_*.csv`) ve O−C tabloları (`zamanlar_*.csv`). |
-| `parcalar/` | `kilavuz.tex`'in kaynak parçaları; `python parcalar/birlestir.py` ile yeniden birleştirilir. |
+| `2209-A_Arastirma_Onerisi_Formu_Idris_Avlar.docx` | Hocaya gidecek doldurulmuş Word formu. |
+| `TUBITAK_2209A_form_metinleri.md` | Aynı form metninin düz hali (TYBS'ye kopyalamak için). |
+| `kilavuz.pdf` / `kilavuz.tex` | Başvuru kılavuzu: aday seçimi, TYBS adımları, olası sorular, yapılan her şey, form metni (Ek A). |
+| `kod/secim_tablosu.py` | Tablo 1'i (hedef seçimi) açık arşivlerden üretir. |
+| `kod/oc_diyagrami.py`, `tess_zaman.py`, `rv_analiz.py`, `fizik_testleri.py`, `zaman_donusum.py` | Analiz kodları (O−C, TESS zaman ölçümü, RV/Rømer, fiziksel testler, zaman dönüşümü). |
+| `kod/kilavuz_ek_uret.py` | Kılavuzun Ek A'sını form metninden üretir. |
+| `veri/` | Tablo 1 (`tablo1_secim.csv`), RV verileri (`rv_*`), denemede ölçülen TESS zamanları (`tess_*.csv`). |
+| `sekiller/`, `on_calisma_colab.ipynb` | Eski denemeler; formda kullanılmıyor. |
 
-Hızlı başlangıç (Google Colab):
+Kılavuzu derlemek (proje kökünden):
 
 ```
-!pip install -q astropy astroquery batman-package emcee
-!python oc_diyagrami.py "WASP-12 b" WASP-012
+python kod/kilavuz_ek_uret.py
+pdflatex kilavuz.tex && pdflatex kilavuz.tex
 ```

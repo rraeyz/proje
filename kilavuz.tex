@@ -35,6 +35,8 @@
 \DeclareUnicodeCharacter{00D7}{\ensuremath{\times}}
 \DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
 \DeclareUnicodeCharacter{03B3}{\ensuremath{\gamma}}
+\DeclareUnicodeCharacter{221A}{\ensuremath{\surd}}
+\DeclareUnicodeCharacter{03C9}{\ensuremath{\omega}}
 
 \setlength{\parskip}{0.45em}
 \setlength{\parindent}{0pt}
@@ -96,7 +98,7 @@ Atatürk Üniversitesi, Fen Fakültesi, Astronomi ve Uzay Bilimleri Bölümü\pa
 % =====================================================================
 
 \begin{soyle}[Tek cümlelik cevap]
-``Wang vd. (2024)'nin LOOCV testini geçen 14 adayından, önceden belirlediğim iki veri yeterliliği ölçütüyle seçtim: TESS'te yeterince geçiş zamanı olması (en az 30) ve arşivdeki radyal hız verisinin, dönem değişimini Rømer etkisinden ayırt edecek kadar hassas olması. Dört aday ikisini de sağladı: WASP-12 b, WASP-4 b, HAT-P-7 b ve TrES-1 b.''
+``Wang vd. (2024)'nin LOOCV testini geçen 14 adayından, önceden belirlediğim iki veri yeterliliği ölçütüyle seçtim: TESS'te yeterince geçiş zamanı olması (en az 30) ve Rømer etkisinin radyal hız verisiyle sınandığı yayımlanmış bir analizin bulunması. Dört aday ikisini de sağladı: WASP-12 b, WASP-4 b, HAT-P-7 b ve TrES-1 b.''
 \end{soyle}
 
 \subsection{Seçim üç adımdan oluşuyor}
@@ -108,7 +110,7 @@ Adım & Ölçüt & Kalan aday \\ \midrule
 Başlangıç & Wang vd. (2024)'nin dönem değişimi bildirdiği adaylar & 26 \\
 (i) LOOCV & Wang vd.'nin LOOCV testini geçmiş olmak (Tablo 3, ``pass'') & 14 \\
 (ii) TESS verisi & Wang vd.'nin TESS geçiş zamanı sayısı $\geq 30$ & 7 \\
-(iii) Radyal hız & $\sR < |\Pdot_\text{Wang}|/3$ & \textbf{4} \\ \bottomrule
+(iii) Radyal hız & Rømer'i RV ile sınayan yayımlanmış analiz var & \textbf{4} \\ \bottomrule
 \end{tabular}
 \end{center}
 
@@ -147,69 +149,69 @@ Bu, \OC{}'den bulunan değerle aynıysa değişim Rømer'dendir (gerçek değil)
 \item \textbf{WASP-12 b}: tek kesin örnek sayılmasının nedeni, RV'nin Rømer'i dışlamış olması (Yee vd., 2020).
 \end{itemize}
 
-Hocanın direktifinin ikinci yarısı ``değişim varsa nedenini belirle'' idi. Ayırt edilmesi en zor ikili gelgit ile Rømer, ve yalnızca RV ile ayrılabiliyor. RV'si yetersiz bir aday seçseydik, değişim bulsak bile ``nedeni şu'' diyemezdik.
+Hocanın direktifinin ikinci yarısı ``değişim varsa nedenini belirle'' idi. Ayırt edilmesi en zor ikili gelgit ile Rømer, ve yalnızca RV ile ayrılabiliyor. Rømer'i RV ile sınanmamış bir aday seçseydik, değişim bulsak bile ``nedeni şu'' diyemezdik.
 
 \begin{soyle}[Hocaya tek cümle]
-``\OC{}'deki parabol hem gerçek gelgit bozulmasından hem de uzak bir eşlikçinin ışık-yolu (Rømer) etkisinden kaynaklanabiliyor; ikisi zamanlamada aynı izi bıraktığı için ayırt etmenin tek yolu yıldızın radyal hızındaki uzun dönemli eğilim. Bu yüzden arşiv RV verisi bu ayrımı yapmaya yetecek adayları seçtim.''
+``\OC{}'deki parabol hem gerçek gelgit bozulmasından hem de uzak bir eşlikçinin ışık-yolu (Rømer) etkisinden kaynaklanabiliyor; ikisi zamanlamada aynı izi bıraktığı için ayırt etmenin tek yolu yıldızın radyal hızındaki uzun dönemli eğilim. Bu yüzden Rømer etkisinin RV ile zaten sınandığı, yani bu ayrımın yapılabileceği adayları seçtim.''
 \end{soyle}
 
-\subsection{RV verisini nereden bulduk? (Gözlem yok, hepsi arşiv)}
-Tayfçekerimiz olmadığı için kendimiz ölçüm yapmadık; yalnızca yayımlanmış, herkese açık veriyi kullandık:
+\subsection{Rømer analizlerini nereden bulduk? (Hesap yok, hepsi literatür)}
+Kendimiz RV ölçmedik ve RV'ye model de uydurmadık. Her aday için, Rømer katkısını RV ile zaten sınamış \textbf{yayımlanmış} bir çalışma aradık:
 
 \begin{center}\small
-\begin{tabularx}{\linewidth}{@{}lXl@{}}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
 \toprule
-Kaynak & İçerik & Nereden \\ \midrule
-Knutson vd. 2014 & Keck/HIRES ile onlarca sıcak Jüpiterin yıllara yayılan RV'leri (WASP-12 b, HAT-P-7 b) & VizieR J/ApJ/785/126 \\
-Bouma vd. 2020 & WASP-4 RV'leri (CORALIE, HARPS, HIRES) & VizieR J/ApJ/893/L29 \\
-Bonomo vd. 2017 & HARPS-N ile 231 gezegen (TrES-1 b, ayrıca WASP-12, HAT-P-7) & VizieR J/A+A/602/A107 \\
-Oberst vd. 2017 & KELT-16 b keşif makalesi, TRES ölçümleri & Makalenin Tablo 3'ü \\
-DACE & Cenevre Üniversitesi RV arşivi (birçok yıldız) & dace.unige.ch \\ \bottomrule
+Kaynak & Ne veriyor \\ \midrule
+Bouma vd. 2020, Tablo 5 & 51 sıcak Jüpiter için (çoğu Knutson vd. 2014'ün yıllara yayılan Keck/HIRES RV'lerinden) ölçülen RV ivmesi ve buna karşılık gelen Rømer öngörüsü $\dot P_\text{Rømer}\pm\sigma$. WASP-12 b, WASP-4 b, HAT-P-7 b burada. VizieR'de de var: J/ApJ/893/L29/table5. \\
+Hagey vd. 2025 & TrES-1 b'nin 12 yıllık RV'sini inceliyor: en iyi model \emph{eğilimsiz}; iddia edilen dönem değişimini açıklayacak bir ivme ``veride fark edilirdi, görülmüyor''. Rømer'i açıkça dışlıyor. \\
+Rothmeier vd. 2025 & TrES-5 b için: ``yalnızca 217 güne yayılan 8 RV ölçümü yayımlanmış; uzun dönemli eğilimi belirlemek için kullanışlı değil.'' \\
+Oberst vd. 2017 & KELT-16 b keşif makalesi: RV'ler yaklaşık 6 aya yayılıyor; uzun dönemli eğilim için yetersiz. \\ \bottomrule
 \end{tabularx}
 \end{center}
-Her aday için bulunan \emph{bütün} veri setleri denendi; en hassas sonucu vereni alındı.
+WASP-46 b için incelediğim çalışmalarda (Wang vd. 2024, Bouma vd. 2020 ve diğerleri) Rømer'i RV ile sınayan bir analiz bulamadım. Formda da ``incelenen literatürde bulunamadı'' yazıyor (``dünyada hiç yok'' demiyoruz).
 
-\subsection{\sR{} nedir, nasıl hesaplandı?}
-\sR, ``arşiv RV verisiyle Rømer etkisinin vereceği dönem değişimini ne kadar hassas öngörebiliyoruz'' sorusunun cevabıdır (birimi \msyil). Küçükse iyidir. Adım adım:
-\begin{enumerate}
-\item Yayımlanmış RV ölçümleri indirildi.
-\item Geçiş sırasında alınan ölçümler atıldı (Rossiter–McLaughlin etkisi RV'yi bozar).
-\item Her alete (spektrograf) ayrı bir sıfır noktası verildi; çünkü farklı aletlerin RV'leri doğrudan karşılaştırılamaz.
-\item Veriye ``gezegenin dairesel yörünge sinyali (sinüs) + doğrusal eğilim'' modeli ağırlıklı en küçük kareler ile uyduruldu.
-\item Hatalar, yıldız kaynaklı ek saçılmayı (``jitter'') içerecek şekilde büyütüldü.
-\item Eğimin belirsizliği $\sigma(dv/dt)$, $\dot{P}=P\cdot(dv/dt)/c$ formülüne konarak \sR{} bulundu.
-\end{enumerate}
-
-\subsection{Neden eşik \texorpdfstring{$|\dot P|/3$}{|Pdot|/3}?}
+\subsection{Bouma vd. (2020) Tablo 5 nedir?}
+Bouma ve arkadaşları, WASP-4 b'nin dönem kısalmasının Rømer'den olup olmadığını araştırırken aynı hesabı 51 sıcak Jüpiter için yapıp tablo olarak yayımladılar. Her gezegen için:
 \begin{itemize}
-\item Rømer'in katkısını, aradığımız sinyalin en az \textbf{üç katı} hassasiyetle ölçebilmek için. Böylece ``Rømer bu değişimi açıklıyor/açıklamıyor'' sonucunu en az 3σ düzeyinde söyleyebiliriz (3σ, astronomide ``anlamlı'' için kullanılan standart sınır; Wang vd. de dP/dt için 3σ kullandı).
-\item \textbf{Sonuç eşiğe duyarlı değil}: seçilenlerde \sR/$|\dot P|$ oranı en fazla 0,15; elenenlerde en az 1,09. Eşik ``1/6'' ile ``1/1'' arasında ne seçilirse seçilsin aynı dört aday kalıyor.
+\item yıldızın RV'sindeki uzun dönemli eğim (ivme, $dv/dt$, m/s/gün),
+\item bu ivmenin yaratacağı görünür dönem değişimi $\dot P_\text{Rømer} = P\cdot(dv/dt)/c$ ve belirsizliği (\msyil).
 \end{itemize}
+Yani tablodaki sayı, ``bu sistemde Rømer etkisi ne kadar dönem değişimi yaratır'' sorusunun yayımlanmış cevabıdır. Biz sadece okuduk.
+
+\subsection{Ölçüt (iii) tam olarak ne?}
+Adayın Rømer katkısını RV ile sınayan yayımlanmış bir analiz bulunmalı ve bu analiz ya
+\begin{itemize}
+\item Rømer öngörüsünü, Wang vd.'nin $|\Pdot|$ değerinin \textbf{üçte birinden küçük} bir belirsizlikle vermeli (WASP-12, WASP-4, HAT-P-7), ya da
+\item Rømer etkisini açıkça dışlamalı (TrES-1, Hagey vd. 2025).
+\end{itemize}
+\textbf{Neden üçte bir?} Rømer'in katkısını, aradığımız sinyalden en az üç kat daha ince bilmek için. Böylece ``Rømer bu değişimi açıklıyor/açıklamıyor'' sonucunu en az 3σ düzeyinde söyleyebiliriz (3σ, ``anlamlı'' için kullanılan standart sınır; Wang vd. de 3σ kullandı).
+
+\textbf{Sonuç eşiğe duyarlı değil}: seçilenlerde belirsizlik, sinyalin yalnızca \%4--6'sı (WASP-12: 1,1/30,2; WASP-4: 0,4/6,4; HAT-P-7: 0,9/18,3). Elenenlerde ise ya hiç analiz yok ya da veri birkaç ayla sınırlı. Eşik 1/3 yerine 1/10 bile olsa aynı dört aday kalır.
 
 \subsection{Aday aday sonuç}
 {\small
-\begin{longtable}{@{}lrrp{3.9cm}rrl@{}}
+\begin{longtable}{@{}lrrrp{6.2cm}l@{}}
 \toprule
-Aday & $|\Pdot|/\sigma$ & TESS & RV verisi (en iyi set) & \sR & Eşik & Sonuç \\ \midrule\endhead
-CoRoT-2 b & 7,3 & 5 & -- & -- & 7,2 & (ii) ile elendi \\
-HAT-P-37 b & 5,1 & 8 & -- & -- & 11,4 & (ii) ile elendi \\
-WASP-10 b & 7,9 & 8 & -- & -- & 9,2 & (ii) ile elendi \\
-WASP-22 b & 4,2 & 5 & -- & -- & 23,9 & (ii) ile elendi \\
-WASP-45 b & 8,0 & 14 & -- & -- & 56,4 & (ii) ile elendi \\
-XO-4 b & 3,6 & 16 & -- & -- & 20,9 & (ii) ile elendi \\
-WASP-1 b & 4,3 & 9 & -- & -- & 7,5 & (ii) ile elendi \\
-KELT-16 b & 5,8 & 65 & Oberst 2017: 18 ölçüm, 0,5 yıl & 39,3 & 9,3 & (iii) ile elendi \\
-TrES-5 b & 4,6 & 66 & DACE: 8 ölçüm, 0,6 yıl & 29,2 & 3,2 & (iii) ile elendi \\
-WASP-46 b & 18,1 & 32 & DACE: 21 ölçüm, 8,5 yıl & 56,3 & 17,2 & (iii) ile elendi \\
-\textbf{WASP-12 b} & 32,8 & 81 & Knutson 2014: 29 ölçüm, 4,0 yıl & 1,6 & 10,1 & \textbf{Seçildi} \\
-\textbf{WASP-4 b} & 11,5 & 47 & Bouma 2020: 45 ölçüm, 11,9 yıl & 0,4 & 2,1 & \textbf{Seçildi} \\
-\textbf{HAT-P-7 b} & 4,5 & 66 & Knutson 2014: 42 ölçüm, 5,9 yıl & 1,2 & 6,1 & \textbf{Seçildi} \\
-\textbf{TrES-1 b} & 6,3 & 34 & Bonomo 2017: 15 ölçüm, 2,8 yıl & 2,2 & 4,9 & \textbf{Seçildi} \\ \bottomrule
+Aday & $|\Pdot|/\sigma$ & TESS & Eşik & Rømer analizi (\msyil) & Sonuç \\ \midrule\endhead
+CoRoT-2 b & 7,3 & 5 & 7,2 & -- & (ii) ile elendi \\
+HAT-P-37 b & 5,1 & 8 & 11,4 & -- & (ii) ile elendi \\
+WASP-10 b & 7,9 & 8 & 9,2 & $-15{,}6\pm4{,}1$ (Bouma 2020) & (ii) ile elendi \\
+WASP-22 b & 4,2 & 5 & 23,9 & $+21{,}7\pm2{,}8$ (Bouma 2020) & (ii) ile elendi \\
+WASP-45 b & 8,0 & 14 & 56,4 & -- & (ii) ile elendi \\
+XO-4 b & 3,6 & 16 & 20,9 & $+4{,}3\pm4{,}3$ (Bouma 2020) & (ii) ile elendi \\
+WASP-1 b & 4,3 & 9 & 7,5 & $+0{,}8\pm1{,}5$ (Bouma 2020) & (ii) ile elendi \\
+KELT-16 b & 5,8 & 65 & 9,3 & Sınırlayıcı değil: RV'ler $\sim$6 ay (Oberst 2017) & (iii) ile elendi \\
+TrES-5 b & 4,6 & 66 & 3,2 & Sınırlayıcı değil: 217 günde 8 RV (Rothmeier 2025) & (iii) ile elendi \\
+WASP-46 b & 18,1 & 32 & 17,2 & İncelenen literatürde bulunamadı & (iii) ile elendi \\
+\textbf{WASP-12 b} & 32,8 & 81 & 10,1 & $-0{,}1\pm1{,}1$ (Bouma 2020) & \textbf{Seçildi} \\
+\textbf{WASP-4 b} & 11,5 & 47 & 2,1 & $-5{,}9\pm0{,}4$ (Bouma 2020) & \textbf{Seçildi} \\
+\textbf{HAT-P-7 b} & 4,5 & 66 & 6,1 & $+15{,}0\pm0{,}9$ (Bouma 2020) & \textbf{Seçildi} \\
+\textbf{TrES-1 b} & 6,3 & 34 & 4,9 & Dışlandı: 12 yıllık RV'de eğilim yok (Hagey 2025) & \textbf{Seçildi} \\ \bottomrule
 \end{longtable}}
 \vspace{-0.5em}
-{\footnotesize $|\Pdot|/\sigma$: Wang vd.'nin dönem değişim hızının belirsizliğine oranı (Tablo 3, 5σ kırpma sütunu). Eşik = $|\Pdot_\text{Wang}|/3$. \sR{} ve eşik \msyil. Ölçüm sayıları, geçiş sırasındaki ölçümler atıldıktan sonra uydurmada kullanılan sayılardır (ör. KELT-16 b'nin makalesinde 20 ölçüm var, 2'si geçiş sırasında).}
+{\footnotesize $|\Pdot|/\sigma$: Wang vd.'nin dönem değişim hızının belirsizliğine oranı (Tablo 3, 5σ kırpma sütunu). Eşik = $|\Pdot_\text{Wang}|/3$, \msyil. Bouma vd.'nin asimetrik hataları (ör. $+1{,}11/-1{,}07$) yuvarlanarak tek değerle yazıldı. Bouma'da değeri olan dört aday (WASP-10, -22, -1, XO-4) zaten (ii)'de elendiği için o değerler seçimi etkilemiyor; tablo dolu olsun diye yazıldı.}
 
-\textbf{Elenen üç adayın RV'si neden yetersiz?} KELT-16 b ve TrES-5 b'nin RV'leri yalnızca birkaç ay içinde alınmış (keşif için); yıllara yayılan bir eğilimi ölçmeye yetmez. WASP-46 b'nin 8,5 yıllık verisi var ama sadece 21 ölçüm ve yıldızın saçılması büyük; eğim belirsizliği çok yüksek çıkıyor.
+\textbf{Bu sayılar ne söylüyor? (Sorulursa)} WASP-12'de Rømer öngörüsü sıfıra çok yakın ($-0{,}1\pm1{,}1$), oysa gözlenen değişim $\sim-30$: Rømer açıklayamaz, gelgit güçlü aday. WASP-4'te Rømer öngörüsü ($-5{,}9$) gözlenen değişime ($\sim-6$) çok yakın: Rømer büyük ölçüde açıklayabilir. HAT-P-7'de Rømer $+15$, gözlenen $\sim+18$: önemli kısmı Rømer olabilir. Bunlar zaten H1 ve H2 hipotezlerinin dayanağı. Ama kesin hükmü projede (İP4) vereceğiz.
 
 \subsection{Seçilen dört hedef neden iyi bir set?}
 Rastgele değil, birbirini tamamlayan dört durumu temsil ediyorlar:
@@ -222,20 +224,21 @@ Rastgele değil, birbirini tamamlayan dört durumu temsil ediyorlar:
 
 \subsection{Bu seçimde ne yaptım, ne yapmadım? (Dürüst cevap)}
 \begin{soyle}[Doğru ifade]
-``Ön çalışmada hipotez test etmedim. 14 adayın verilerinin projeyi yürütmeye yetip yetmediğini inceledim; TESS geçiş sayılarını belirledim ve arşiv RV'lerinden Rømer etkisinin ne hassasiyetle öngörülebileceğini hesapladım.''
+``Ön çalışmada hesap ya da test yapmadım; literatür taraması yaptım. 14 adayın TESS geçiş sayılarını Wang vd.'den, Rømer etkisinin RV ile sınanıp sınanmadığını yayımlanmış analizlerden (Bouma vd. 2020, Hagey vd. 2025, Rothmeier vd. 2025, Oberst vd. 2017) inceledim ve iki ölçütü sağlayan dört hedefi seçtim.''
 \end{soyle}
 \begin{itemize}
-\item (i) ve (ii) hazır veriden okuma/sayma. (iii) küçük ama gerçek bir hesap (RV'ye model uydurma).
-\item \textbf{Adayları kendi \OC{} sonuçlarıma bakarak seçmedim.} Ölçütler projenin sonucundan bağımsız. Bu bir zayıflık değil, güçlü yan: ``beğendiğim sonuçları seçmişim'' denemez.
-\item Seçim tablosu bir Python betiğiyle (\texttt{kod/secim\_tablosu.py}) açık arşivlerden baştan üretilebiliyor; 7 Kasım'da yeniden çalıştırıldı, formdaki Tablo 1 ile birebir aynı çıktı.
+\item Tablo 1'deki \textbf{her sayı} bir makaleden okunuyor ya da basit bir bölme (Eşik = $|\Pdot|/3$). Kendi hesabın yok.
+\item \textbf{Adayları kendi \OC{} sonuçlarıma bakarak seçmedim.} Ölçütler projenin sonucundan bağımsız; ``beğendiğim sonuçları seçmişim'' denemez.
+\item Tablo 1'in ham hali ve kaynakları: \texttt{veri/tablo1\_secim.csv}.
 \end{itemize}
 
 \subsection{Olası itirazlar}
 \SC{Neden sadece dört hedef?}{Sayıyı ben belirlemedim; ölçütler 14 adayı dörde indirdi. Ayrıca 12 aylık bir lisans projesi için dört hedef, her birinin altı fiziksel etkiye göre ayrı ayrı incelenmesine izin veren gerçekçi bir sayı.}
-\SC{RV'si olmayan adaylarda da dönem değişimini ölçebilirdin, neden seçmedin?}{Ölçebilirdim ama nedenini belirleyemezdim; proje ``değişim varsa nedenini belirle'' diyor. RV'siz bir adayda gelgit ile Rømer ayırt edilemez.}
+\SC{Rømer'i sınanmamış adaylarda da dönem değişimini ölçebilirdin, neden seçmedin?}{Ölçebilirdim ama nedenini belirleyemezdim; proje ``değişim varsa nedenini belirle'' diyor. Rømer sınanmamış bir adayda gelgit ile Rømer ayırt edilemez, ve tayfçekerimiz olmadığı için yeni RV de alamayız.}
 \SC{Neden LOOCV'yi geçemeyen 12 adayı almadın?}{Wang vd.'nin kendisi onları ``zayıf aday'' sayıyor: sonuçları tek bir ölçüme bağlı. Hocanın direktifi de geçen 14'ten seçmekti.}
-\SC{TrES-1 b'de \sR{} = 2,2, eşik 4,9; sınırda değil mi?}{Hayır; eşiğin yarısından küçük (oran 0,15). Eşik 1/6'ya kadar sıkılaştırılsa bile seçiliyor.}
-\SC{KELT-16 b'nin RV verisi var mıydı?}{Evet, keşif makalesinde (Oberst vd., 2017) 20 ölçüm var ama hepsi $\sim$6 ay içinde alınmış. \sR{} = 39,3\msyil, eşik 9,3; yetersiz. Makalenin kendi verdiği eğimden de $\sim$35\msyil çıkıyor, tutarlı.}
+\SC{TrES-1 için sayı yok, neden seçildi?}{Hagey vd. (2025) 12 yıllık RV'yi incelemiş ve eğilim bulmamış; dönem değişimini açıklayacak bir ivmenin veride görüneceğini, görünmediğini açıkça yazıyor. Yani Rømer'i dışlıyor; ölçütün ikinci yolu bu.}
+\SC{KELT-16 b'nin RV verisi yok muydu?}{Var, keşif makalesinde (Oberst vd., 2017) 20 ölçüm var ama hepsi yaklaşık 6 ay içinde alınmış. Yıllara yayılan bir eğilimi ölçmeye yetmez; Rømer sınanmış sayılmaz.}
+\SC{WASP-46 b için gerçekten hiç analiz yok mu?}{Benim incelediğim çalışmalarda yok. ``Dünyada hiç yok'' demiyorum, formda da ``incelenen literatürde bulunamadı'' yazıyor.}
 \SC{Seçimi senin O$-$C sonuçların etkiledi mi?}{Hayır. Ölçütler yalnızca veri yeterliliğine bakıyor.}
 
 % =====================================================================
@@ -355,7 +358,7 @@ Her cevabı ezberleme; \emph{mantığını} anla. Kısa cevap ver, sorulursa ayr
 \SC{Lomb--Scargle nedir?}{Düzensiz aralıklı veride periyodik sinyal arayan yöntem. Yanlış alarm olasılığı 0,01'in altındaki tepeler sinyal sayılır; gözlem mevsiminden gelen $\sim$1 yıllık tepeler sayılmaz.}
 
 \subsection{Ön çalışma}
-\SC{Ön çalışmada ne yaptın?}{Bölüm 1'deki seçim: 14 adayın TESS sayısını belirledim, arşiv RV'lerinden \sR'yi hesapladım, dört hedefi seçtim ve bu hedeflerin geçiş zamanlarının ve yeni TESS verilerinin arşivlerde gerçekten bulunduğunu doğruladım.}
+\SC{Ön çalışmada ne yaptın?}{Literatür taraması: 14 adayın TESS geçiş sayısını Wang vd.'den aldım, her aday için Rømer etkisini RV ile sınayan yayımlanmış analiz aradım (Bouma vd. 2020 Tablo 5, Hagey vd. 2025, Rothmeier vd. 2025, Oberst vd. 2017), iki ölçütü sağlayan dört hedefi seçtim ve bu hedeflerin geçiş zamanlarının ve yeni TESS verilerinin arşivlerde bulunduğunu kontrol ettim. Hesap ya da test yok.}
 \SC{Neden grafik koymadın?}{Ön çalışmayı veri yeterliliği ile sınırlı tuttum; ölçüm sonuçlarını projenin kendisinde, yöntemin tamamıyla vermek istedim.}
 
 \subsection{3.1 Çalışma takvimi ve ekip}
@@ -379,8 +382,8 @@ Her cevabı ezberleme; \emph{mantığını} anla. Kısa cevap ver, sorulursa ayr
 \SC{Yeni projeye çıktı?}{Aynı yöntem Wang vd.'nin diğer adaylarına uygulanabilir; bir lisansüstü tez çalışmasına temel olabilir.}
 
 \subsection{5 Diğer konular (Tablo 1)}
-\SC{Tablo 1'i nereden aldın?}{Ben oluşturdum. Satırlar Wang vd.'nin LOOCV'yi geçen 14 adayı; $|\Pdot|/\sigma$ ve TESS sayısı Wang vd.'nin VizieR tablolarından; \sR{} benim hesabım (arşiv RV'lerinden). Bkz. Bölüm 1.}
-\SC{``Eşik'' sütunu ne?}{Wang vd.'nin $|\Pdot|$ değerinin üçte biri. \sR{} bundan küçükse aday seçiliyor.}
+\SC{Tablo 1'i nereden aldın?}{Literatürden derledim. Satırlar Wang vd.'nin LOOCV'yi geçen 14 adayı; $|\Pdot|/\sigma$ ve TESS sayısı Wang vd.'nin VizieR tablolarından; Rømer sütunu Bouma vd. 2020 Tablo 5, Hagey vd. 2025, Rothmeier vd. 2025 ve Oberst vd. 2017'den. Bkz. Bölüm 1.}
+\SC{``Eşik'' sütunu ne?}{Wang vd.'nin $|\Pdot|$ değerinin üçte biri. Yayımlanmış Rømer öngörüsünün belirsizliği bundan küçükse (ya da Rømer açıkça dışlanmışsa) aday seçiliyor.}
 
 \subsection{6 Kaynakça}
 \SC{Kaynaklar doğru mu?}{35 kaynağın hepsinin DOI'si çözülüyor ve yazar, yıl, başlık, dergi, cilt, sayfa bilgileri Crossref kayıtlarıyla eşleşiyor (7 Kasım'da kontrol edildi). Metinde hepsine atıf var.}
@@ -403,8 +406,8 @@ Her cevabı ezberleme; \emph{mantığını} anla. Kısa cevap ver, sorulursa ayr
 \item \textbf{Hocanın direktifi alındı}: Wang vd. (2024)'nin LOOCV'yi geçen 14 adayından birkaçını gerekçesiyle seç; LOOCV'yi kendin öğren (proje kapsamı değil); \OC{} diyagramı çiz; TESS ve VarAstro/literatür verisiyle dönemin değişip değişmediğine bak; değişiyorsa gelgit/apsis/Rømer/Applegate/üçüncü cisim/kütle kaybından hangisi olduğunu belirle.
 \item \textbf{Kısıtlar belirlendi}: tayfçeker yok $\rightarrow$ RV yalnızca arşivden; bütçe 0 TL; yalnızca açık veri; hocanın söylediklerine fazla ekleme yapma.
 \item \textbf{Literatür okundu}: Wang 2024, Ivshina ve Winn 2022, Yee 2020, Patra 2017, Bouma 2020, Baştürk 2025, Winn ve Stefánsson 2025, Adams 2024, Hagey 2025, Kutluay 2026, Yang 2025 vb. Amaç: hangi adayda ne tartışıldığını görmek.
-\item \textbf{Analiz kodları yazıldı ve denendi} (Bölüm 5): \OC{} kodu, TESS zaman ölçüm kodu, RV/Rømer kodu. Yöntemin uygulanabilir olduğunu görmek için.
-\item \textbf{Seçim ölçütleri kesinleşti ve Tablo 1 üretildi} (Bölüm 1). Ölçütler veri yeterliliğine dayandırıldı ki seçim sonuçlardan bağımsız olsun.
+\item \textbf{Analiz kodları yazıldı ve denendi} (Bölüm 5): \OC{} kodu, TESS zaman ölçüm kodu, RV/Rømer kodu. Yöntemin uygulanabilir olduğunu görmek için. Bu kodları yapay zekâ (Claude) yazdı ve çalıştırdı.
+\item \textbf{Seçim ölçütleri kesinleşti ve Tablo 1 üretildi} (Bölüm 1). Ölçütler veri yeterliliğine dayandırıldı ki seçim sonuçlardan bağımsız olsun. İlk sürümde Rømer sütunu arşiv RV'lerinden kodla hesaplanmıştı (\sR); senin isteğinle tamamen yayımlanmış analizlere (Bouma vd. 2020 Tablo 5, Hagey vd. 2025, Rothmeier vd. 2025, Oberst vd. 2017) dayandırıldı. Seçilen dört hedef değişmedi.
 \item \textbf{Form metinleri yazıldı}, TÜBİTAK kurallarına göre (bilgi notu, çağrı metni) bölüm bölüm gözden geçirildi.
 \item \textbf{Kalkınma Planı ve 2030 Stratejisi} kaynak PDF'lerden okunup madde numaraları doğrulandı (270, 271; ``Fizik ve Astronomi'').
 \item \textbf{Ön çalışma daraltıldı}: grafikler ve ölçüm sonuçları formdan çıkarıldı; yalnızca Tablo 1 kaldı (senin kararın).
@@ -436,8 +439,8 @@ Bahar proje ortağı & Koşulları sağlıyor; destek görevleri, zor kısımlar
 \item \texttt{2209-A\_Arastirma\_Onerisi\_Formu\_Idris\_Avlar.docx}: hocaya gidecek Word formu.
 \item \texttt{TUBITAK\_2209A\_form\_metinleri.md}: aynı metnin düz hali (TYBS'ye buradan da kopyalanabilir).
 \item \texttt{kilavuz.pdf}: bu belge.
-\item \texttt{kod/secim\_tablosu.py}: Tablo 1'i üretir. \texttt{kod/oc\_diyagrami.py}: \OC{} analizi. \texttt{kod/tess\_zaman.py}: TESS zaman ölçümü. \texttt{kod/rv\_analiz.py}: RV eğilimi ve Rømer.
-\item \texttt{veri/tablo1\_secim.csv}: Tablo 1'in ham hali. \texttt{veri/tess\_*.csv}: denemede ölçülen TESS zamanları. \texttt{veri/rv\_*}: indirilen RV'ler.
+\item \texttt{kod/secim\_tablosu.py}: Tablo 1'in ilk (hesaplı, \sR) sürümünü üretir; formda artık kullanılmıyor. \texttt{kod/oc\_diyagrami.py}: \OC{} analizi. \texttt{kod/tess\_zaman.py}: TESS zaman ölçümü. \texttt{kod/rv\_analiz.py}: RV eğilimi ve Rømer.
+\item \texttt{veri/tablo1\_secim.csv}: Tablo 1'in ham hali ve her değerin kaynağı. \texttt{veri/tess\_*.csv}: denemede ölçülen TESS zamanları. \texttt{veri/rv\_*}: indirilen RV'ler.
 \item \texttt{sekiller/}, \texttt{on\_calisma\_colab.ipynb}: eski denemelerden; formda kullanılmıyor.
 \end{itemize}
 
@@ -445,8 +448,11 @@ Bahar proje ortağı & Koşulları sağlıyor; destek görevleri, zor kısımlar
 \section{Formda olmayan ama yapılmış denemeler}
 % =====================================================================
 \begin{dikkat}[Bunu nasıl kullanmalısın?]
-Bunlar yöntemin çalıştığını görmek için yapıldı, sonra senin kararınla formdan çıkarıldı. Formda yazmadığı için kimse senden beklemiyor. Hoca ``yöntemi denedin mi?'' derse: \emph{``Evet, kodları WASP-12 b üzerinde denedim, literatürle uyumlu çıktı; asıl analizi projede yapacağım''} diyebilirsin — ama \textbf{yalnızca aşağıdakini anladıysan}. Anlamadığın sayıyı söyleme.
+Bunlar yöntemin çalıştığını görmek için yapıldı, sonra senin kararınla formdan çıkarıldı. Kodları yapay zekâ (Claude) yazdı ve bu oturumda çalıştırdı; sen çalıştırmadın. Formda yazmadığı için kimse senden beklemiyor. Hoca ``yöntemi denedin mi?'' derse: \emph{``Evet, kodları WASP-12 b üzerinde denedim, literatürle uyumlu çıktı; asıl analizi projede yapacağım''} diyebilirsin — ama \textbf{yalnızca aşağıdakini anladıysan}. Anlamadığın sayıyı söyleme.
 \end{dikkat}
+
+\subsection{Arşiv RV'lerinden \sR{} hesabı}
+Tablo 1'in ilk sürümünde Rømer sütunu, yayımlanmış RV ölçümlerine (Knutson, Bouma, Bonomo, Oberst, DACE) kodla model uydurularak hesaplanmıştı: geçiş sırasındaki ölçümler atıldı, her alete ayrı sıfır noktası verildi, gezegen sinyali + doğrusal eğilim uyduruldu, eğimin belirsizliği $\dot P=P(dv/dt)/c$ ile dönem değişimine çevrildi. Sonuç (\msyil): WASP-12 1,6; WASP-4 0,4; HAT-P-7 1,2; TrES-1 2,2 (seçildi); KELT-16 39,3; TrES-5 29,2; WASP-46 56,3 (elendi). Yani literatüre dayalı seçimle \emph{aynı dört hedef}. Formda artık yok.
 
 \subsection{Yöntem doğrulaması (TESS sektör 20)}
 Wang vd.'nin zaten ölçtüğü sektör 20'deki WASP-12 b geçişleri yeniden ölçüldü: 21 geçiş, 20'si ortak. Ortalama fark $-1{,}7$ s, farkların hataya oranının ortancası 0,40σ, ortanca hata 45 s. Yani sistematik kayma yok; ölçüm yöntemi Wang vd. ile uyumlu.
@@ -496,7 +502,7 @@ Bunlar ön deneme; projede zaman sistemleri tek tek kontrol edilip, tüm testler
 \item[$Q'_*$] Yıldızın gelgit kalite faktörü; küçükse bozulma hızlı.
 \item[Rømer etkisi (ışık-yolu etkisi, LTTE)] Sistemin ivmelenmesinden kaynaklanan görünür dönem değişimi; yörünge değişmez.
 \item[Radyal hız (RV)] Yıldızın bize yaklaşma/uzaklaşma hızı (tayftaki Doppler kaymasından).
-\item[\sR] Arşiv RV'siyle Rømer'in öngörülebildiği belirsizlik (\msyil).
+\item[Rømer öngörüsü] RV ivmesinden beklenen görünür dönem değişimi, $\dot P = P(dv/dt)/c$ (\msyil). Bouma vd. 2020 Tablo 5'te 51 gezegen için yayımlanmış.
 \item[Jitter] Yıldızın kendi yüzey hareketlerinden gelen ek RV saçılması.
 \item[Rossiter--McLaughlin] Geçiş sırasında RV'deki bozulma.
 \item[Apsis hareketi] Dışmerkez yörüngenin uzun ekseninin dönmesi; \OC'de sinüs.

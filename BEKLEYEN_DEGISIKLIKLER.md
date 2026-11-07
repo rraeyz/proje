@@ -230,4 +230,15 @@ büyütülüyor (`oc_diyagrami.hata_olcekle`). Sebep: TrES-1 literatür zamanlar
     Yang, E., Su, Y. ve Winn, J. N. 2025. "A Third Star in the HAT-P-7 System and a New Dynamical Pathway to Misaligned Hot Jupiters", The Astrophysical Journal, 986, 117. https://doi.org/10.3847/1538-4357/add5f7
     Yee, S. W. vd. 2020. "The Orbit of WASP-12b Is Decaying", The Astrophysical Journal Letters, 888, L5. https://doi.org/10.3847/2041-8213/ab5c16
 
+28. **"K1/K2/K3" kısaltmaları kalkacak** (hakem Tablo 1'de ne demek olduğunu anlayamaz; tanımları sayfalarca önce Yöntem'de).
+    - Tablo 1 "Sonuç" sütunu: "K2 sağlanmıyor" → "Elendi: TESS geçiş sayısı 30'dan az"; KELT-16 → "Elendi: arşivde RV verisi yok";
+      TrES-5, WASP-46 → "Elendi: arşiv RV verisi yetersiz (σ_Rømer > |dP/dt|/3)"; "Seçildi" aynen.
+    - Tablo 1 açıklaması: "Tablo 1. Hedef seçimi. Satırlar, Wang vd. (2024)'nin LOOCV testini geçen 14 adaydır. Seçim ölçütleri:
+      (1) Wang vd.'nin raporladığı TESS geçiş zamanı sayısı en az 30; (2) arşiv radyal hız verisinden öngörülen Rømer katkısının
+      belirsizliği (σ_Rømer), Wang vd.'nin raporladığı |dP/dt| değerinin üçte birinden küçük. |dP/dt|/σ ve TESS sayısı Wang vd.
+      (2024)'den alınmış; σ_Rømer bu çalışmada yayımlanmış radyal hız ölçümlerinden hesaplanmıştır (ms/yıl). '–': hesaplanmadı ya da
+      veri yok."
+    - Yöntem/Örneklem seçimi: "(K1)", "(K2)", "(K3)" → "(i) LOOCV ölçütü", "(ii) TESS verisi ölçütü", "(iii) radyal hız verisi ölçütü".
+    - `kod/secim_tablosu.py` çıktısındaki etiketler de aynı açık ifadelere çevrilecek (tablo ile kod tutarlı olsun).
+
 (Yapay zekâ kullanım beyanı kullanıcıya ait; bu listede yer almıyor.)

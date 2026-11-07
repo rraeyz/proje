@@ -233,11 +233,15 @@ büyütülüyor (`oc_diyagrami.hata_olcekle`). Sebep: TrES-1 literatür zamanlar
 28. **"K1/K2/K3" kısaltmaları kalkacak** (hakem Tablo 1'de ne demek olduğunu anlayamaz; tanımları sayfalarca önce Yöntem'de).
     - Tablo 1 "Sonuç" sütunu: "K2 sağlanmıyor" → "Elendi: TESS geçiş sayısı 30'dan az"; KELT-16 → "Elendi: arşivde RV verisi yok";
       TrES-5, WASP-46 → "Elendi: arşiv RV verisi yetersiz (σ_Rømer > |dP/dt|/3)"; "Seçildi" aynen.
-    - Tablo 1 açıklaması: "Tablo 1. Hedef seçimi. Satırlar, Wang vd. (2024)'nin LOOCV testini geçen 14 adaydır. Seçim ölçütleri:
-      (1) Wang vd.'nin raporladığı TESS geçiş zamanı sayısı en az 30; (2) arşiv radyal hız verisinden öngörülen Rømer katkısının
-      belirsizliği (σ_Rømer), Wang vd.'nin raporladığı |dP/dt| değerinin üçte birinden küçük. |dP/dt|/σ ve TESS sayısı Wang vd.
-      (2024)'den alınmış; σ_Rømer bu çalışmada yayımlanmış radyal hız ölçümlerinden hesaplanmıştır (ms/yıl). '–': hesaplanmadı ya da
-      veri yok."
+    - Tablo 1 açıklaması (tablonun ne olduğu ve her sütunun kaynağı açıkça):
+      "Tablo 1. Bu çalışmada oluşturulan hedef seçim tablosu. Satırlar, Wang vd. (2024)'nin dönem değişimi bildirdiği 26 adaydan, aynı
+      çalışmanın LOOCV testini geçen 14'üdür (Wang vd., 2024, Tablo 3). Sütunların kaynakları: |dP/dt|/σ (Wang vd.'nin bildirdiği dönem
+      değişim hızının belirsizliğine oranı) ve TESS geçiş sayısı Wang vd. (2024)'nin VizieR'de yayımlanan tablolarından (J/ApJS/270/14)
+      alınmıştır. σ_Rømer (uzak bir eşlikçinin ivmesinden kaynaklanabilecek dönem değişiminin arşiv radyal hız verisiyle öngörülebildiği
+      belirsizlik, ms/yıl) bu çalışmada, yayımlanmış radyal hız ölçümlerinden (Knutson vd., 2014; Bonomo vd., 2017; Bouma vd., 2020;
+      DACE arşivi) hesaplanmış ve her aday için en hassas veri seti kullanılmıştır. Seçim ölçütleri: (1) TESS geçiş sayısı en az 30;
+      (2) σ_Rømer, Wang vd.'nin bildirdiği |dP/dt| değerinin üçte birinden küçük. '–': ilk ölçütte elendiği için hesaplanmadı ya da
+      arşivde radyal hız verisi yok."
     - Yöntem/Örneklem seçimi: "(K1)", "(K2)", "(K3)" → "(i) LOOCV ölçütü", "(ii) TESS verisi ölçütü", "(iii) radyal hız verisi ölçütü".
     - `kod/secim_tablosu.py` çıktısındaki etiketler de aynı açık ifadelere çevrilecek (tablo ile kod tutarlı olsun).
 

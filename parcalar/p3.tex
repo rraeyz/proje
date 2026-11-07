@@ -1,0 +1,271 @@
+% ===================================================== BÖLÜM 5
+\section{O$-$C Diyagramı: Mala Anlatır Gibi}
+\label{sec:oc}
+
+\subsection{Otobüs benzetmesi}
+Bir otobüs tarifeye göre durağa \textbf{her 60 dakikada bir} geliyor. İlk otobüs 08:00'de geldi.
+Tarifeye göre 10. otobüsün gelmesi gereken saat: 08:00 + 10 $\times$ 60 dk = 18:00. Buna \textbf{C}
+(\emph{Calculated}, hesaplanan) denir. Otobüs gerçekte 17:58'de geldi. Buna \textbf{O} (\emph{Observed}, gözlenen)
+denir. Fark: \textbf{O$-$C} = 17:58 $-$ 18:00 = $-2$ dakika (2 dakika erken).
+
+Şimdi her otobüs için O$-$C'yi bul ve otobüs numarasına karşı çiz:
+\begin{itemize}[leftmargin=*]
+\item Noktalar \textbf{sıfırın etrafında} rastgele saçılıyorsa: tarife doğru, otobüs gerçekten her 60 dakikada geliyor.
+\item Noktalar \textbf{eğik bir doğru} oluşturuyorsa: tarifedeki aralık biraz yanlış (aslında 59,9 dakika). Bu fiziksel
+      bir şey değildir, tarife hatasıdır; doğruyu uydurup aralığı düzeltirsin.
+\item Noktalar \textbf{aşağı bükülen bir parabol} çiziyorsa: otobüs her seferinde bir öncekinden biraz \emph{daha} erken
+      geliyor, yani aralık sürekli \textbf{kısalıyor}. İşte “yörünge dönemi azalıyor” bu demektir.
+\item Noktalar \textbf{yukarı bükülen bir parabol} çiziyorsa: aralık sürekli \textbf{uzuyor}.
+\item Noktalar \textbf{dalgalanıyorsa} (sinüs): aralık bir uzayıp bir kısalıyor (periyodik bir etki).
+\end{itemize}
+Gezegende “otobüs” geçiştir, “otobüs numarası” epoktur (Bölüm~\ref{sec:kavram}). Hocanın kağıdındaki çizim
+tam olarak budur: \textbf{dikey eksen O$-$C, yatay eksen epok (ya da zaman)}.
+
+\subsection{O$-$C şekil kataloğu}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[group style={group size=3 by 2, horizontal sep=1.1cm, vertical sep=1.6cm},
+   width=5.4cm, height=4.2cm, xmin=-1, xmax=1, ymin=-1.3, ymax=1.3, xtick=\empty, ytick={0},
+   xlabel={Epok}, ylabel={O$-$C}, title style={font=\small\bfseries}, every axis plot/.append style={thick}]
+\nextgroupplot[title={(a) Sabit dönem}]
+\addplot[only marks, mark=*, mark size=1.2pt, blue] coordinates {(-0.9,0.12)(-0.7,-0.1)(-0.5,0.05)(-0.3,-0.15)(-0.1,0.1)(0.1,-0.05)(0.3,0.14)(0.5,-0.12)(0.7,0.06)(0.9,-0.08)};
+\addplot[dashed, black, domain=-1:1] {0};
+\nextgroupplot[title={(b) Tarife (P) biraz yanlış}]
+\addplot[only marks, mark=*, mark size=1.2pt, blue] coordinates {(-0.9,-0.75)(-0.7,-0.6)(-0.5,-0.4)(-0.3,-0.3)(-0.1,-0.05)(0.1,0.1)(0.3,0.25)(0.5,0.4)(0.7,0.6)(0.9,0.7)};
+\addplot[red, domain=-1:1] {0.8*x};
+\nextgroupplot[title={(c) Dönem kısalıyor}]
+\addplot[only marks, mark=*, mark size=1.2pt, blue] coordinates {(-0.9,-0.65)(-0.7,-0.25)(-0.5,0.1)(-0.3,0.3)(-0.1,0.42)(0.1,0.38)(0.3,0.33)(0.5,0.1)(0.7,-0.2)(0.9,-0.62)};
+\addplot[red, domain=-1:1] {0.45-1.25*x^2};
+\nextgroupplot[title={(d) Dönem uzuyor}]
+\addplot[only marks, mark=*, mark size=1.2pt, blue] coordinates {(-0.9,0.6)(-0.7,0.2)(-0.5,-0.08)(-0.3,-0.35)(-0.1,-0.4)(0.1,-0.42)(0.3,-0.3)(0.5,-0.12)(0.7,0.2)(0.9,0.62)};
+\addplot[red, domain=-1:1] {-0.45+1.25*x^2};
+\nextgroupplot[title={(e) Periyodik (sinüs)}]
+\addplot[only marks, mark=*, mark size=1.2pt, blue] coordinates {(-0.9,-0.15)(-0.7,-0.74)(-0.5,-0.72)(-0.3,-0.42)(-0.1,0.29)(0.1,0.66)(0.3,0.81)(0.5,0.30)(0.7,-0.24)(0.9,-0.78)};
+\addplot[red, domain=-1:1, samples=80] {0.8*sin(deg(4*x+0.7))};
+\nextgroupplot[title={(f) Tek aykırı nokta}]
+\addplot[only marks, mark=*, mark size=1.2pt, blue] coordinates {(-0.7,-0.1)(-0.5,0.05)(-0.3,-0.12)(-0.1,0.1)(0.1,-0.05)(0.3,0.12)(0.5,-0.1)(0.7,0.06)(0.9,-0.08)};
+\addplot[only marks, mark=square*, mark size=2pt, orange] coordinates {(-0.9,-1.0)};
+\addplot[dashed, black, domain=-1:1] {0};
+\end{groupplot}
+\end{tikzpicture}
+\caption{O$-$C diyagramında karşılaşacağın altı şekil. (a) Değişim yok. (b) Kullanılan $P$ hatalı: fiziksel değil,
+doğrusal uydurma düzeltir. (c) Aşağı parabol: dönem kısalıyor (gelgit bozulması \emph{ya da} bize doğru ivme).
+(d) Yukarı parabol: dönem uzuyor (bizden uzağa ivme ya da başka bir etki). (e) Sinüs: apsis hareketi, uzak eşlikçinin
+ışık-yolu etkisi ya da Applegate. (f) Tek bir hatalı eski nokta (turuncu) sahte bir parabol yaratabilir: LOOCV'nin
+yakaladığı durum budur.}
+\label{fig:katalog}
+\end{figure}
+
+\subsection{Gözlem yapmam gerekiyor mu?}
+\begin{basit}[Kısa cevap: HAYIR]
+O$-$C diyagramı için \textbf{teleskopla gözlem yapman gerekmez}. Gerekli olan, farklı yıllarda ölçülmüş
+orta geçiş zamanlarıdır ve bunlar zaten yayımlanmıştır:
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Hazır tablolardan (ana yol)}: Ivshina \& Winn (2022) veritabanı, Wang vd. (2024) TESS zamanları,
+      ETD/VarAstro, ExoClock, hedefe özel makaleler. İndir, birleştir, çiz.
+\item \textbf{TESS ışık eğrilerinden kendin ölçerek (önerilen ek adım)}: Wang vd.'nin kullandığı son TESS verisi
+      WASP-4 için 2020, diğer hedefler için 2021–2022'dir. Sonrasında çekilen TESS sektörlerindeki geçişlerin
+      zamanını bilgisayarda ölçersin (Bölüm~\ref{sec:kod}, \texttt{tess\_zaman.py}). Bu da “gözlem” değildir;
+      uydunun çektiği hazır veriyi işlemektir. Hocanın “TESS verisini dahil et” sözünün içindedir.
+\end{enumerate}
+\end{basit}
+
+\subsection{“O” nereden gelir? (Gözlenen orta geçiş zamanları)}
+
+\subsubsection*{Kaynak 1: Ivshina \& Winn (2022) veritabanı — EN ÖNEMLİSİ}
+382 sıcak Jüpiter için literatürde yayımlanmış ve TESS'ten ölçülmüş binlerce geçiş zamanı tek tabloda.
+\begin{itemize}[leftmargin=*]
+\item VizieR kodu: \texttt{J/ApJS/259/62}. Geçiş zamanları \textbf{Tablo 4}'te (\texttt{table4}).
+\item Sütunlar: \texttt{Sys} (sistem adı; dikkat: \texttt{WASP-012}, \texttt{WASP-004}, \texttt{HAT-P-07},
+      \texttt{TrES-1} biçiminde yazılır), \texttt{Orbit} (epok), \texttt{TTmid} (orta zaman), \texttt{e\_TTmid}
+      (hata, gün), \texttt{n\_TTmid} (\textbf{zaman sistemi}), \texttt{Ref} (kaynak makale; “This work” = onların TESS ölçümü).
+\item Tarayıcıdan bakmak için: \url{https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=J/ApJS/259/62}
+      (açılmazsa Harvard aynası: \texttt{vizier.cfa.harvard.edu}).
+\item Ayrıca ekibin sitesi: \texttt{transit-timing.github.io} (güncellenmiş sürümler olabilir).
+\end{itemize}
+
+\subsubsection*{Kaynak 2: Wang vd. (2024) TESS zamanları}
+\begin{itemize}[leftmargin=*]
+\item VizieR kodu: \texttt{J/ApJS/270/14}. \textbf{Tablo 1} (\texttt{table1}): her TESS geçişi için \texttt{Name},
+      \texttt{Epoch}, \texttt{Tc} (BJD$_\mathrm{TDB}$), \texttt{e\_Tc}. \textbf{Tablo 2} (\texttt{table2}): 326 gezegenin
+      efemerisleri ($T_0$, $P_0$, adaylar için $\dot P$).
+\item Gezegen adı \texttt{WASP-12 b} biçimindedir (boşluklu).
+\end{itemize}
+
+\subsubsection*{Kaynak 3: ETD / VarAstro (hocanın notundaki “VarAstro”)}
+\textbf{Exoplanet Transit Database (ETD)}, Çek Astronomi Derneği'nin değişen yıldız portalı \textbf{VarAstro}
+(\texttt{var.astro.cz}) içinde yer alır. Dünyanın her yerinden (çoğu amatör) gözlemcilerin geçiş zamanlarını içerir.
+\begin{itemize}[leftmargin=*]
+\item Hedef sayfasına git (ör. “WASP-12 b”), geçiş listesini indir. Her satırda zaman, hata ve bir
+      \textbf{veri kalitesi (DQ)} notu bulunur.
+\item \textbf{Kalite filtresi uygula}: yalnızca DQ = 1–2 (en iyi) olanları al; hatası sistemin ortanca hatasının
+      3 katından büyük olanları alma; kısmi geçişleri alma.
+\item \textbf{Zaman sistemine dikkat}: ETD zamanları çoğunlukla HJD olarak verilir. Kullanmadan önce
+      BJD$_\mathrm{TDB}$'ye dönüştür (kod: Bölüm~\ref{sec:kod}, \texttt{hjd\_to\_bjd\_tdb}).
+\item Aynı geçiş hem ETD'de hem bir makalede varsa \textbf{iki kez sayma}.
+\end{itemize}
+
+\subsubsection*{Kaynak 4: ExoClock ve hedefe özel makaleler}
+\begin{itemize}[leftmargin=*]
+\item \textbf{ExoClock} (\texttt{exoclock.space}): Ariel uzay görevi için kurulmuş gözlem ağı; zamanlar BJD$_\mathrm{TDB}$.
+\item \textbf{WASP-12\,b}: Yee vd. (2020), VizieR \texttt{J/ApJ/888/L5}; Tablo 5'te 139 geçiş \emph{ve 19 örtülme}
+      (ikincil tutulma) zamanı var (apsis testi için çok değerli, Bölüm~\ref{sec:etkiler}).
+\item \textbf{WASP-4\,b}: Bouma vd. (2020), VizieR \texttt{J/ApJ/893/L29}, Tablo 1; Baştürk vd. (2025) 216 zaman.
+\item \textbf{TrES-1\,b}: Hagey vd. (2025); Kutluay vd. (2026).
+\item \textbf{HAT-P-7\,b}: Kepler uydusu bu sistemi 2009–2013'te sürekli izledi; Kepler zamanları O$-$C'deki büyük
+      boşluğu doldurur (isteğe bağlı; ör. Holczer vd. 2016 Kepler TTV kataloğu).
+\end{itemize}
+
+\subsubsection*{Kaynak 5: TESS ışık eğrilerinden kendi ölçümün}
+Mantık, adım adım (kodu Bölüm~\ref{sec:kod}):
+\begin{enumerate}[leftmargin=*]
+\item \textbf{İndir}: MAST arşivinden (\texttt{mast.stsci.edu}) hedefin SPOC 2 dakikalık ışık eğrisi dosyalarını
+      (\texttt{*\_lc.fits}) indir.
+\item \textbf{Temizle}: Kalite bayrağı (\texttt{QUALITY}) sıfır olmayan ve boş (NaN) noktaları at; akıyı ortancaya
+      bölerek 1'e normalize et. \texttt{PDCSAP\_FLUX} sütununu kullan (aletsel etkiler temizlenmiş akı).
+\item \textbf{Zamanı çevir}: \texttt{TIME} sütunu BTJD'dir; 2457000 ekle $\Rightarrow$ BJD$_\mathrm{TDB}$.
+\item \textbf{Efemerisi merkezle}: Eski bir $T_0$ ile katlanan (phase-fold) ışık eğrisi bulanık çıkabilir
+      (TrES-1'de $T_0$ 2004'ten kalma; 7000 tur boyunca $P$'nin küçük hatası dakikalar eder). Kod önce kutu
+      taramasıyla gerçek geçiş konumunu bulur.
+\item \textbf{Geçiş şeklini bul}: Tüm geçişleri üst üste katla, \texttt{batman} modeliyle $R_p/R_\star$, $a/R_\star$,
+      eğiklik $i$ değerlerini bir kez uydur. Sağlama: literatür değerlerine yakın çıkmalı (WASP-12: $R_p/R_\star \approx 0{,}117$,
+      $a/R_\star \approx 3{,}0$; benim sonucum 0,113 ve 3,1).
+\item \textbf{Her geçişi tek tek uydur}: Şekli sabit tut; yalnızca orta zaman $T_c$ ve yerel taban çizgisi
+      (2 parametre) serbest. Önce en küçük kareler, sonra MCMC (\texttt{emcee}) ile $T_c$'nin hatasını bul.
+\item \textbf{Kalite}: Giriş ya da çıkışı veride olmayan (kısmi) geçişleri kullanma.
+\item \textbf{Kaydet}: \texttt{epok, Tc\_BJD\_TDB, hata\_gun} sütunlu bir CSV. Bu dosya O$-$C koduna doğrudan eklenir.
+\end{enumerate}
+TESS'te tek bir geçişin zaman hatası parlak sıcak Jüpiterlerde tipik olarak 20–90 saniyedir
+(WASP-12'de benim ölçümlerim $\sim$44 s).
+
+\subsection{“C” nedir, nereden gelir? (Hesaplanan zaman)}
+
+\subsubsection*{Formül}
+Dönem sabit olsaydı, $E$'inci geçişin zamanı:
+\[
+\boxed{\;C(E) = T_0 + P \cdot E\;}
+\]
+Buna \textbf{doğrusal efemeris} denir.
+\begin{itemize}[leftmargin=*]
+\item $T_0$: Referans (sıfırıncı) geçişin zamanı, BJD$_\mathrm{TDB}$.
+\item $P$: Yörünge dönemi (gün).
+\item $E$: Epok: $E = \mathrm{yuvarla}\!\left[(O - T_0)/P\right]$. Yuvarlamadan önceki sayı tam sayıya çok yakın
+      olmalıdır (ör. 2407,997). Kesirli kısım 0,02'den büyükse ($|x - E| > 0{,}02$) ya yanlış epok ya yanlış zaman
+      vardır: o noktayı kontrol et.
+\end{itemize}
+
+\subsubsection*{$T_0$ ve $P$'yi nereden alacağım?}
+Üç seçenek var; projede \textbf{üçüncüsünü} kullanacaksın, ilk ikisi başlangıç tahmini içindir:
+\begin{enumerate}[leftmargin=*]
+\item \textbf{NASA Exoplanet Archive} (\texttt{exoplanetarchive.ipac.caltech.edu}), “Planetary Systems Composite
+      Parameters” tablosu (\texttt{pscomppars}). Sütunlar: \texttt{pl\_tranmid} ($T_0$) ve \texttt{pl\_orbper} ($P$).
+      Tarayıcıdan: tabloda gezegeni ara, bu iki sütunu oku. Koddan (tek satır):
+\begin{lstlisting}
+https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_tranmid,pl_orbper+from+pscomppars+where+pl_name='WASP-12+b'&format=csv
+\end{lstlisting}
+      Sonuç (Kasım 2026): $T_0 = 2457607{,}519305$, $P = 1{,}091418901$ gün.
+\item \textbf{Wang vd. (2024) Tablo 2}: \texttt{T0}, \texttt{P0}. Kodum varsayılan olarak bunu kullanır.
+\item \textbf{Kendi uydurman (asıl yöntem)}: $T_0$ ve $P$'yi \emph{tüm geçiş zamanlarına doğru uydurarak} sen
+      belirlersin. Neden? Çünkü başkasının efemerisi biraz yanlışsa O$-$C'de sahte bir eğim (Şekil~\ref{fig:katalog}b)
+      görürsün. Kendi doğrusal uydurmanla hesaplanan C, verine göre en iyi “sabit dönem” tahminidir; parabol varsa
+      ancak o zaman net görünür. Kodumdaki O$-$C ekseni bu şekilde hesaplanır.
+\end{enumerate}
+
+\begin{ornek}[Elle bir O$-$C hesabı (WASP-12\,b, gerçek sayılarla)]
+\textbf{O}: TESS sektör 71'de ölçtüğüm bir geçiş: $O = 2460235{,}652614$ BJD$_\mathrm{TDB}$.\\
+\textbf{Efemeris}: $T_0 = 2457607{,}519305$, $P = 1{,}091418901$ gün (NASA Exoplanet Archive).\\
+\textbf{1. Epok}: $(O - T_0)/P = 2628{,}133309 / 1{,}091418901 = 2407{,}997 \Rightarrow E = 2408$.\\
+\textbf{2. C}: $C = 2457607{,}519305 + 1{,}091418901 \times 2408 = 2460235{,}656019$.\\
+\textbf{3. O$-$C}: $2460235{,}652614 - 2460235{,}656019 = -0{,}003405$ gün $= -0{,}003405 \times 1440 = \mathbf{-4{,}9}$
+\textbf{dakika}.\\
+Yani gezegen, 2016'daki efemerisin öngördüğünden \textbf{yaklaşık 5 dakika erken} geçti. Tek bir nokta bir şey
+kanıtlamaz; ama yüzlerce nokta aynı yönde bir parabol çiziyorsa (Şekil~\ref{fig:w12}) dönem kısalıyor demektir.
+\end{ornek}
+
+\subsection{Doğrusal ve kuadratik model: dönem değişimini ölçmek}
+
+\subsubsection*{Kuadratik efemeris}
+Dönem her turda sabit bir $\Delta P$ kadar değişiyorsa, turların toplamı:
+\[
+\boxed{\;T(E) = T_0 + P\,E + \tfrac{1}{2}\,\frac{dP}{dE}\,E^2\;}
+\]
+Kodda bunu $T(E) = c_0 + c_1 E + c_2 E^2$ diye yazarız. O zaman:
+\[
+\frac{dP}{dE} = 2c_2 \quad\text{(gün/tur)}, \qquad
+\dot P = \frac{dP}{dt} = \frac{1}{P}\frac{dP}{dE} = \frac{2c_2}{P} \quad\text{(boyutsuz)}, \qquad
+\dot P\,[\mathrm{ms/yıl}] = \frac{2c_2}{P}\times 3{,}156\times10^{10}.
+\]
+
+\begin{ornek}[Küçük bir değişim neden dakikalar eder?]
+WASP-12\,b: $P = 94\,297$ s, $\dot P = -31$\msyil{} $= -9{,}8\times10^{-10}$ (boyutsuz).
+Her turda dönem $P\dot P = 94\,297 \times 9{,}8\times10^{-10} \approx 9\times10^{-5}$ s (0,09 ms) kısalır.
+10 yılda $E \approx 3346$ tur olur; birikmiş kayma $\tfrac12 \times 9\times10^{-5} \times 3346^2 \approx 500$ s
+$\approx 8$ dakika. Her tur için milisaniyenin onda biri, 10 yılda dakikalara dönüşür. Ölçümü mümkün kılan budur ve
+zaman tabanını uzatmanın (eski zamanlar + yeni TESS) bu kadar önemli olmasının sebebi de budur: duyarlılık
+zaman tabanının karesiyle artar.
+\end{ornek}
+
+\subsubsection*{Uydurma nasıl yapılır? (ağırlıklı en küçük kareler)}
+Her iki model de parametrelerine göre doğrusaldır; bu yüzden tek satır matris çözümüyle kesin sonuç bulunur
+(MCMC gerekmez). Satırları $\sigma_i$ ile bölünmüş $[1, E_i, E_i^2]$ matrisi $A$, $T_i/\sigma_i$ vektörü $b$ olsun.
+Çözüm $\hat c = (A^\top A)^{-1}A^\top b$, parametre hataları $\sqrt{\mathrm{diag}\,(A^\top A)^{-1}}$.
+Epokları ortalamak (veri ortasında $E \approx 0$) sayısal kararlılığı artırır; kod bunu yapar.
+
+\subsubsection*{Karar kuralları (Wang vd. 2024 ile aynı)}
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Aykırı nokta kırpma}: Kuadratik modelin artıklarında ortalamadan $5\sigma$ uzaktaki noktaları at,
+      yeniden uydur, değişmeyene kadar tekrarla.
+\item \textbf{Anlamlılık}: $|\dot P|/\sigma_{\dot P} \ge 3$.
+\item \textbf{Model seçimi}: $\Delta\mathrm{BIC} = \mathrm{BIC}_\text{doğrusal} - \mathrm{BIC}_\text{kuadratik} > 10$.
+\item \textbf{Kaynak kontrolü (isteğe bağlı, şüpheli kaynak varsa)}: Her kaynak makaleyi (ya da her TESS
+      sektörünü) \emph{grup olarak} çıkarıp yeniden uydur. Sonuç tek bir makaleye bağlıysa not et.
+\end{enumerate}
+Hepsi sağlanıyorsa: “\textbf{Yörünge döneminde anlamlı değişim VAR}.” Biri bile sağlanmıyorsa:
+“\textbf{Bu veriyle anlamlı değişim YOK / belirsiz}” ve sebep araştırmasına geçilmez (yine de bu bir sonuçtur).
+
+\subsection{Ön sonuçlar: dört hedefin O$-$C diyagramları}
+Aşağıdaki şekiller bu belgedeki kodla, herkese açık veriyle üretilmiştir. Turuncu: literatür (Ivshina \& Winn 2022);
+yeşil: Wang vd./I\&W TESS zamanları; kırmızı: \textbf{bu projede yeni TESS sektörlerinden ölçtüğüm zamanlar}.
+Mavi eğri en iyi kuadratik model, kesikli çizgi en iyi doğrusal model (sabit dönem).
+
+\begin{figure}[H]
+\centering
+\sekil{sekiller/sekil1_WASP-12b_OC.png}{0.82\textwidth}
+\caption{WASP-12\,b O$-$C diyagramı. Yeni TESS sektörleri (71–72, kırmızı) kuadratik modelin tam üzerine düşüyor:
+$\dot P = -31{,}1 \pm 0{,}8$\msyil, $\Delta$BIC = 1422 ($n = 227$). Literatür: $-29\pm2$ (Yee vd. 2020),
+$-30{,}2\pm0{,}9$ (Wang vd. 2024). \textbf{Yöntem doğrulandı.}}
+\label{fig:w12}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\sekil{sekiller/sekil2_dort_hedef_OC.png}{\textwidth}
+\caption{Seçilen dört hedefin O$-$C diyagramları (kırmızı: bu projede ölçülen yeni TESS zamanları).}
+\label{fig:dort}
+\end{figure}
+
+\begin{center}
+\small
+\begin{tabular}{l r r r r r l}
+\toprule
+Hedef & $n$ & yeni TESS & $\dot P$ (ms/yıl) & $|\dot P|/\sigma$ & $\Delta$BIC & LOOCV\\
+\midrule
+WASP-12\,b & 227 & 38 & $-31{,}05\pm0{,}82$ & 37,9 & 1422,4 & geçti\\
+WASP-4\,b  & 197 & 75 & $-5{,}11\pm0{,}30$  & 17,0 & 290,3  & geçti\\
+HAT-P-7\,b & 117 & 40 & $+28{,}14\pm3{,}26$ & 8,6  & 69,6   & geçti\\
+TrES-1\,b  & 94  & 21 & $-12{,}70\pm1{,}90$ & 6,7  & 40,3   & geçti\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Okuma}: Dört hedefin dördünde de yörünge döneminde anlamlı değişim \emph{var}. Şimdi hocanın ikinci sorusu:
+\emph{neden?}
+
+\begin{dikkat}[WASP-4\,b'de dikkat çekici bir ipucu]
+WASP-4\,b'nin $|\dot P|$ değeri veri uzadıkça küçülüyor: Bouma vd. (2020) $-8{,}6$, Wang vd. (2024; veri 2020'ye kadar)
+$-6{,}4$, benim (veri 2025'e kadar) $-5{,}1$\msyil. Gelgit bozulması on yıllar boyunca \emph{sabit} bir $\dot P$
+verir; değişen bir $\dot P$, daha çok uzak bir eşlikçinin \emph{değişen} ivmesine (ışık-yolu etkisi) uyar
+(Winn \& Stefánsson 2025). Bu, projede sınanacak bir sorudur (Bölüm~\ref{sec:karar}, kübik/sinüs testi).
+\end{dikkat}
+

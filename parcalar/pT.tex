@@ -1,0 +1,230 @@
+% ===================================================== KISIM I: TÜBİTAK METİNLERİ (resmi dil)
+\part*{KISIM I\\[0.3em] TÜBİTAK 2209-A Araştırma Önerisi Metinleri}
+\addcontentsline{toc}{part}{KISIM I — TÜBİTAK 2209-A Araştırma Önerisi Metinleri}
+
+\begin{tcolorbox}[colback=black!4,colframe=black!40,fonttitle=\bfseries,title={Forma aktarma notu (forma kopyalanmaz)}]
+\small Bu kısımdaki metinler 2209-A Araştırma Önerisi Formu'ndaki başlıkların birebir karşılığıdır. Word formuna
+yapıştırdıktan sonra yazı tipini \textbf{Arial 9} yapın. Köşeli parantez içindeki alanları doldurun. Bölüm 5'teki şekil
+dosyaları \texttt{sekiller/} klasöründedir. Aynı metinlerin düz metin hali \texttt{TUBITAK\_2209A\_form\_metinleri.md}
+dosyasındadır.
+\end{tcolorbox}
+
+\section*{A. Genel Bilgiler}
+\addcontentsline{toc}{section}{A. Genel Bilgiler}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X}
+\toprule
+Başvuru Sahibinin Adı Soyadı & İdris Avlar\\
+Araştırma Önerisinin Başlığı & Sıcak Jüpiterlerde Yörünge Dönemi Değişimlerinin O$-$C Analiziyle İncelenmesi ve Fiziksel Kökenlerinin Belirlenmesi\\
+Danışmanın Adı Soyadı & [Danışmanın unvanı, adı ve soyadı]\\
+Araştırmanın Yürütüleceği Kurum & Atatürk Üniversitesi, Fen Fakültesi, Astronomi ve Uzay Bilimleri Bölümü\\
+\bottomrule
+\end{tabularx}
+
+\section*{Özet}
+\addcontentsline{toc}{section}{Özet}
+Yıldızlarına çok yakın yörüngelerde dolanan sıcak Jüpiterlerin yörünge dönemlerinin zamanla değişip değişmediği, yıldız–gezegen gelgit etkileşimini doğrudan sınayabilen az sayıdaki gözlemsel yoldan biridir. Wang vd. (2024), TESS verisiyle 326 sıcak Jüpiteri inceleyerek uzun dönemli dönem değişimi gösteren 26 aday bildirmiş; bunlardan 14'ü, tek bir ölçümün çıkarılmasına karşı sonucun dayanıklılığını sınayan “birini dışarıda bırak çapraz doğrulama” (LOOCV) testini geçmiştir. Ancak geçiş zamanlarında görülen parabolik bir değişim yalnızca gelgit kaynaklı yörünge bozulmasından değil; apsis hareketi, uzak bir üçüncü cismin ışık-yolu (Rømer) etkisi ya da kütle çekimsel etkisi, Applegate mekanizması, kütle kaybı ve veri hatalarından da kaynaklanabilir. Bu projede LOOCV testini geçen 14 aday, Wang vd. tarafından raporlanan TESS geçiş zamanı sayısı ve fiziksel kökenin ayırt edilebilmesi için gerekli arşiv radyal hız verisinin yeterliliği ölçütleriyle elenmiş; WASP-12 b, WASP-4 b, HAT-P-7 b ve TrES-1 b hedef olarak seçilmiştir. Her hedef için literatür ve katalog geçiş zamanları (Ivshina ve Winn 2022; Wang vd. 2024; ETD/VarAstro; ExoClock) derlenecek, tümü BJD\_TDB zaman sistemine dönüştürülecek ve Wang vd. tarafından kullanılmamış yeni TESS sektörlerinden orta geçiş zamanları ölçülecektir. Gözlenen ve doğrusal efemerisle hesaplanan zamanların farkı olan O$-$C diyagramlarına doğrusal, kuadratik ve kübik modeller uydurulacak; dönem değişim hızının anlamlılığı ve Bayes Bilgi Ölçütü ile sınanacaktır. Anlamlı değişim bulunan hedeflerde, yalnızca zamanlamayla ayırt edilemeyen gelgit ve Rømer etkileri, yayımlanmış arşiv radyal hız ölçümlerinden öngörülen dönem değişimiyle karşılaştırılarak ayrılacak; diğer etkiler gelgit kalite faktörü, örtülme zamanları, dışmerkezlik, yıldız etkinliği, periyodogram ve Roche sınırı testleriyle değerlendirilecektir. Projede yeni gözlem yapılmayacak, tüm veriler açık arşivlerden sağlanacaktır. Ön çalışmada dört hedefte 174 yeni TESS geçiş zamanı ölçülmüş ve dördünde de anlamlı dönem değişimi bulunmuştur; WASP-12 b için elde edilen $-31{,}1 \pm 0{,}8$ ms/yıl değeri literatürle uyumludur. Bütçe gerektirmeyen 12 aylık projenin çıktıları güncel efemerisler, her hedef için fiziksel köken hükmü, açık kaynak kod ve veri seti, ulusal kongre bildirisi ve makale taslağıdır.
+
+\textbf{Anahtar Kelimeler:} Sıcak Jüpiter, geçiş zamanlaması, O$-$C diyagramı, yörünge bozulması, TESS
+
+\section*{1. Araştırma Önerisinin Bilimsel Niteliği}
+\addcontentsline{toc}{section}{1. Araştırma Önerisinin Bilimsel Niteliği}
+\subsection*{1.1. Konunun Önemi ve Araştırma Önerisinin Bilimsel Niteliği}
+Sıcak Jüpiterler, kütleleri Jüpiter mertebesinde olan ve yıldızlarının etrafında birkaç günde dolanan gezegenlerdir. Yıldızlarına çok yakın oldukları için yıldızda gelgit kabarıklıkları oluştururlar. Yıldızın dönmesi yörünge hareketinden yavaş olduğunda bu kabarıklık gezegeni geriye doğru çeker; gezegen açısal momentum kaybederek içeri doğru sarmallanır ve yörünge dönemi kısalır. Bu sürecin hızı, yıldızın gelgit enerjisini ne kadar verimli soğurduğunu gösteren değiştirilmiş gelgit kalite faktörüne (Q′*) bağlıdır. Kuramsal tahminler Q′* için birkaç mertebelik bir aralık verdiğinden (Penev vd. 2018), dönem değişiminin doğrudan ölçümü yıldız içi fiziği sınamanın ender yollarından biridir.
+
+Dönem değişimi, geçiş zamanlarının gözlenen (O) ve sabit dönemle hesaplanan (C) değerleri arasındaki farkın zamana karşı çizildiği O$-$C diyagramıyla incelenir. Dönem sabit bir hızla değişiyorsa O$-$C bir parabol çizer. Bugüne kadar ikna edici biçimde doğrulanmış tek örnek WASP-12 b'dir; geçiş, örtülme ve radyal hız verileri birlikte kullanılarak apsis hareketi ve ivme açıklamaları dışlanmış, dP/dt ≈ −29 ms/yıl ve Q′* ≈ 1,8×10$^5$ bulunmuştur (Yee vd. 2020; Winn ve Stefánsson 2025). Wang vd. (2024), 326 sıcak Jüpiterin 7068 TESS geçişini literatür zamanlarıyla birleştirerek 26 dönem değişimi adayı bildirmiş, bunlardan 12'sinin sonucunun tek bir ölçümün çıkarılmasıyla kaybolduğunu (LOOCV testi) göstermiş ve gelgit dışında apsis hareketi, Rømer etkisi ve Applegate etkisinin de katkı verebileceğini belirtmiş; ancak adayların fiziksel kökenini sistem sistem sınamamıştır.
+
+Literatürdeki temel sorun, O$-$C diyagramındaki parabolün tek başına kökenini göstermemesidir. Uzak bir eşlikçi nedeniyle bakış doğrultusunda sabit ivmelenen bir sistemde ışığın yol süresi değişir ve geçiş zamanları gelgit bozulmasıyla matematiksel olarak aynı kuadratik izi bırakır (Bouma vd. 2020). Nitekim WASP-4 b için aynı dönem değişimi bir çalışmada gelgit bozulmasıyla (Baştürk vd. 2025), başka bir çalışmada yaklaşık 7 Jüpiter kütleli uzak bir eşlikçinin ışık-yolu etkisiyle açıklanmıştır (Winn ve Stefánsson 2025). Dışmerkez yörüngelerde apsis hareketi de kısa veri aralığında parabol gibi görünebilir. Ayrıca literatür zamanlarındaki zaman sistemi karışıklıkları ve gerçekçi olmayan küçük hata çubukları sahte sinyaller üretebilmektedir (Adams vd. 2024; Rothmeier vd. 2025; Sodickson ve Grunblatt 2025). Bu nedenle adayların güncel veriyle yeniden sınanması ve olası her fiziksel etkinin aynı yöntemle sistematik biçimde değerlendirilmesi gerekmektedir.
+
+Bu proje, Wang vd. (2024)'nin LOOCV testini geçen 14 adayından önceden tanımlanmış ölçütlerle seçilen dört sıcak Jüpiterde (WASP-12 b, WASP-4 b, HAT-P-7 b, TrES-1 b) bu boşluğu doldurmayı amaçlamaktadır. Projenin özgün yanları şunlardır: (i) Wang vd. sonrasında yayımlanan TESS sektörlerinden ölçülecek yeni geçiş zamanlarıyla zaman tabanı 2–5 yıl uzatılacaktır; (ii) gelgit etkileşimi, apsis hareketi, Rømer etkisi, üçüncü cismin dinamik etkisi, Applegate etkisi ve kütle kaybı her hedef için önceden yazılmış bir karar ağacıyla değerlendirilecektir; (iii) gelgit ile Rømer etkisi, farklı arşivlerde (DACE, Keck/HIRES, HARPS-N) yayımlanmış radyal hız ölçümlerinden öngörülen dönem değişimiyle karşılaştırılarak ayrılacaktır.
+
+\textbf{Araştırma sorusu:} Wang vd. (2024)'nin LOOCV testini geçen adaylardan seçilen dört sıcak Jüpiterin yörünge dönemleri güncel TESS verisiyle anlamlı biçimde değişmekte midir; değişiyorsa bu değişimden gelgit etkileşimi, apsis hareketi, Rømer etkisi, üçüncü cisim, Applegate etkisi ve kütle kaybından hangisi sorumludur?
+
+\textbf{Hipotezler:}
+
+H1: WASP-12 b'de güncel TESS verisiyle bulunan dönem değişim hızı literatür değeriyle (Yee vd. 2020) 2σ içinde uyumludur ve arşiv radyal hızlarından öngörülen Rømer katkısı bu değişimi açıklayamaz (gelgit kökenli bozulma).
+
+H2: WASP-4 b ve HAT-P-7 b'deki dönem değişimleri, arşiv radyal hız eğilimlerinden öngörülen Rømer katkısıyla 2σ içinde uyumludur (ışık-yolu kökenli değişim).
+
+H3: TrES-1 b'deki dönem kısalması ne gelgitle (kuramsal aralığın çok altında bir Q′* gerektirdiğinden) ne de arşiv radyal hızlarından öngörülen Rømer katkısıyla açıklanabilir; değişim apsis hareketi, üçüncü cismin dinamik etkisi, Applegate etkisi ya da veri sistematiğinden kaynaklanır.
+
+Proje, 2030 Sanayi ve Teknoloji Stratejisi'nde kritik alanlar arasında yer alan uzay bilimleri ile açık ve büyük veri analizine dayalı yöntemlerle ilişkilidir; uzay görevlerinin (TESS) açık verisini işleme ve doğrulama becerisinin lisans düzeyinde kazandırılmasına katkı sağlar.
+
+\subsection*{1.2. Amaç ve Hedefler}
+Projenin amacı, Wang vd. (2024)'nin LOOCV testini geçen 14 sıcak Jüpiter adayından önceden tanımlanmış ölçütlerle seçilen dört hedefte yörünge dönemi değişiminin varlığını güncel TESS ve katalog verileriyle sınamak ve değişim varsa fiziksel kökenini belirlemektir.
+
+\textbf{Hedef 1 (Veri seti):} Dört hedefin her biri için en az 70 geçiş zamanından oluşan, tümü BJD\_TDB zaman sistemine dönüştürülmüş ve kaynakları etiketlenmiş bir zaman tablosu oluşturmak; Wang vd. sonrası TESS sektörlerinden toplam en az 150 yeni orta geçiş zamanını, ortanca belirsizliği 60 saniyeyi aşmayacak biçimde ölçmek.
+
+\textbf{Hedef 2 (Dönem değişimi):} Her hedef için O$-$C diyagramını çizmek; doğrusal, kuadratik ve kübik modelleri karşılaştırarak dönem değişim hızını (dP/dt) belirsizliğiyle ve ΔBIC değeriyle raporlamak. Yöntemin doğruluğu, WASP-12 b için literatür değeriyle 2σ içinde uyumla gösterilecektir.
+
+\textbf{Hedef 3 (Fiziksel köken):} Anlamlı değişim bulunan her hedef için altı fiziksel etkinin her birine (gelgit, apsis hareketi, Rømer, üçüncü cisim, Applegate, kütle kaybı) önceden tanımlanmış ölçütlerle “dışlandı / olası değil / olası / en olası / ayrılamadı” hükmü veren, 24 hücrelik gerekçeli bir karar tablosu oluşturmak.
+
+\textbf{Hedef 4 (Öngörü):} Dört hedef için güncel efemerisleri yayımlamak ve her hedef için Rømer açıklamasının gerektirdiği radyal hız eğimini, gelecekteki gözlemlerle sınanabilecek sayısal bir öngörü olarak vermek.
+
+\section*{2. Yöntem}
+\addcontentsline{toc}{section}{2. Yöntem}
+\textbf{Araştırma tasarımı.} Proje, açık arşiv verisine dayanan, hipotez sınayan gözlemsel bir çalışmadır. Yeni teleskop ya da tayf gözlemi yapılmayacak; tüm veriler NASA MAST (TESS), VizieR, NASA Exoplanet Archive, DACE, ETD/VarAstro ve ExoClock arşivlerinden sağlanacaktır. Bağımsız değişken geçiş epoku (E), bağımlı değişken orta geçiş zamanı ve ondan türetilen O$-$C değeridir; türetilen temel büyüklük dönem değişim hızıdır (dP/dt). Kontrol edilen değişkenler zaman sistemi, ölçüm belirsizliği ve veri kaynağıdır.
+
+\textbf{Örneklem seçimi.} Hedefler, sonuçlara bakılmadan önce tanımlanan üç ölçütle seçilmiştir (Tablo 1). (K1) Wang vd. (2024)'nin LOOCV testini geçmiş olmak (14 aday). (K2) Wang vd. tarafından raporlanan TESS geçiş zamanı sayısının en az 30 olması; bu ölçüt, projenin TESS verisiyle sınama amacını karşılayabilecek, en az birkaç TESS sektörüne yayılmış veriyi güvenceye alır (7 aday). (K3) Fiziksel kökenin belirlenebilmesi için, yayımlanmış arşiv radyal hız ölçümlerinden öngörülen Rømer katkısının belirsizliğinin gözlenen |dP/dt| değerinin üçte birinden küçük olması (4 aday: WASP-12 b, WASP-4 b, HAT-P-7 b, TrES-1 b). Seçilen hedefler doğrulanmış bir gelgit bozulmasını (yöntem kalibrasyonu), tartışmalı bir gelgit–ivme vakasını, dönemi uzayan bir sistemi ve gelgit dışı bir etki gerektiren bir kısalmayı temsil etmektedir.
+
+\textbf{İP1 – Zaman tablosunun oluşturulması (Ay 1–3).} Literatür ve TESS zamanları Ivshina ve Winn (2022) veritabanından, Wang vd. (2024) TESS zamanları, ETD/VarAstro, ExoClock ve hedefe özel makalelerden (Yee vd. 2020; Bouma vd. 2020; Baştürk vd. 2025; Hagey vd. 2025) derlenecektir. Her zamanın sistemi makalesinden kontrol edilecek, HJD ve BJD\_UTC zamanları astropy ile BJD\_TDB'ye dönüştürülecek, sistemi belirlenemeyen kaynaklar işaretlenerek analiz bu kaynaklarla ve onlarsız iki kez yapılacaktır. ETD verilerinde yalnızca yüksek kalite notlu tam geçişler kullanılacaktır. Epok numarasının kesirli kısmı 0,02'yi aşan zamanlar ayrıca kontrol edilecektir.
+
+\textbf{İP2 – Yeni TESS zamanlarının ölçülmesi (Ay 2–5).} Wang vd. sonrası SPOC 2 dakikalık ışık eğrileri MAST'tan indirilecek, kalite bayraklı noktalar atılarak normalize edilecektir. Tüm geçişler katlanarak geçiş şekli (Rp/R*, a/R*, eğiklik) batman modeliyle (Kreidberg 2015) belirlenecek; ardından her geçiş, yalnızca orta zaman ve yerel taban çizgisi serbest bırakılarak uydurulacak ve orta zamanın belirsizliği emcee ile MCMC örneklemesinden (Foreman-Mackey vd. 2013) elde edilecektir. Kısmi geçişler kullanılmayacaktır. Ölçümler, Wang vd. ile ortak geçişlerde karşılaştırılarak doğrulanacaktır.
+
+\textbf{İP3 – O$-$C analizi ve model seçimi (Ay 4–7).} Doğrusal (T = T0 + P·E), kuadratik (T = T0 + P·E + ½·(dP/dE)·E²) ve kübik efemerisler ağırlıklı en küçük karelerle uydurulacak, dP/dt = (1/P)(dP/dE) hesaplanacaktır. Aykırı noktalar 5σ yinelemeli kırpmayla belirlenecektir. Model seçimi BIC = χ² + k·ln n ile yapılacak; Wang vd. (2024) ile aynı ölçütler (|dP/dt|/σ ≥ 3 ve ΔBIC > 10) uygulanacaktır.
+
+\textbf{İP4 – Fiziksel kökenin belirlenmesi (Ay 6–11).} (a) Rømer etkisi: Yayımlanmış arşiv radyal hızlarına (Knutson vd. 2014; Bonomo vd. 2017; Bouma vd. 2020; Yee vd. 2020; DACE) her alet için ayrı sıfır noktası, gezegenin dairesel yörünge sinyali ve doğrusal eğilim uydurulacak; Rømer etkisinin öngördüğü dönem değişimi dP/dt = P·(dv/dt)/c ile hesaplanıp O$-$C sonucuyla karşılaştırılacaktır (fark < 2σ: Rømer açıklayabilir; fark > 3σ: Rømer tek başına açıklayamaz). Sonucun kullanılan radyal hız veri setine duyarlılığı ayrıca raporlanacaktır. (b) Gelgit: dP/dt = −(27π/2Q′*)(Mp/M*)(R*/a)$^5$ bağıntısından gereken Q′* hesaplanacak ve kuramsal aralıkla karşılaştırılacaktır. (c) Apsis hareketi: dışmerkezlik üst sınırından beklenen genlik (≈ eP/π) ve varsa örtülme zamanlarının geçişlere göre kayma yönü sınanacaktır. (d) Applegate etkisi ve üçüncü cismin dinamik etkisi: kuadratik model artıklarında Lomb–Scargle periyodogramıyla periyodik sinyal aranacak, kübik modelle eğriliğin sabitliği sınanacak, yıldız etkinliği literatürden değerlendirilecektir. (e) Kütle kaybı: a/a\_Roche oranı hesaplanacaktır. Her etki için hüküm önceden yazılmış karar ağacıyla verilecek; her hedef için Rømer açıklamasının gerektirdiği radyal hız eğimi (dv/dt = c·(dP/dt)/P) ayrıca raporlanacaktır.
+
+\textbf{Ön çalışma.} Yöntemin tüm adımları açık verilerle denenmiştir. Yalnızca katalog verisiyle WASP-12 b için dP/dt = −28,6 ± 1,0 ms/yıl (ΔBIC = 855) elde edilmiş; TESS sektör 71–72'den ölçülen 38 yeni geçiş zamanı (tipik belirsizlik 44 s) eklendiğinde değer −31,1 ± 0,8 ms/yıl olmuş ve literatürle uyumlu bulunmuştur (Şekil 1). Dört hedefte toplam 174 yeni TESS zamanı ölçülmüş ve dördünde de anlamlı dönem değişimi bulunmuştur (Şekil 2). Arşiv radyal hızlarından öngörülen Rømer katkısı WASP-12 b'de değişimi açıklayamamış (16σ fark), WASP-4 b'de açıklayabilmiş (1,9σ), HAT-P-7 b'de değişimin yaklaşık yarısını açıklamıştır. TrES-1 b'de HARPS-N ölçümleri (Bonomo vd. 2017) Rømer katkısını −2,5 ± 2,2 ms/yıl ile sınırlamış ve gözlenen −12,7 ± 1,9 ms/yıl değerini açıklayamamıştır (3,5σ); gelgit açıklaması ise yaklaşık 8×10$^2$ gibi kuramsal aralığın çok altında bir Q′* gerektirmektedir (Tablo 2). Ön çalışma, yöntemin amaç ve hedeflere ulaşmaya elverişli olduğunu göstermektedir. Yöntem adımları çalışma takvimindeki İP1–İP4 ile birebir ilişkilidir.
+
+\section*{3. Proje Yönetimi}
+\addcontentsline{toc}{section}{3. Proje Yönetimi}
+\subsection*{3.1. Çalışma Takvimi}
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X l >{\raggedright\arraybackslash}X}
+\toprule
+Tarih Aralığı & Faaliyetler & Kim(ler) & Başarı Ölçütü ve Araştırmanın Başarısına Katkısı\\
+\midrule
+Ay 1 – Ay 3 & İP1: Katalog ve literatür geçiş zamanlarının derlenmesi, BJD\_TDB'ye dönüştürülmesi, kaynak etiketleme & Bursiyer; danışman & Her hedef için en az 70 zaman; zaman sistemi belirsiz kaynaklar ayrıca işaretli (\%20)\\
+Ay 2 – Ay 5 & İP2: Yeni TESS sektörlerinden orta geçiş zamanlarının ölçülmesi & Bursiyer & En az 150 yeni zaman; ortanca belirsizlik en fazla 60 s; Wang vd. ile ortak geçişlerde ortanca fark en fazla 1σ (\%20)\\
+Ay 4 – Ay 7 & İP3: O$-$C diyagramları; doğrusal, kuadratik ve kübik modeller; BIC ile model seçimi & Bursiyer; danışman & Dört hedef için dP/dt ± σ ve ΔBIC; WASP-12 b'de literatürle 2σ uyum (\%25)\\
+Ay 6 – Ay 11 & İP4: Arşiv radyal hızlarıyla Rømer testi; gelgit (Q′*), apsis, Applegate, üçüncü cisim ve kütle kaybı testleri; karar tablosu & Bursiyer; danışman & 24 hücrelik karar tablosunun tamamı gerekçeli; her hedef için sayısal radyal hız öngörüsü (\%35)\\
+\bottomrule
+\end{tabularx}
+\end{center}
+{\small [Tarih aralıklarını TÜBİTAK'ın bildireceği başlangıç tarihine göre gg/aa/yyyy biçiminde yazın.]}
+
+\subsection*{3.2. Risk Yönetimi}
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+En Önemli Riskler & Alınacak Tedbirler (B Planı)\\
+\midrule
+Literatür zamanlarında zaman sistemi belirsizliği veya gerçekçi olmayan küçük hata çubukları sahte sinyal üretebilir. & Her kaynağın zaman sistemi makalesinden kontrol edilecek; belirsiz kaynaklarla ve onlarsız iki ayrı analiz yapılacak; gerekirse hata çubukları indirgenmiş χ² ile ölçeklenecektir.\\
+Yeni TESS sektörlerinden bazı geçişlerin zamanı ölçülemeyebilir (veri boşluğu, düşük sinyal-gürültü oranı). & Ölçülebilen geçişlerle devam edilecek; gerekirse sektör bazında birleşik zaman kullanılacak; en kötü durumda analiz yalnızca Wang vd. ve Ivshina ve Winn TESS zamanlarıyla tamamlanacaktır (yöntem değişmez).\\
+Bir hedefte güncel veriyle anlamlı dönem değişimi bulunmayabilir. & Bu durum bilimsel bir sonuç olarak raporlanacak ve güncel sabit dönemli efemeris verilecektir; fiziksel köken analizi diğer hedeflerle sürdürülecek, gerekirse yedek aday (WASP-10 b; arşiv radyal hızı mevcut) eklenecektir.\\
+Farklı arşivlerdeki radyal hız veri setleri, alet sıfır noktası farkları nedeniyle farklı eğimler verebilir. & Tüm yayımlanmış ölçümler alet başına ayrı sıfır noktasıyla birlikte uydurulacak, sonucun veri setine duyarlılığı raporlanacak; yeterli duyarlılık sağlanamazsa literatürde yayımlanmış eğimler ve radyal hız gerektirmeyen testler (Q′*, eğrilik, periyodogram, Roche) kullanılacaktır.\\
+Gelgit ve Rømer etkileri mevcut veriyle ayrılamayabilir. & İki senaryonun da büyüklüğü verilecek ve “ayrılamadı” hükmü gerekçesiyle raporlanacak; ayrım için gereken radyal hız duyarlılığı hesaplanacaktır.\\
+Yazılım veya bilgisayar arızası. & Tüm kod ve veriler sürüm kontrolüyle (GitHub) yedeklenecek; analizler ücretsiz bulut ortamında (Google Colab) da çalışabilecek şekilde hazırlanmıştır.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection*{3.3. Araştırma Olanakları}
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+Kuruluşta Bulunan Altyapı/Ekipman Türü, Modeli & Projede Kullanım Amacı\\
+\midrule
+Atatürk Üniversitesi Astronomi ve Uzay Bilimleri Bölümü bilgisayar olanakları ve kişisel dizüstü bilgisayar & Veri indirme, ışık eğrisi analizi, O$-$C ve radyal hız analizleri\\
+Atatürk Üniversitesi Kütüphanesi elektronik veri tabanları & Literatür taraması, hedefe özel makalelere ve ek tablolarına erişim\\
+Açık arşivler: NASA MAST (TESS), VizieR, NASA Exoplanet Archive, DACE, ETD/VarAstro, ExoClock & Geçiş zamanları, ışık eğrileri, sistem parametreleri ve radyal hız verileri\\
+Açık kaynak yazılımlar: Python, NumPy, Astropy, astroquery, batman, emcee, Google Colab & Tüm analizlerin ücretsiz ve yeniden üretilebilir biçimde yapılması\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section*{4. Araştırma Önerisinin Yaygın Etkisi}
+\addcontentsline{toc}{section}{4. Araştırma Önerisinin Yaygın Etkisi}
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{4.2cm} >{\raggedright\arraybackslash}X}
+\toprule
+Çıktı, Etki ve Kazanımlar & Öngörülen Çıktı(lar), Etki(ler) ve Kazanım(lar)\\
+\midrule
+Bilimsel/Akademik Çıktılar & Ulusal Astronomi Kongresi'nde (UAK) en az bir bildiri; dört hedefin güncel O$-$C analizini ve fiziksel köken karar tablosunu içeren bir makale taslağı (ör. Turkish Journal of Astronomy and Astrophysics ya da Research Notes of the AAS).\\
+Ekonomik/Ticari/Sosyal Çıktılar & Dört hedefin tüm geçiş zamanlarını (yeni TESS zamanları dahil) içeren, BJD\_TDB'ye dönüştürülmüş açık veri seti ve açık kaynak analiz kodu (GitHub/Zenodo); güncel efemerislerin gözlemcilerle (ETD/VarAstro, ExoClock) paylaşılması; bölümde öğrencilere yönelik bir O$-$C analizi eğitim oturumu.\\
+Yeni Proje(ler) Oluşturmasına Yönelik Çıktılar & Aynı yöntemin Wang vd. (2024)'nin diğer adaylarına genişletildiği bir lisansüstü tez önerisi; projede verilecek radyal hız öngörülerini sınayacak ulusal ya da uluslararası gözlem işbirliği önerisi.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section*{5. Belirtmek İstediğiniz Diğer Konular}
+\addcontentsline{toc}{section}{5. Belirtmek İstediğiniz Diğer Konular}
+Aşağıdaki şekil ve tablolar, yöntem bölümünde özetlenen ön çalışmanın bulgularıdır. Tüm ön çalışma kodları ve verileri danışmanla paylaşılmıştır ve talep halinde sunulabilir.
+
+\begin{figure}[H]
+\centering
+\sekil{sekiller/sekil1_WASP-12b_OC.png}{0.78\textwidth}
+\caption*{\small \textbf{Şekil 1.} WASP-12 b O$-$C diyagramı. Turuncu: literatür zamanları (Ivshina ve Winn 2022); yeşil: Wang vd. (2024) ve Ivshina ve Winn TESS zamanları; kırmızı: bu çalışmada TESS sektör 71–72'den ölçülen 38 yeni geçiş zamanı. Mavi eğri en iyi kuadratik model (dP/dt = −31,1 ± 0,8 ms/yıl, ΔBIC = 1422), kesikli çizgi sabit dönemli doğrusal modeldir. Sonuç literatür değeriyle (−29 ± 2 ms/yıl; Yee vd. 2020) uyumludur.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\sekil{sekiller/sekil2_dort_hedef_OC.png}{0.95\textwidth}
+\caption*{\small \textbf{Şekil 2.} Seçilen dört hedefin O$-$C diyagramları (renkler Şekil 1'deki gibidir). Dört hedefte de kuadratik model doğrusal modele güçlü biçimde tercih edilmektedir (ΔBIC: WASP-12 b 1422; WASP-4 b 290; HAT-P-7 b 70; TrES-1 b 40).}
+\end{figure}
+
+\begin{center}
+\small
+\textbf{Tablo 1.} Hedef seçimi. |dP/dt|/σ ve TESS sayısı Wang vd. (2024)'den; σ$_\text{Rømer}$, arşiv radyal hızlarından öngörülen Rømer katkısının belirsizliğidir (ms/yıl; bu çalışma).\\[0.3em]
+\begin{tabularx}{\textwidth}{l r r r >{\raggedright\arraybackslash}X}
+\toprule
+Aday & |dP/dt|/σ & TESS geçiş sayısı & σ$_\text{Rømer}$ & Sonuç\\
+\midrule
+CoRoT-2 b  & 7,3  & 5  & 28   & K2 sağlanmıyor\\
+HAT-P-37 b & 5,1  & 8  & --   & K2 sağlanmıyor\\
+KELT-16 b  & 5,8  & 65 & --   & K3 sağlanmıyor (arşiv RV'si yok)\\
+TrES-1 b   & 6,3  & 34 & 2,2  & \textbf{Seçildi}\\
+TrES-5 b   & 4,6  & 66 & 29   & K3 sağlanmıyor\\
+WASP-4 b   & 11,5 & 47 & 0,3  & \textbf{Seçildi}\\
+WASP-10 b  & 7,9  & 8  & 3,9  & K2 sağlanmıyor (yedek aday)\\
+WASP-12 b  & 32,8 & 82 & 1,7  & \textbf{Seçildi}\\
+WASP-22 b  & 4,2  & 5  & 1,4  & K2 sağlanmıyor\\
+WASP-45 b  & 8,0  & 14 & 39   & K2 sağlanmıyor\\
+XO-4 b     & 3,6  & 16 & 25   & K2 sağlanmıyor\\
+HAT-P-7 b  & 4,5  & 66 & 1,2  & \textbf{Seçildi}\\
+WASP-1 b   & 4,3  & 9  & 2,6  & K2 sağlanmıyor\\
+WASP-46 b  & 18,1 & 32 & 56   & K3 sağlanmıyor\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{center}
+\small
+\textbf{Tablo 2.} Ön çalışma: arşiv radyal hızlarıyla Rømer testi ve gelgit için gereken Q′*. dP/dt değerleri ms/yıl biriminde, O$-$C değerleri bu çalışmanın yeni TESS zamanlarını içerir.\\[0.3em]
+\begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X r r r r}
+\toprule
+Hedef & Radyal hız verisi & dP/dt (Rømer) & dP/dt (O$-$C) & Fark & Gereken Q′*\\
+\midrule
+WASP-12 b & DACE: 90 ölçüm, SOPHIE + ESPRESSO, 13,9 yıl & −0,8 ± 1,7 & −31,05 ± 0,82 & 16σ & 1,9×10$^5$\\
+WASP-4 b  & Bouma vd. 2020: 48 ölçüm, CORALIE + HARPS + HIRES, 11,9 yıl & −5,95 ± 0,32 & −5,11 ± 0,30 & 1,9σ & 7,7×10$^4$\\
+HAT-P-7 b & Knutson vd. 2014: 43 ölçüm, HIRES, 5,9 yıl & +13,1 ± 1,2 & +28,14 ± 3,26 & 4,3σ & (dönem uzuyor)\\
+TrES-1 b  & Bonomo vd. 2017: 15 ölçüm, HARPS-N, 2,8 yıl & −2,5 ± 2,2 & −12,70 ± 1,90 & 3,5σ & 8×10$^2$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section*{6. Ekler — EK-1: Kaynaklar}
+\addcontentsline{toc}{section}{6. Ekler — EK-1: Kaynaklar}
+\begin{small}
+\begin{itemize}[leftmargin=*,itemsep=0.05em,label={}]
+\item Adams, E. R., vd. 2024, PSJ, 5, 163 (arXiv:2404.07339)
+\item Applegate, J. H. 1992, ApJ, 385, 621
+\item Baştürk, Ö., vd. 2025, The Orbit of WASP-4 b is in Decay (arXiv:2506.15022)
+\item Bonomo, A. S., vd. 2017, A\&A, 602, A107
+\item Bouma, L. G., vd. 2020, ApJL, 893, L29 (arXiv:2004.00637)
+\item DACE, Data \& Analysis Center for Exoplanets, Cenevre Üniversitesi, https://dace.unige.ch
+\item Foreman-Mackey, D., vd. 2013, PASP, 125, 306
+\item Hagey, S. R., Edwards, B., \& Tsiaras, A. 2025, TrES-1 b: A Case Study in Detecting Secular Evolution of Exoplanet Orbits (arXiv:2508.15075)
+\item Ivshina, E. S., \& Winn, J. N. 2022, ApJS, 259, 62
+\item Knutson, H. A., vd. 2014, ApJ, 785, 126
+\item Kreidberg, L. 2015, PASP, 127, 1161
+\item Kutluay, A. C., vd. 2026, Chasing the Tides (arXiv:2602.01446)
+\item Patra, K. C., vd. 2017, AJ, 154, 4
+\item Penev, K., vd. 2018, AJ, 155, 165
+\item Rothmeier, M., vd. 2025, Doomed Worlds II (arXiv:2512.13937)
+\item Sodickson, N., \& Grunblatt, S. 2025, In Search of Decay (arXiv:2508.18355)
+\item Wang, W., vd. 2024, ApJS, 270, 14 (doi:10.3847/1538-4365/ad0847)
+\item Watson, C. A., \& Marsh, T. R. 2010, MNRAS, 405, 2037
+\item Winn, J. N., \& Stefánsson, G. 2025, Orbital decay candidates reconsidered (arXiv:2510.05229)
+\item Yee, S. W., vd. 2020, ApJL, 888, L5 (arXiv:1911.09131)
+\end{itemize}
+\end{small}
+
+\clearpage
+\part*{KISIM II\\[0.3em] Proje Kılavuzu (Sana Özel, Adım Adım)}
+\addcontentsline{toc}{part}{KISIM II — Proje Kılavuzu}
+

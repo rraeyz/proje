@@ -1,0 +1,276 @@
+% =====================================================================
+%  SICAK JÜPİTERLERDE YÖRÜNGE DÖNEMİ DEĞİŞİMİ — ADIM ADIM PROJE KILAVUZU
+%  Derleme: pdflatex kilavuz.tex  (iki kez çalıştır: içindekiler için)
+%  Overleaf: yeni proje -> bu dosyayı yapıştır -> "sekiller" klasörüne PNG'leri yükle
+%  Şekil dosyası yoksa belge yine derlenir; yerine gri bir kutu çıkar.
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[shorthands=off,turkish]{babel}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,longtable,tabularx,array}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+% Ek A'daki düz metinde (Word'e kopyalanacak) geçen özel karakterler
+\DeclareUnicodeCharacter{2032}{\ensuremath{'}}
+\DeclareUnicodeCharacter{03C3}{\ensuremath{\sigma}}
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}
+\DeclareUnicodeCharacter{0394}{\ensuremath{\Delta}}
+\DeclareUnicodeCharacter{00B7}{\ensuremath{\cdot}}
+\DeclareUnicodeCharacter{00B1}{\ensuremath{\pm}}
+\DeclareUnicodeCharacter{00B2}{\ensuremath{^2}}
+\DeclareUnicodeCharacter{03C7}{\ensuremath{\chi}}
+\DeclareUnicodeCharacter{03C0}{\ensuremath{\pi}}
+\DeclareUnicodeCharacter{00BD}{\ensuremath{\tfrac{1}{2}}}
+\DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.2}
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small O$-$C Proje Kılavuzu}\rhead{\small TÜBİTAK 2209-A}\cfoot{\thepage}
+
+% ---------- kutular ----------
+\newtcolorbox{basit}[1][]{colback=green!5,colframe=green!45!black,title={#1},fonttitle=\bfseries,breakable}
+\newtcolorbox{dikkat}[1][]{colback=red!4,colframe=red!60!black,title={#1},fonttitle=\bfseries,breakable}
+\newtcolorbox{ornek}[1][]{colback=blue!4,colframe=blue!50!black,title={#1},fonttitle=\bfseries,breakable}
+\newtcolorbox{hoca}[1][]{colback=yellow!8,colframe=orange!70!black,title={#1},fonttitle=\bfseries,breakable}
+
+% ---------- şekil: dosya yoksa kutu ----------
+\newcommand{\sekil}[2]{\IfFileExists{#1}{\includegraphics[width=#2]{#1}}{\fbox{\parbox[c][4cm][c]{#2}{\centering\small (Şekil dosyası bulunamadı:\\\texttt{\detokenize{#1}}\\Kod bölümündeki betiği çalıştır.)}}}}
+
+% ---------- kod ----------
+\definecolor{kodzemin}{rgb}{0.97,0.97,0.97}
+\lstset{basicstyle=\ttfamily\footnotesize,backgroundcolor=\color{kodzemin},frame=single,
+  breaklines=true,columns=fullflexible,keepspaces=true,showstringspaces=false,
+  commentstyle=\color{green!40!black},keywordstyle=\color{blue!70!black},stringstyle=\color{red!60!black},
+  language=Python,upquote=true,
+  literate={ı}{{\i}}1 {ğ}{{\u{g}}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {ş}{{\c{s}}}1 {ç}{{\c{c}}}1
+           {İ}{{\.I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {Ş}{{\c{S}}}1 {Ç}{{\c{C}}}1 {Ğ}{{\u{G}}}1
+           {±}{{$\pm$}}1 {−}{{$-$}}1 {Δ}{{$\Delta$}}1}
+\lstdefinestyle{kabuk}{language=bash,backgroundcolor=\color{black!85},basicstyle=\ttfamily\footnotesize\color{white},
+  commentstyle=\color{green!70},keywordstyle=\color{white},stringstyle=\color{yellow!80}}
+
+\newcommand{\OC}{O$-$C}
+\newcommand{\Pdot}{\ensuremath{\dot{P}}}
+\newcommand{\msyil}{\,ms\,yıl$^{-1}$}
+
+\begin{document}
+
+% ===================================================== KAPAK
+\begin{titlepage}
+\centering
+\vspace*{1.5cm}
+{\LARGE\bfseries Sıcak Jüpiterlerde Yörünge Dönemi Değişimi\par}
+\vspace{0.4cm}
+{\Large O$-$C Diyagramlarıyla Adım Adım Proje Kılavuzu\par}
+\vspace{0.3cm}
+{\large (Sıfırdan, “mala anlatır gibi”)\par}
+\vspace{1.2cm}
+{\large İdris Avlar\par}
+{Atatürk Üniversitesi, Astronomi ve Uzay Bilimleri (lisans)\par}
+\vspace{0.6cm}
+{TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri — 2026 Çağrısı\par}
+\vspace{1.5cm}
+\begin{tcolorbox}[colback=white,colframe=black!60,width=0.9\textwidth]
+\small
+\textbf{Bu belge ne?} Hocanın verdiği görevin (14 aday $\rightarrow$ 3–4 hedef $\rightarrow$ O$-$C diyagramı
+$\rightarrow$ dönem değişti mi? $\rightarrow$ değiştiyse hangi fiziksel etki?) baştan sona, hiçbir adımı atlamadan
+anlatıldığı çalışma kılavuzudur. İçindeki bütün kodlar gerçek veriyle çalıştırılmış ve sonuçları
+yazılmıştır. \textbf{Kısım I} TÜBİTAK formuna yapıştırılacak resmi metinlerdir; \textbf{Kısım II} sana özel kılavuzdur.\\[0.4em]
+\textbf{Bu belge ne değil?} Eski “Detaylı Proje Raporu”nun yerine geçen, kapsamı \emph{daraltılmış} plandır.
+Gaia astrometrisi, 26 adayın tamamı, teleskop gözlemi ve yeni tayf (RV) gözlemi \textbf{bu projede yoktur}.
+\end{tcolorbox}
+\vfill
+{\small Kasım 2026}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ===================================================== BÖLÜM 0
+\section{Önce Bunu Oku: Proje Ne, Hoca Ne İstedi, Sen Ne Yapacaksın?}
+
+\subsection{Hocanın söyledikleri (kelimesi kelimesine)}
+
+\begin{hoca}[Hocanın direktifi]
+“O makaledeki 26 kaynaktan LOOCV testini geçen 14 tanenin birkaç tanesini seç ama bir gerekçe sun bunun için.
+Ayrıca bu testin ne olduğunu öğren; yani o testi geçip geçmemek ne anlama geliyor onu da öğren.
+Bu seçtiğin gezegenlerin O$-$C diyagramlarını çiz. Yörünge dönemlerinde değişim var mı yok mu kontrol edeceğiz.
+TESS ve VarAstro gibi database/katalog verilerini dahil edeceksin, literatürdeki verileri yani.
+Yörünge dönemi değişimi varsa: 1.~Tidal interaction (effect), 2.~Apsidal motion, 3.~Rømer effect,
+4.~Applegate effect, 5.~3.~cisim, 6.~Mass loss — bunlardan hangisinden etkilendiğini tespit etmen gerekiyor.”
+\end{hoca}
+
+Kağıttaki notlar da aynı şeyi söylüyor: “26 kaynak $\rightarrow$ pass $\rightarrow$ kullan; 14 kaynak $\rightarrow$
+O$-$C'lerini çiz; yörünge dönemlerinde değişim var mı yok mu kontrol edeceğiz; TESS, katalog verileri dahil edilecek
+(database: VarAstro gibi, literatürdeki veriler); yörünge dönem değişimi var ise $\rightarrow$ Tidal, Apsidal,
+Rømer, Applegate, 3.~cisim, Mass loss.” İkinci kağıtta O$-$C diyagramının eksenleri çizilmiş:
+\textbf{dikey eksen O$-$C, yatay eksen zaman ya da epok}. Bu belgenin tamamı bu iki kağıdın açılımıdır.
+
+\subsection{Bu görevin altı adımı (tek bakışta)}
+
+\begin{enumerate}[label=\textbf{Adım \arabic*:},leftmargin=*]
+  \item \textbf{LOOCV'yi öğren} (Bölüm~\ref{sec:loocv}). Hocanın sana \emph{kişisel olarak} öğrenmeni istediği konu;
+        projenin yöntemi değil. Testin ne yaptığını ve geçip geçmemenin anlamını kendi cümlelerinle anlatabilecek hale gel.
+        Projede yalnızca seçimin başlangıç listesi olarak geçer (“Wang vd.'nin LOOCV'yi geçen 14 adayı”).
+  \item \textbf{14 adaydan birkaçını gerekçeyle seç} (Bölüm~\ref{sec:secim}). Seçim bu belgede yapıldı:
+        önceden yazılmış üç ölçütten kendiliğinden \textbf{WASP-12\,b, WASP-4\,b, HAT-P-7\,b} ve \textbf{TrES-1\,b}
+        çıkıyor. Gerekçe, sayılarla birlikte hazır.
+  \item \textbf{Geçiş zamanlarını topla} (Bölüm~\ref{sec:oc}). Hazır kataloglardan (Ivshina \& Winn 2022,
+        Wang vd. 2024, ETD/VarAstro, ExoClock) ve TESS'ten. \emph{Gözlem yapmayacaksın.}
+  \item \textbf{O$-$C diyagramını çiz ve dönem değişimini ölç} (Bölüm~\ref{sec:oc} ve \ref{sec:kod}).
+        Doğrusal ve kuadratik model, $\dot P$, $\Delta$BIC, 3$\sigma$.
+  \item \textbf{Değişim varsa sebebini bul} (Bölüm~\ref{sec:etkiler}, \ref{sec:rv}, \ref{sec:karar}).
+        Altı etkinin her birini, sırayla, basit testlerle eleyeceksin. Gelgit ile Rømer'i ayırmak için
+        \emph{arşivdeki} hazır radyal hız (RV) tablolarına bakacaksın (tayfçeker gerekmez).
+  \item \textbf{Formu doldur ve gönder} (Kısım I ve Bölüm~\ref{sec:basvuru}).
+\end{enumerate}
+
+\subsection{Kapsamda olan / olmayan (hocanın sözünden çıkmamak için)}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{KAPSAMDA (yapılacak)} & \textbf{KAPSAM DIŞI (yapılmayacak)}\\
+\midrule
+Wang vd. (2024)'nin LOOCV'yi geçen 14 adayından 4'ünün seçimi & 26 adayın tamamının yeniden analizi\\
+Katalog/literatür geçiş zamanları (I\&W 2022, Wang 2024, ETD/VarAstro, ExoClock, makaleler) & Teleskopla yeni geçiş gözlemi (ATA50/T100 vb.)\\
+TESS geçiş zamanları (hazır tablolar + Wang sonrası yeni TESS sektörleri) & Yeni tayf/RV gözlemi (tayfçekerimiz yok)\\
+O$-$C diyagramı, doğrusal/kuadratik model, BIC & Gaia/Hipparcos astrometrisi, Gaia DR4; LOOCV'yi kendi verimize uygulamak\\
+6 fiziksel etkinin basit testlerle değerlendirilmesi & Q$'_\star$ için Monte Carlo, yıldız evrim modelleri\\
+Arşivdeki \emph{hazır} RV tablolarından eğilim okumak (yalnızca Rømer testi için) & Karmaşık LTTE/apsis MCMC modelleri (yalnızca gerekirse, basit sürüm)\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{dikkat}[RV konusu: tayfçeker yok, sorun da yok]
+Bu projede \textbf{hiçbir tayf gözlemi yapılmayacak}. Radyal hız ölçümleri yıllar önce başka ekipler tarafından
+(Keck/HIRES, HARPS, HARPS-N, SOPHIE, CORALIE ile) yapılmış ve \textbf{DACE arşivinde ve VizieR'de} herkese açık yayımlanmıştır.
+Sen yalnızca bu hazır sayıları indirip “yıldızın hızı yıllar içinde düzenli olarak artıyor/azalıyor mu?” diye
+bakacaksın. Bu, bir Excel tablosundaki sayılara doğru uydurmakla aynı zorlukta bir iştir. Hatta Bouma vd.
+(2020)'nin Tablo~5'i bu hesabı senin hedeflerin için \emph{zaten yapmış}: doğrudan okuyup O$-$C sonucunla
+karşılaştırman yeterli (Bölüm~\ref{sec:rv}).
+\end{dikkat}
+
+\subsection{Şu an ne yapacaksın? (Önce başvuru, sonra kod)}
+
+\begin{basit}[SIRA (11 Kasım 2026, 17:30'a kadar)]
+2209-A formu ön çalışmayı \emph{zorunlu} tutmaz (“yapıldıysa sunulması beklenir”). Ön çalışma şekilleri bu belgede
+zaten hazır. Bu yüzden \textbf{önce başvuru}, kod sonra.
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Bugün}: Hocana seçimi ve gerekçesini göster (Bölüm~\ref{sec:secim}'teki hazır paragraf ve Kısım I Tablo~1). Onay al.
+\item \textbf{Form}: Kısım I'deki metinleri Word formuna yapıştır; Şekil~1, Şekil~2, Tablo~1, Tablo~2'yi Bölüm~5'e koy.
+      Danışman adını yaz.
+\item \textbf{Hoca kontrolü}: Formu hocana gönder, düzeltmeleri işle. Ekler hariç en fazla 20 sayfa, Arial 9.
+\item \textbf{Gönder}: En geç \textbf{10 Kasım} akşamı TÜBİTAK sistemine yükle; danışmana onay için bir gün bırak.
+\item \textbf{Sonra (başvurudan sonra ya da zaman kalırsa)}: Bölüm~\ref{sec:kod}'daki kodu Colab'da bir kez çalıştır.
+      Bu başvuru için değil, hoca ya da jüri “bunu nasıl yaptın?” diye sorduğunda anlatabilmen için gerekli.
+\end{enumerate}
+Gün gün plan: Bölüm~\ref{sec:basvuru}.
+\end{basit}
+
+% ===================================================== BÖLÜM 1
+\section{Sıfırdan Temel Kavramlar}
+\label{sec:kavram}
+
+Bu bölüm hiçbir şey bilmediğini varsayar. Her kavramın yanında “bu projede neden lazım?” sorusunun cevabı var.
+
+\subsection{Sıcak Jüpiter ve geçiş (transit)}
+\textbf{Sıcak Jüpiter}, kütlesi Jüpiter kadar olan ama yıldızına çok yakın (yörünge dönemi 1–5 gün) dolanan
+gezegendir. Karşılaştırma için: Merkür 88 günde, bu gezegenler 1–3 günde bir tur atar.
+
+\textbf{Geçiş (transit)}: Gezegen, bizim bakış doğrultumuzda yıldızın önünden geçerken yıldızın ışığının küçük bir
+kısmını (\%0,5–2) keser. Yıldızın parlaklığını zamana karşı çizersen (\textbf{ışık eğrisi}) düzenli aralıklarla
+tekrarlanan küçük “çukurlar” görürsün. Her çukur bir geçiştir.
+
+\textbf{Orta geçiş zamanı ($T_c$, “mid-transit time”)}: Çukurun tam ortasının zamanı. Bu projede ölçtüğümüz,
+topladığımız, çizdiğimiz \emph{tek} gözlemsel büyüklük budur. Örnek: WASP-12\,b'nin TESS'te ölçtüğüm bir geçişi
+$T_c = 2460235{,}652614$ BJD$_\mathrm{TDB}$ $\pm$ 44 saniye.
+
+\textbf{Yörünge dönemi ($P$)}: Art arda iki geçiş arasındaki süre. WASP-12\,b için $P \approx 1{,}0914$ gün
+(26 saat 11 dakika).
+
+\textbf{Epok ($E$ veya $N$)}: Bir başlangıç geçişinden bu yana geçen \emph{tam tur sayısı}. Başlangıç geçişi
+$E=0$, bir sonraki $E=1$, bir önceki $E=-1$ \dots{} Epok hep tam sayıdır.
+
+\subsection{Zaman nasıl yazılır: JD, BJD, TDB, BTJD}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Jülyen Günü (JD)}: Gökbilimciler tarihleri gün/ay/yıl yerine tek bir sayıyla yazar: MÖ 4713'ten beri
+geçen gün sayısı. Örnek: 1 Ocak 2024 öğlen $\approx$ JD 2460311,0. Kesirli kısım günün kesridir
+(0,5 gün = 12 saat; 0,001 gün = 86,4 saniye).
+\item \textbf{Barisentrik JD (BJD)}: Dünya Güneş etrafında dönerken yıldızdan gelen ışık bize bazen 8 dakika
+erken, bazen 8 dakika geç ulaşır. Bu yüzden bütün zamanlar Güneş Sistemi'nin kütle merkezine (barisentere)
+taşınır. Bu düzeltme yapılmış zamana BJD denir.
+\item \textbf{TDB ve UTC}: Saatin “cinsi”. UTC artık saniyeler içerir; TDB düzgün akar.
+2017'den beri \textbf{TDB $-$ UTC = 69,184 s}. Yani biri BJD$_\mathrm{UTC}$, diğeri BJD$_\mathrm{TDB}$ yazmışsa
+aynı geçiş arasında \textbf{bir dakikadan fazla} fark çıkar. Dönem değişimi sinyali birkaç dakikalık olduğu için
+bu fark \emph{sahte sinyal üretir}. Kural: \textbf{her zaman BJD$_\mathrm{TDB}$ kullan}.
+\item \textbf{HJD}: Güneş merkezli (heliosentrik) eski bir sistem. BJD$_\mathrm{TDB}$'den $\sim$1 dakika farklı
+olabilir; dönüştürmek gerekir (kodu Bölüm~\ref{sec:kod}'da).
+\item \textbf{BTJD}: TESS'in kendi zaman sayısı: BTJD = BJD$_\mathrm{TDB}$ $-$ 2457000. Yani TESS dosyasındaki
+\texttt{TIME} sütununa 2457000 eklersen BJD$_\mathrm{TDB}$ elde edersin.
+\end{itemize}
+
+\begin{dikkat}[Gerçek bir tuzak: HAT-P-7\,b]
+Ivshina \& Winn (2022) veritabanında HAT-P-7\,b'nin 9 eski geçiş zamanı yalnızca “BJD” olarak etiketlenmiştir
+(UTC mi TDB mi belli değil). Bu 9 zamanı dahil edince $\dot P = +22{,}6 \pm 5{,}1$\msyil, çıkarınca
+$\dot P = +40{,}3 \pm 7{,}0$\msyil{} çıkıyor (kendi hesabım). \textbf{Tek bir zaman sistemi sorusu sonucu iki katına
+çıkarabiliyor.} Bu yüzden her kaynağın zaman sistemini makalesinden kontrol etmek bu projenin en önemli “temizlik”
+işidir.
+\end{dikkat}
+
+\subsection{Birimler: ms/yıl ne demek?}
+Dönem değişim hızı $\dot P = dP/dt$ ile gösterilir. Boyutsuzdur (saniye/saniye) ama alışkanlıkla
+\textbf{milisaniye/yıl} (ms\,yıl$^{-1}$) yazılır. $\dot P = -30$\msyil{} demek: “her yıl yörünge dönemi
+30 milisaniye kısalıyor” demektir. Çok küçük görünür ama her turda birikir; WASP-12\,b'de 10 yılda geçişler
+yaklaşık 8 dakika erken gelir (Bölüm~\ref{sec:oc}).
+
+Dönüşüm: $\dot P\,[\mathrm{ms\,yıl^{-1}}] = \dot P\,[\text{boyutsuz}] \times 3{,}156\times 10^{10}$
+(1 yıl = $3{,}156\times10^{7}$ s, 1 s = 1000 ms).
+
+\subsection{Hata, sigma ($\sigma$) ve “3$\sigma$”}
+Her ölçümün bir belirsizliği (hata çubuğu) vardır: $T_c = 2460235{,}652614 \pm 0{,}000508$ gün demek
+“gerçek değer büyük olasılıkla bu aralıkta” demektir. Bir sonucun \textbf{3$\sigma$ anlamlı} olması, sonucun
+sıfırdan en az 3 hata payı uzakta olması demektir: $|\dot P| / \sigma_{\dot P} \ge 3$. Örnek:
+$\dot P = -28{,}6 \pm 1{,}0$ ise oran 28,6 $\Rightarrow$ çok anlamlı. $\dot P = -23 \pm 6{,}7$ ise oran 3,4
+$\Rightarrow$ sınırda.
+
+\subsection{En küçük kareler, $\chi^2$ ve BIC}
+\textbf{Model uydurmak}: Noktalara bir eğri (doğru ya da parabol) geçirmek. En iyi eğri, noktalardan
+\emph{hata çubuğuna göre ağırlıklı} uzaklıkların karelerinin toplamını en küçük yapan eğridir:
+\[
+\chi^2 = \sum_{i=1}^{n} \left( \frac{\text{gözlenen}_i - \text{model}_i}{\sigma_i} \right)^2 .
+\]
+$\chi^2$ küçükse model noktalara iyi uyuyor demektir.
+
+\textbf{BIC (Bayes Bilgi Ölçütü)}: Daha çok parametreli model hep biraz daha iyi uyar; bu “haksız avantajı”
+cezalandırmak için:
+\[
+\mathrm{BIC} = \chi^2 + k \ln n ,
+\]
+$k$: modeldeki serbest parametre sayısı (doğru için 2, parabol için 3), $n$: nokta sayısı.
+\textbf{BIC'i küçük olan model kazanır.} $\Delta\mathrm{BIC} = \mathrm{BIC}_\text{doğrusal} -
+\mathrm{BIC}_\text{kuadratik} > 10$ ise parabol “çok güçlü biçimde” tercih edilir (Kass \& Raftery 1995;
+Wang vd. 2024 bu eşiği kullanır).
+
+\subsection{Işık-yolu, radyal hız (RV) ve ivme}
+\textbf{Radyal hız (RV)}: Yıldızın bize doğru ya da bizden uzağa hızı. Tayfçizgilerinin Doppler kaymasından
+ölçülür. Gezegen yıldızı her turda biraz çeker, bu yüzden RV gezegenin dönemiyle bir sinüs çizer
+(sıcak Jüpiterlerde genliği $\sim$200 m/s). Eğer sistemde uzakta \emph{ikinci bir ağır cisim} varsa, bütün sistem
+yavaşça ivmelenir ve RV'de bu sinüsün üstüne yıllar boyunca süren \textbf{düz bir eğilim (trend)} eklenir:
+$\dot\gamma = dv_r/dt$ (m\,s$^{-1}$\,yıl$^{-1}$). Bu eğilim, Rømer etkisinin “parmak izi”dir (Bölüm~\ref{sec:rv}).
+

@@ -97,7 +97,9 @@ def yeni_tablo(veri, genislikler):
             x = etree.SubElement(tcp, q('tcW')); x.set(q('w'), str(gw)); x.set(q('type'), 'dxa')
             if i == 0:
                 s = etree.SubElement(tcp, q('shd')); s.set(q('val'), 'clear'); s.set(q('color'), 'auto'); s.set(q('fill'), 'D9D9D9')
-            tc.append(para(d, kalin=(i == 0), hiza='left', boy=16, sonra=0))
+            pp = para(d, kalin=(i == 0), hiza='left', boy=16, sonra=0)
+            sp = pp.find(q('pPr')).find(q('spacing')); sp.set(q('line'), '240'); sp.set(q('lineRule'), 'auto')   # tek satır aralığı
+            tc.append(pp)
     return tbl
 
 # ---------- resim ekleme ----------
@@ -179,7 +181,7 @@ for p in tc.findall(q('p')): tc.remove(p)
 giris = [x for x in p5 if not x.startswith('**')]
 tab1 = [x for x in p5 if x.startswith('**Tablo 1.')][0]
 for g in giris: tc.append(para(g))
-tc.append(para(tab1, boy=16, once=120)); tc.append(yeni_tablo(t5[0], [1500, 1300, 1400, 1300, 1100, 2400]))
+tc.append(para(tab1, boy=16, once=120)); tc.append(yeni_tablo(t5[0], [1250, 950, 1050, 1150, 950, 3650]))
 tc.append(para(''))   # hücre bir paragrafla bitmeli
 
 # EK-1 Kaynaklar

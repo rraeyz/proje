@@ -12,7 +12,7 @@ def kacis(t):
     url = []
     t = re.sub(r"https?://\S+", lambda m: url.append(m.group(0)) or f"@@URL{len(url) - 1}@@", t)
     t = t.replace("\\|", "|").replace("\\", "")
-    for a, b in [("&", r"\&"), ("%", r"\%"), ("_", r"\_"), ("#", r"\#"), ("$", r"\$"), ("~", r"\textasciitilde{}")]:
+    for a, b in [("&", r"\&"), ("%", r"\%"), ("_", r"\_"), ("#", r"\#"), ("$", r"\$"), ("~", r"\textasciitilde{}"), ("^", r"\textasciicircum{}")]:
         t = t.replace(a, b)
     t = re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", t)
     for i, u in enumerate(url):

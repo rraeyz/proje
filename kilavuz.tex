@@ -18,6 +18,12 @@
 \usepackage{fancyhdr}
 \usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\footnotesize,backgroundcolor=\color{black!4},frame=single,breaklines=true,
+  columns=fullflexible,keepspaces=true,showstringspaces=false,language=Python,upquote=true,
+  literate={ı}{{\i}}1 {ğ}{{\u{g}}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {ş}{{\c{s}}}1 {ç}{{\c{c}}}1
+           {İ}{{\.I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {Ş}{{\c{S}}}1 {Ç}{{\c{C}}}1 {Ğ}{{\u{G}}}1
+           {ø}{{\o}}1 {σ}{{$\sigma$}}1 {Δ}{{$\Delta$}}1 {±}{{$\pm$}}1 {−}{{$-$}}1 {²}{{$^2$}}1}
 \DeclareUnicodeCharacter{2032}{\ensuremath{'}}
 \DeclareUnicodeCharacter{03C3}{\ensuremath{\sigma}}
 \DeclareUnicodeCharacter{2212}{\ensuremath{-}}
@@ -83,6 +89,7 @@ Atatürk Üniversitesi, Fen Fakültesi, Astronomi ve Uzay Bilimleri Bölümü\pa
 \item \textbf{Formda olmayan denemeler}: yapıldı ama forma konmadı; sorulursa bil.
 \item \textbf{Kavramlar sözlüğü}, \textbf{son kontrol listesi}.
 \item \textbf{Ek A}: TYBS'ye yapıştırılacak form metninin tamamı.
+\item \textbf{Ek B}: Kendin yap: WASP-4 b için Rømer testi (VizieR + Google Colab).
 \end{enumerate}
 \end{bilgi}
 \end{minipage}
@@ -269,7 +276,7 @@ TYBS ekranlarını ben görmedim; aşağıdaki adımlar çağrı metninden ve fo
 \item \textbf{Araştırma önerisi metin kutuları}: Ek A'daki metni bölüm bölüm ilgili kutuya yapıştır: Özet, Anahtar Kelimeler, 1.1, 1.2, 2, 3.1 (takvim), 3.2 (risk), 3.3 (olanaklar), 4 (yaygın etki), 5 (diğer konular + Tablo 1).
 \item \textbf{Tabloları} metin kutusunun üstündeki \textbf{``Tablo''} düğmesiyle kur (yapıştırınca bozulabilir). Takvim, risk, olanaklar, yaygın etki ve Tablo 1 için geçerli.
 \item \textbf{Özel karakterler} (σ, Δ, ±, ≥, ′, ⁵): Yunan harfleri doğrudan yapıştırılabilir; görünmezse ``Özel karakter'' düğmesini kullan.
-\item \textbf{Kaynakça adımı}: 35 kaynağı ayrı ayrı gir (Ek A'nın sonu). Hepsinin sonunda DOI var (DOI zorunlu); DACE, MAST ve iki resmi belge için bağlantı ve erişim tarihi var.
+\item \textbf{Kaynakça adımı}: 36 kaynağı ayrı ayrı gir (Ek A'nın sonu). Hepsinin sonunda DOI var (DOI zorunlu); DACE, MAST ve iki resmi belge için bağlantı ve erişim tarihi var.
 \item \textbf{Yapay zekâ beyanı}: kendin işaretle ve yaz.
 \item \textbf{Proje Önerisini Önizle}: her bölümün göründüğünü, tabloların taşmadığını kontrol et. Boş görünen kısım olursa bilgi notunun dediği gibi biçimi temizleyip yeniden yapıştır.
 \item \textbf{Onayla} $\rightarrow$ başvuru salt okunur olarak hocanın e-postasına ``danışman onayı'' için gider. Hoca onaylarsa üniversitenin kuruluş yetkilisine e-imza için gider. Hoca iade ederse düzeltip yeniden gönderirsin.
@@ -324,6 +331,9 @@ Her cevabı ezberleme; \emph{mantığını} anla. Kısa cevap ver, sorulursa ayr
 \SC{Efemeris nedir, neden yayımlanacak?}{Bir gezegenin geçiş zamanlarını öngören formül: $T = T_0 + P\cdot E$ (gerekirse $+\tfrac12\,\tfrac{dP}{dE}E^2$). Gözlemciler bir sonraki geçişi ne zaman gözleyeceklerini bununla planlar.}
 
 \subsection{2 Yöntem — genel}
+\begin{bilgi}[Not]
+Hocanın isteğiyle formdaki Yöntem bölümünde \textbf{hiç başlık yok}: İP1--İP4 ya da ``Araştırma tasarımı'' gibi başlıklar kaldırıldı; bölüm birbirine bağlanan düz paragraflardan oluşuyor. İş paketleri yalnızca Çalışma Takvimi'nde. Aşağıdaki İP başlıkları sadece sorulara kolay ulaşman için.
+\end{bilgi}
 \SC{Araştırma tasarımın ne?}{Açık arşiv verisine dayanan, hipotez sınayan gözlemsel bir çalışma. Bağımsız değişken geçiş epoku ($E$), bağımlı değişken orta geçiş zamanı ve ondan türetilen \OC; türetilen asıl büyüklük dP/dt. Kontrol edilen değişkenler: zaman sistemi, ölçüm belirsizliği, veri kaynağı.}
 \SC{Hangi arşivleri kullanacaksın?}{TESS ışık eğrileri: MAST. Katalog tabloları: VizieR. Sistem parametreleri: NASA Exoplanet Archive. RV: DACE ve makale tabloları. Yer gözlemi zamanları: ETD/VarAstro ve ExoClock. Dört hedefin hepsinin bu arşivlerde kaydı olduğu kontrol edildi (ETD'de de, ExoClock'ta da).}
 
@@ -349,7 +359,17 @@ Her cevabı ezberleme; \emph{mantığını} anla. Kısa cevap ver, sorulursa ayr
 \SC{Hata çubuklarını neden ölçekliyorsun?}{Bazı literatür zamanlarının hataları gerçekçi olmayacak kadar küçük ve sahte anlamlılık yaratıyor. Literatür ve TESS gruplarının hataları ayrı ayrı, model artıklarının indirgenmiş $\chi^2$'si 1 olacak şekilde \emph{yalnızca büyütülerek} ölçekleniyor. Hiçbir zaman küçültülmüyor.}
 
 \subsection{İP4 — Fiziksel köken (Ay 7--11)}
-\SC{Altı etkiyi tek tek nasıl sınayacaksın?}{(a) \textbf{Rømer}: arşiv RV'sinden eğim $\rightarrow$ $\dot P = P(dv/dt)/c$, \OC{} değeriyle karşılaştır: fark $<2σ$ ise Rømer açıklayabilir, 2--3σ kısmen, $>3σ$ tek başına açıklayamaz. (b) \textbf{Gelgit}: gereken $Q'_*$'yi $\dot P = -\frac{27\pi}{2Q'_*}\frac{M_p}{M_*}\left(\frac{R_*}{a}\right)^5$ ile hesapla, kuramsal aralıkla kıyasla; dönem uzuyorsa gelgit dışlanır. (c) \textbf{Apsis hareketi}: dışmerkezliğin üst sınırından beklenen genlik ($\approx eP/\pi$); WASP-12 b'de örtülme zamanlarının kayma yönü. (d) \textbf{Applegate ve üçüncü cisim}: artıklarda periyodik sinyal (Lomb--Scargle), kübik modelle eğriliğin sabitliği, yıldız etkinliği. (e) \textbf{Kütle kaybı}: gezegenin Roche sınırına uzaklığı ($a/a_\text{Roche}$).}
+\SC{Altı etkiyi tek tek nasıl sınayacaksın? (formülleriyle)}{Formda her etkinin formülü yazıyor; sırasıyla:
+\begin{itemize}[leftmargin=1.2em]
+\item \textbf{Rømer:} $(dP/dt)_\text{Rømer} = P\cdot(dv_r/dt)/c$ (Bouma vd. 2020). Karşılaştırma: $|(dP/dt)_{O-C}-(dP/dt)_\text{Rømer}|/\sqrt{\sigma_{O-C}^2+\sigma_\text{Rømer}^2}$; $<2\sigma$ Rømer açıklayabilir, 2--3σ kısmen, $>3\sigma$ açıklayamaz ve kalan kısım diğer etkilere gider.
+\item \textbf{Gelgit:} $\dot P = -\dfrac{27\pi}{2Q'_*}\dfrac{M_p}{M_*}\left(\dfrac{R_*}{a}\right)^5$ (Patra vd. 2017) $\rightarrow$ gereken $Q'_*$ bulunur, kuramsal aralıkla (Penev vd. 2018) kıyaslanır. Dönem uzuyorsa gelgit dışlanır.
+\item \textbf{Apsis:} $t_\text{geçiş}(E)=T_0+P_sE-\frac{eP_a}{\pi}\cos\omega(E)$, $t_\text{örtülme}(E)=T_0+\frac{P_a}{2}+P_sE+\frac{eP_a}{\pi}\cos\omega(E)$, $\omega(E)=\omega_0+\frac{d\omega}{dE}E$, $P_s=P_a\left(1-\frac{d\omega/dE}{2\pi}\right)$ (Patra vd. 2017). En büyük genlik $eP_a/\pi$. Örtülmeler geçişlerle \emph{zıt} yönde kayıyorsa apsis, \emph{aynı} yönde kayıyorsa gelgit.
+\item \textbf{Applegate:} $\Delta P/P = -9\,(R_*/a)^2\,\Delta Q/(M_*R_*^2)$; \OC{} genliği $A=(P_\text{mod}/2\pi)\,(\Delta P/P)$ (Applegate 1992; Watson ve Marsh 2010). Gereken $\Delta Q$ ve enerji, yıldızın ışınım gücüyle kıyaslanır.
+\item \textbf{Üçüncü cisim:} artıklarda Lomb--Scargle ile periyodik sinyal (yanlış alarm $<0{,}01$); RV ivmesi varsa eşlikçi için $M_c \geq |dv_r/dt|\,r^2/G$ (Bouma vd. 2020).
+\item \textbf{Kütle kaybı:} $a_\text{Roche}\approx 2{,}16\,R_p\,(M_*/M_p)^{1/3}$ (Ford ve Rasio 2006); $a/a_\text{Roche}$ 1'e yakınsa tartışılır, büyükse ihmal edilir.
+\end{itemize}}
+\SC{Formüldeki harfler ne?}{$P$: yörünge dönemi; $c$: ışık hızı; $dv_r/dt$: yıldızın radyal hızındaki eğim (ivme); $Q'_*$: yıldızın gelgit kalite faktörü; $M_p, M_*$: gezegen ve yıldız kütlesi; $R_*$: yıldız yarıçapı; $a$: yörünge yarı-büyük ekseni; $e$: dışmerkezlik; $\omega$: periastron argümanı; $P_a, P_s$: anomalistik ve yıldızıl dönem; $\Delta Q$: yıldızın dört kutup momentindeki değişim; $P_\text{mod}$: etkinlik döngüsünün süresi; $R_p$: gezegen yarıçapı; $G$: kütle çekim sabiti; $r$: eşlikçinin uzaklığı.}
+\SC{``RV verisi varsa Rømer, yoksa gelgit'' mi diyeceksin?}{\textbf{Hayır} (bunu hocana yanlış ifade etmiştin; sorarsa düzelt). RV'nin \emph{olması} karar değil. RV'deki eğimden Rømer'in yaratacağı dönem değişimi hesaplanır ve \OC{}'den bulunan değerle karşılaştırılır. Uyuşuyorsa Rømer; uyuşmuyorsa aradaki fark gelgit gibi gerçek bir nedenden. Örnek (Wang ve Bouma değerleriyle): WASP-12'de gözlenen $-30{,}2\pm0{,}9$, Rømer $-0{,}1\pm1{,}1$, fark $\approx21\sigma$ $\rightarrow$ Rømer açıklayamaz. WASP-4'te gözlenen $-6{,}4\pm0{,}6$, Rømer $-5{,}9\pm0{,}4$, fark $\approx0{,}7\sigma$ $\rightarrow$ Rømer açıklayabilir. Bunu Ek B'de kendin yapabilirsin.}
 \SC{Apsis hareketi nedir?}{Hafif dışmerkez bir yörüngenin uzun ekseninin yavaşça dönmesi. Geçiş zamanlarında sinüs benzeri bir dalga yapar; kısa bir zaman aralığında parabol gibi görünebilir. Örtülmeler (gezegen yıldızın arkasına geçerken) geçişlere göre ters yönde kayar; gelgit bozulmasında ise aynı yönde. WASP-12'de bu test yapılabiliyor.}
 \SC{Applegate etkisi nedir?}{Yıldızın manyetik etkinlik döngüsü yıldızın şeklini (kütle dağılımını) değiştirir, bu da gezegenin dönemini çevrimsel olarak değiştirebilir. Periyodik bir \OC{} sinyali bekleriz (Watson ve Marsh, 2010).}
 \SC{Rømer ile ``üçüncü cismin dinamik etkisi'' farkı ne?}{Rømer: eşlikçi sistemi ivmelendirir, ışığın yolu değişir; yörünge değişmez. Dinamik etki: eşlikçinin çekimi gezegenin yörüngesini gerçekten değiştirir.}
@@ -386,7 +406,7 @@ Her cevabı ezberleme; \emph{mantığını} anla. Kısa cevap ver, sorulursa ayr
 \SC{``Eşik'' sütunu ne?}{Wang vd.'nin $|\Pdot|$ değerinin üçte biri. Yayımlanmış Rømer öngörüsünün belirsizliği bundan küçükse (ya da Rømer açıkça dışlanmışsa) aday seçiliyor.}
 
 \subsection{6 Kaynakça}
-\SC{Kaynaklar doğru mu?}{35 kaynağın hepsinin DOI'si çözülüyor ve yazar, yıl, başlık, dergi, cilt, sayfa bilgileri Crossref kayıtlarıyla eşleşiyor (7 Kasım'da kontrol edildi). Metinde hepsine atıf var.}
+\SC{Kaynaklar doğru mu?}{36 kaynağın hepsinin DOI'si çözülüyor ve yazar, yıl, başlık, dergi, cilt, sayfa bilgileri Crossref kayıtlarıyla eşleşiyor (7 Kasım'da kontrol edildi). Metinde hepsine atıf var.}
 \SC{En önemli 5 kaynak ve ne söyledikleri?}{Wang vd. 2024 (aday listesi, LOOCV); Yee vd. 2020 (WASP-12 kesin bozulma, $-29\pm2$\msyil, Rømer dışlandı); Bouma vd. 2020 (WASP-4 RV'si ivmeleniyor, Rømer $\approx -5{,}9$\msyil); Winn ve Stefánsson 2025 (WASP-4 bozulmuyor, $\sim$7 Jüpiter kütleli eşlikçi; tek kesin örnek WASP-12); Patra vd. 2017 (gelgit formülü, WASP-12).}
 \SC{Neden bir resmi belgeye (Kalkınma Planı) atıf var?}{Form, projenin bu planlarla ilişkisini açıklamayı istiyor; atıf yapılan her şey kaynakçada olmalı.}
 
@@ -418,6 +438,8 @@ Her cevabı ezberleme; \emph{mantığını} anla. Kısa cevap ver, sorulursa ayr
   \item Baştürk vd. 2025 arXiv'den MNRAS yayınına güncellendi; Winn vd. 2009'un dergi adı düzeltildi; Oberst vd. 2017 eklendi (35 kaynak).
   \item ``Zaman tabanı 2--5 yıl'' $\rightarrow$ ``2--6 yıl'' (WASP-4 için 5,9 yıl).
   \end{itemize}
+\item \textbf{Hocanın geri bildirimi (7 Kasım akşamı)}: Yöntem başlıksız, birbirine bağlı paragraflar halinde yazıldı; İP'ler yalnızca takvimde kaldı. Altı etkinin formülleri Yöntem'e eklendi (Roche sınırı için Ford ve Rasio 2006 eklendi; kaynak sayısı 36). Hoca önce ``RV şart mı?'' diye sordu, sonra ``tamam sen yaz, kontrol edeceğim'' dedi; seçim gerekçesi aynen kaldı.
+\item \textbf{WASP-4 alıştırması}: Bouma vd. 2020'nin VizieR'deki verisiyle Rømer öngörüsünü ($-5{,}86$) ve \OC{}'den dönem değişimini ($-8{,}66$) Colab'da adım adım hesapladın (Ek B).
 \end{enumerate}
 
 \subsection{Verilen kararlar ve gerekçeleri}
@@ -441,6 +463,7 @@ Bahar proje ortağı & Koşulları sağlıyor; destek görevleri, zor kısımlar
 \item \texttt{kilavuz.pdf}: bu belge.
 \item \texttt{kod/secim\_tablosu.py}: Tablo 1'in ilk (hesaplı, \sR) sürümünü üretir; formda artık kullanılmıyor. \texttt{kod/oc\_diyagrami.py}: \OC{} analizi. \texttt{kod/tess\_zaman.py}: TESS zaman ölçümü. \texttt{kod/rv\_analiz.py}: RV eğilimi ve Rømer.
 \item \texttt{veri/tablo1\_secim.csv}: Tablo 1'in ham hali ve her değerin kaynağı. \texttt{veri/tess\_*.csv}: denemede ölçülen TESS zamanları. \texttt{veri/rv\_*}: indirilen RV'ler.
+\item \texttt{kod/ornek\_wasp4\_romer\_oc.py}: Ek B'deki WASP-4 alıştırmasının tek dosya hali.
 \item \texttt{sekiller/}, \texttt{on\_calisma\_colab.ipynb}: eski denemelerden; formda kullanılmıyor.
 \end{itemize}
 
@@ -526,7 +549,7 @@ Bunlar ön deneme; projede zaman sistemleri tek tek kontrol edilip, tüm testler
 \item TYBS: başlık, danışman, proje ortağı girildi.
 \item Bütçe: 0 TL.
 \item Metin kutuları dolduruldu; tablolar ``Tablo'' düğmesiyle kuruldu; özel karakterler doğru görünüyor.
-\item Kaynakça: 35 kaynak, DOI'ler var.
+\item Kaynakça: 36 kaynak (32'si DOI'li; DACE, MAST ve iki resmi belge bağlantılı).
 \item Yapay zekâ beyanı (kendim).
 \item Önizleme kontrol edildi, hiçbir bölüm boş değil.
 \item Onaylandı $\rightarrow$ danışman onayı $\rightarrow$ kuruluş e-imzası (11 Kasım 17.30'dan önce).
@@ -538,5 +561,145 @@ Bunlar ön deneme; projede zaman sistemleri tek tek kontrol edilip, tüm testler
 \section{TYBS'ye yapıştırılacak form metni (tamamı)}
 Bu ek, \texttt{TUBITAK\_2209A\_form\_metinleri.md} dosyasından otomatik üretilir; Word formuyla aynı metindir.
 \input{kilavuz_ek_form.tex}
+
+\section{Kendin yap: WASP-4 b için Rømer testi}
+Bu ekte, projenin İP4'teki Rømer testini hazır (yayımlanmış) veriyle baştan sona kendin yapıyorsun. Tayf işlemiyoruz: RV'yi başkaları ölçüp sayı olarak yayımlamış; biz tabloyu indirip üzerine model uyduruyoruz. Tüm kod denendi; her hücrenin altında görmen gereken sonuç yazıyor. Aynı kodun tek dosya hali: \texttt{kod/ornek\_wasp4\_romer\_oc.py}.
+
+\subsection{Veriyi tarayıcıda bul (VizieR)}
+\begin{enumerate}
+\item Google'a \textbf{VizieR} yaz, VizieR sitesine gir.
+\item Sayfanın \emph{ortasındaki} ``Find catalogs among \ldots{} available'' kutusuna \textbf{J/ApJ/893/L29} yaz, Enter. (Soldaki dar paneldeki kutuyu kullanma; ``Bouma WASP-4'' gibi kelime aramaları bazen alakasız kataloğa atıyor.)
+\item Açılan sayfa: \textbf{WASP-4 RVs \& hot Jupiter predicted period changes (Bouma+, 2020)}. Üç tablo var:
+  \begin{itemize}
+  \item \textbf{table2} (48 satır): WASP-4'ün ham RV ölçümleri. Sütunlar: BJD (zaman, 2450000 çıkarılmış), RV (m/s), e\_RV (hata), Tel (alet: CORALIE, HARPS, HIRES).
+  \item \textbf{table1} (93 satır): WASP-4 b'nin geçiş zamanları (Epoch, BJD, e\_BJD).
+  \item \textbf{table5} (51 satır): 51 sıcak Jüpiter için hazır Rømer öngörüleri. \textbf{Name} kutusuna \textbf{WASP-4 b} yaz, Submit: \textbf{dP/dt = $-$5.94}.
+  \end{itemize}
+\end{enumerate}
+
+\subsection{P ve T0 nereden?}
+Google'a \textbf{NASA Exoplanet Archive} yaz, siteye gir, arama kutusuna \textbf{WASP-4 b} yaz. Gezegen sayfasında \textbf{Orbital Period} (P = 1.338230994 gün, Baştürk vd. 2025) ve \textbf{Transit Midpoint} (T0 = 2455804.51567913, Sodickson ve Grunblatt 2025) satırları. Kodda 6 ondalığa yuvarlandı. T0 ve P, her ölçümde gezegenin yörüngenin neresinde olduğunu verir; P ayrıca son formülde kullanılır.
+
+\subsection{Google Colab'da hesap}
+Google'a \textbf{Google Colab} yaz, \textbf{Yeni not defteri} aç. Her hücreyi ayrı kutuya yapıştır, \textbf{Shift+Enter}.
+
+\textbf{Hücre 1 — table2'yi indir} (adresteki \texttt{J/ApJ/893/L29/table2}, tarayıcıda gördüğün tablo)
+\begin{lstlisting}
+import pandas as pd, numpy as np, matplotlib.pyplot as plt
+url = "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J/ApJ/893/L29/table2&-out.max=999&-out=BJD,RV,e_RV,Tel"
+d = pd.read_csv(url, sep="\t", comment="#").iloc[2:]
+d["BJD"] = d["BJD"].astype(float) + 2450000
+d["RV"] = d["RV"].astype(float); d["e_RV"] = d["e_RV"].astype(float); d["Tel"] = d["Tel"].str.strip()
+print(len(d), "ölçüm"); d.head()
+\end{lstlisting}
+\emph{Görmen gereken:} \texttt{48 ölçüm}; ilk satır 2454359.71 | $-$172.03 | 20.53 | CORALIE.
+
+\textbf{Hücre 2 — Ham veriyi çiz}
+\begin{lstlisting}
+for alet in d["Tel"].unique():
+    k = d[d["Tel"] == alet]
+    plt.errorbar(k["BJD"], k["RV"], k["e_RV"], fmt="o", label=alet)
+plt.xlabel("Zaman (BJD)"); plt.ylabel("RV (m/s)"); plt.legend(); plt.show()
+\end{lstlisting}
+\emph{Görmen gereken:} $\pm$250 m/s arası dağınık noktalar: gezegenin yıldızı sallaması.
+
+\textbf{Hücre 3 — Geçiş sırasındaki ölçümleri at}
+\begin{lstlisting}
+P = 1.338231          # yörünge dönemi (gün)
+T0 = 2455804.515679   # bir geçişin zamanı
+evre = ((d["BJD"] - T0) / P + 0.5) % 1 - 0.5
+d = d[abs(evre) > 0.04]
+print(len(d), "ölçüm kaldı")
+\end{lstlisting}
+\emph{Görmen gereken:} \texttt{45 ölçüm kaldı} (Rossiter--McLaughlin etkisi olan 3 ölçüm atıldı).
+
+\textbf{Hücre 4 — Model: alet sıfırları + eğim + gezegen sinüsü}
+\begin{lstlisting}
+t = d["BJD"].values; v = d["RV"].values; s = d["e_RV"].values
+yil = (t - t.mean()) / 365.25
+aci = 2 * np.pi * (t - T0) / P
+X = np.column_stack([d["Tel"] == "CORALIE", d["Tel"] == "HARPS", d["Tel"] == "HIRES",
+                     yil, np.sin(aci), np.cos(aci)]).astype(float)
+p, *_ = np.linalg.lstsq(X / s[:, None], v / s, rcond=None)
+print("alet sıfır noktaları:", p[:3].round(1))
+print("EĞİM (m/s/yıl):", p[3].round(2))
+\end{lstlisting}
+\emph{Görmen gereken:} \texttt{[-27.8 -53.7 48.8]} ve \texttt{EĞİM: -15.2}. Her hız = aletin sıfırı + eğim$\times$zaman + gezegenin sinüs dalgası; \texttt{lstsq} (en küçük kareler) bu 6 sayıyı bulur.
+
+\textbf{Hücre 5 — Eğimin hatası ve gezegeni çıkarılmış grafik}
+\begin{lstlisting}
+A = X / s[:, None]; b = v / s
+kikare = np.sum((b - A @ p) ** 2) / (len(t) - 6)
+hata = np.sqrt(np.diag(np.linalg.inv(A.T @ A)) * max(kikare, 1))
+print("eğim =", p[3].round(2), "±", hata[3].round(2), "m/s/yıl")
+kalan = v - X[:, [0,1,2,4,5]] @ p[[0,1,2,4,5]]
+plt.errorbar(t, kalan, s, fmt="o"); plt.plot(t, p[3] * yil, "r-"); plt.show()
+\end{lstlisting}
+\emph{Görmen gereken:} \texttt{eğim = -15.2 ± 0.92 m/s/yıl}; 12 yılda düzenli düşen noktalar ve kırmızı çizgi. Hatalar, yıldızın ek gürültüsü (jitter) için $\sqrt{\chi^2_\nu}\approx3{,}2$ kat büyütüldü.
+
+\textbf{Hücre 6 — Rømer öngörüsü: $\dot P = P\cdot(dv/dt)/c$}
+\begin{lstlisting}
+c = 299792458; saniye_yil = 365.25 * 86400
+ivme = p[3] / saniye_yil                  # m/s/yıl -> m/s²
+P_saniye = P * 86400
+romer = P_saniye * ivme / c * saniye_yil * 1000
+romer_h = P_saniye * (hata[3] / saniye_yil) / c * saniye_yil * 1000
+print("Rømer öngörüsü:", round(romer, 2), "±", round(romer_h, 2), "ms/yıl")
+\end{lstlisting}
+\emph{Görmen gereken:} \texttt{-5.86 ± 0.36 ms/yıl}. Table5'teki Bouma değeri: $-5{,}94\pm0{,}39$.
+
+\textbf{Hücre 7 — Geçiş zamanlarını indir (table1)}
+\begin{lstlisting}
+url2 = "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J/ApJ/893/L29/table1&-out.max=999&-out=BJD,e_BJD,Epoch"
+g = pd.read_csv(url2, sep="\t", comment="#").iloc[2:].astype(float)
+E = g["Epoch"].values; T = g["BJD"].values; h = g["e_BJD"].values
+print(len(g), "geçiş zamanı")
+\end{lstlisting}
+\emph{Görmen gereken:} \texttt{93 geçiş zamanı} (11,7 yıl).
+
+\textbf{Hücre 8 — O$-$C diyagramı}
+\begin{lstlisting}
+lin = np.polyfit(E, T, 1, w=1/h)                     # dönem sabit olsaydı
+OC = (T - np.polyval(lin, E)) * 86400                 # O-C (saniye)
+k, kov = np.polyfit(E, T, 2, w=1/h, cov="unscaled")   # parabol
+plt.errorbar(E, OC, h*86400, fmt="o", ms=3)
+EE = np.linspace(E.min(), E.max(), 200)
+plt.plot(EE, (np.polyval(k, EE) - np.polyval(lin, EE)) * 86400, "r-")
+plt.xlabel("Epok"); plt.ylabel("O-C (s)"); plt.show()
+\end{lstlisting}
+\emph{Görmen gereken:} aşağı bakan parabol = dönem kısalıyor.
+
+\textbf{Hücre 9 — Dönem değişimi ve anlamlılık}
+\begin{lstlisting}
+chi_lin = np.sum(((T - np.polyval(lin, E)) / h) ** 2)
+chi_q = np.sum(((T - np.polyval(k, E)) / h) ** 2)
+olcek = np.sqrt(max(chi_q / (len(E) - 3), 1))
+oc = 2 * k[0] / k[1] * saniye_yil * 1000
+oc_h = 2 * np.sqrt(kov[0, 0]) * olcek / k[1] * saniye_yil * 1000
+n = len(E); dBIC = (chi_lin + 2*np.log(n)) - (chi_q + 3*np.log(n))
+print("O-C dP/dt =", round(oc, 2), "±", round(oc_h, 2), "| anlamlılık", round(abs(oc)/oc_h, 1), "σ | ΔBIC", round(dBIC, 1))
+\end{lstlisting}
+\emph{Görmen gereken:} \texttt{-8.66 ± 1.27}, \texttt{6.8 σ}, \texttt{ΔBIC 89.2} $\rightarrow$ 3σ ve ΔBIC$>$10 sağlanıyor: değişim var. (Bouma vd. 2020 özeti: $-8{,}64\pm1{,}26$.)
+
+\textbf{Hücre 10 — Karşılaştırma (karar)}
+\begin{lstlisting}
+fark = abs(oc - romer) / np.hypot(oc_h, romer_h)
+print("fark =", round(fark, 1), "σ | Rømer çıkarılınca kalan:", round(oc - romer, 2), "±", round(np.hypot(oc_h, romer_h), 2))
+\end{lstlisting}
+\emph{Görmen gereken:} \texttt{fark = 2.1 σ}, kalan $-2{,}8\pm1{,}3$ ms/yıl.
+
+\subsection{Sonucu yorumla}
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Fark & Anlamı & Sonra \\ \midrule
+$<2\sigma$ & Rømer tek başına açıklayabilir & gelgit ``olası değil'' \\
+2--3σ & Rømer büyük kısmını açıklıyor & kalan anlamlı mı? \\
+$>3\sigma$ & Rømer açıklayamaz & kalan için gelgit, apsis, Applegate\ldots \\ \bottomrule
+\end{tabular}
+\end{center}
+WASP-4 b (Bouma'nın 2020 verisiyle): gözlenen $-8{,}7$, Rømer $-5{,}9$, fark 2,1σ; kalan $-2{,}8\pm1{,}3$ (3σ'ya ulaşmıyor) $\rightarrow$ kısalmanın büyük kısmı Rømer, gelgit için anlamlı kanıt yok. Wang vd.'nin daha yeni değeriyle ($-6{,}4\pm0{,}6$) fark 0,7σ: Rømer tamamını açıklıyor. Projede bu sayıyı yeni TESS zamanlarıyla sen güncelleyeceksin.
+
+\textbf{Kendini dene:} Aynı adımları HAT-P-7 b için yap: RV kataloğu Knutson vd. 2014 (\textbf{J/ApJ/785/126}, table3, Name = HAT-P-7; tek alet HIRES), P ve T0 NASA Exoplanet Archive'dan. Rømer öngörün Bouma'nın table5'teki $+15{,}0$ değerine yakın çıkmalı.
 
 \end{document}

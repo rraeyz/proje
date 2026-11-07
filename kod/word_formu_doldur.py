@@ -177,18 +177,14 @@ k, tbl = bul('tbl', '', i)
 tc = tbl.find(q('tr')).find(q('tc'))
 for p in tc.findall(q('p')): tc.remove(p)
 giris = [x for x in p5 if not x.startswith('**')]
-sek1 = [x for x in p5 if x.startswith('**Şekil 1.')][0]; sek2 = [x for x in p5 if x.startswith('**Şekil 2.')][0]
-tab1 = [x for x in p5 if x.startswith('**Tablo 1.')][0]; tab2 = [x for x in p5 if x.startswith('**Tablo 2.')][0]
-tc.append(para(giris[0]))
-tc.append(resim(f'{SEK}/sekil1_WASP-12b_OC.png', 13.5)); tc.append(para(sek1, boy=16))
-tc.append(resim(f'{SEK}/sekil2_dort_hedef_OC.png', 15.5)); tc.append(para(sek2, boy=16))
-tc.append(para(tab1, boy=16, once=120)); tc.append(yeni_tablo(t5[0], [1500, 1300, 1500, 1200, 3300]))
-tc.append(para(tab2, boy=16, once=120)); tc.append(yeni_tablo(t5[1], [1100, 2900, 1300, 1400, 800, 1300]))
+tab1 = [x for x in p5 if x.startswith('**Tablo 1.')][0]
+for g in giris: tc.append(para(g))
+tc.append(para(tab1, boy=16, once=120)); tc.append(yeni_tablo(t5[0], [1500, 1300, 1400, 1300, 1100, 2400]))
 tc.append(para(''))   # hücre bir paragrafla bitmeli
 
 # EK-1 Kaynaklar
 i, ek = bul('p', 'EK-1')
-kaynaklar = paragraflar('6. Ekler — EK-1: Kaynaklar')
+kaynaklar = [x[2:].strip() for x in bolum['6. Ekler — EK-1: Kaynaklar'] if x.startswith('- ')]
 hedef = ek
 for kay in kaynaklar:
     yeni = para(kay.lstrip('- ').strip(), hiza='left', sonra=40); hedef.addnext(yeni); hedef = yeni

@@ -120,7 +120,7 @@ Aşağıdaki tablo, yöntem bölümünde özetlenen ön çalışmanın sonucudur
 |---|---|---|---|---|---|
 | CoRoT-2 b | 7,3 | 5 | – | – | Elendi: TESS geçiş sayısı 30'dan az |
 | HAT-P-37 b | 5,1 | 8 | – | – | Elendi: TESS geçiş sayısı 30'dan az |
-| KELT-16 b | 5,8 | 65 | 37,2 | 9,3 | Elendi: arşiv radyal hız verisi yetersiz |
+| KELT-16 b | 5,8 | 65 | 39,3 | 9,3 | Elendi: arşiv radyal hız verisi yetersiz |
 | TrES-1 b | 6,3 | 34 | 2,2 | 4,9 | **Seçildi** |
 | TrES-5 b | 4,6 | 66 | 29,2 | 3,2 | Elendi: arşiv radyal hız verisi yetersiz |
 | WASP-4 b | 11,5 | 47 | 0,4 | 2,1 | **Seçildi** |

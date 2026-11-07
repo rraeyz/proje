@@ -12,12 +12,23 @@ Hata çubukları artık veri grubu (literatür / TESS) başına, kuadratik model
 büyütülüyor (`oc_diyagrami.hata_olcekle`). Sebep: TrES-1 literatür zamanlarında χ²ν = 7,3 (2006–2007 yer gözlemlerine
 9–18 s hata verilmiş, 4–8σ sapıyorlar); TESS grubunda χ²ν = 0,9. Ölçeklemesiz sonuçlar fazla iyimserdi.
 
-| Hedef | dP/dt (ms/yıl) | anlamlılık | ΔBIC | Rømer öngörüsü | fark | gereken Q′* | kübik ΔBIC |
-|---|---|---|---|---|---|---|---|
-| WASP-12 b (n=227) | −30,92 ± 0,90 | 34σ | 1180 | −0,8 ± 1,7 (DACE) | 15,7σ → dışlandı | 1,96×10⁵ | 5,7 (gereksiz) |
-| WASP-4 b (n=197) | −4,83 ± 0,40 | 12σ | 140 | −5,95 ± 0,32 (Bouma) | 2,2σ → Rømer gözlenen kısalmanın tamamını karşılıyor (hatta aşıyor) | 8,2×10⁴ | 5,5 (gereksiz) |
-| HAT-P-7 b (n=117) | +30,24 ± 4,72 | 6,4σ | 36 | +13,1 ± 1,2 (Knutson) | 3,5σ → kısmen (~%43) | dönem uzuyor | −2,7 |
-| TrES-1 b (n=94) | −4,51 ± 2,63 | 1,7σ | −1,6 | −2,5 ± 2,2 (Bonomo) | 0,6σ | — | 5,1 |
+**KANONİK SAYILAR** (sabit MCMC tohumu seed=42; her çalıştırmada aynı; `on_calisma_colab.ipynb` ile birebir üretilir):
+
+| Hedef | dP/dt (ms/yıl) | anlamlılık | ΔBIC | Rømer öngörüsü | fark | kübik ΔBIC |
+|---|---|---|---|---|---|---|
+| WASP-12 b (n=227) | −30,90 ± 0,90 | 34σ | 1177 | −0,8 ± 1,7 (DACE) | 15,7σ → dışlandı | ~5,7 (gereksiz) |
+| WASP-4 b (n=197) | −4,79 ± 0,40 | 12σ | 138 | −5,95 ± 0,32 (Bouma) | 2,3σ → Rømer kısalmanın tamamını karşılıyor | ~5,5 (gereksiz) |
+| HAT-P-7 b (n=117) | +30,00 ± 4,73 | 6,3σ | 35,5 | +13,1 ± 1,2 (Knutson) | 3,5σ → kısmen (~%44) | ~−2,7 |
+| TrES-1 b (n=94) | −4,26 ± 2,63 | 1,6σ | −1,9 | −2,5 ± 2,2 (Bonomo) | 0,5σ | ~5,1 |
+
+- Yeni TESS zamanları: WASP-12 38 (ortanca hata 43 s), WASP-4 75 (33 s), HAT-P-7 40 (56 s), TrES-1 21 (31 s); TOPLAM 174.
+- İP2 doğrulaması (sektör 20): ölçülen 21, ortak 20, ortalama fark −1,7 s, ortanca |fark| 0,40σ, ortanca hata 45 s.
+- Katalog-yalnız WASP-12: −28,69 ± 1,03, ΔBIC 770,5.
+- Tablo 1 (`veri/tablo1_secim.csv`, `kod/secim_tablosu.py`): σ_Rømer en hassas arşivle — WASP-12 1,6 (Knutson), WASP-4 0,4 (Bouma),
+  HAT-P-7 1,2 (Knutson), TrES-1 2,2 (Bonomo), TrES-5 29,2 (DACE), WASP-46 56,3 (DACE), KELT-16 arşivde yok. K2'de elenenlerde "–".
+  TESS sayıları VizieR tablosundan sayılır (WASP-12: 81; makale metni 82 — eşiği etkilemez).
+- Form metnindeki tüm sayılar bu kanonik değerlere göre yazılacak (ör. ön çalışma: "ortalama −1,7 s fark ve ortanca 0,4σ uyum";
+  Şekil 1 açıklaması "dP/dt = −30,9 ± 0,9 ms/yıl").
 
 - **TrES-1 b'de gerçekçi hatalarla anlamlı dönem değişimi YOK.** Bu hocanın "değişim var mı yok mu" sorusuna geçerli bir cevap.
 - **WASP-4'te kübik terim artık gerekmiyor** (ΔBIC 5,5). "dP/dt zamanla değişiyor, kübik ΔBIC = 13" iddiası her yerden çıkacak.

@@ -1,7 +1,7 @@
 aday,dPdt_anlamlilik,TESS_sayisi,sigma_Romer_msyil,RV_kaynagi,Wang_dPdt_bolu_3,sonuc
 CoRoT-2 b,7.3,5,,,7.2,K2 saglanmiyor
 HAT-P-37 b,5.1,8,,,11.4,K2 saglanmiyor
-KELT-16 b,5.8,65,,,9.3,K3 saglanmiyor
+KELT-16 b,5.8,65,37.20,Oberst 2017,9.3,K3 saglanmiyor
 TrES-1 b,6.3,34,2.17,Bonomo 2017,4.9,SECILDI
 TrES-5 b,4.6,66,29.23,DACE,3.2,K3 saglanmiyor
 WASP-4 b,11.5,47,0.36,Bouma 2020,2.1,SECILDI

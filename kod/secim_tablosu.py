@@ -4,7 +4,7 @@ K1: Wang vd. (2024) Tablo 3, LOOCV sutunu "pass" olan 14 aday (makalenin kendisi
 K2: Wang vd. TESS gecis zamani sayisi >= 30   (VizieR J/ApJS/270/14/table1'de satir sayilir)
 K3: arsiv RV'sinden Romer ongorusunun belirsizligi < Wang vd. |dP/dt| / 3   (K2'yi gecenler icin)
 """
-import csv, io, urllib.parse, urllib.request, collections
+import csv, io, pathlib, urllib.parse, urllib.request, collections
 import numpy as np
 from oc_diyagrami import vizier
 from rv_analiz import rv_uydur, romer_pdot
@@ -31,6 +31,9 @@ def rv_setleri(yildiz, P, T0):
         r = vizier("J/ApJ/893/L29/table2")
         setler["Bouma 2020"] = ([float(x["BJD"]) + 2450000 for x in r], [float(x["RV"]) for x in r],
                                 [float(x["e_RV"]) for x in r], [x["Tel"] for x in r])
+    if yildiz == "KELT-16":                                                          # Oberst vd. 2017, Tablo 3 (VizieR'de yok)
+        d = np.loadtxt(pathlib.Path(__file__).resolve().parent.parent / "veri/rv_KELT-16_TRES_Oberst2017.csv", delimiter=",")
+        setler["Oberst 2017"] = (d[:, 0], d[:, 1], d[:, 2], ["TRES"] * len(d))
     r = [x for x in vizier("J/A+A/602/A107/table1") if x["Star"].strip() == yildiz]  # Bonomo vd. 2017 (km/s)
     if r:
         setler["Bonomo 2017"] = ([float(x["BJD"]) + 2450000 for x in r], [float(x["RV"]) * 1e3 for x in r],

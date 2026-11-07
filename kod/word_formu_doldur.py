@@ -181,7 +181,7 @@ for p in tc.findall(q('p')): tc.remove(p)
 giris = [x for x in p5 if not x.startswith('**')]
 tab1 = [x for x in p5 if x.startswith('**Tablo 1.')][0]
 for g in giris: tc.append(para(g))
-tc.append(para(tab1, boy=16, once=120)); tc.append(yeni_tablo(t5[0], [1250, 950, 1050, 1150, 950, 3650]))
+tc.append(para(tab1, boy=16, once=120)); tc.append(yeni_tablo(t5[0], [1250, 950, 1000, 1100, 900, 3500]))
 tc.append(para(''))   # hücre bir paragrafla bitmeli
 
 # EK-1 Kaynaklar

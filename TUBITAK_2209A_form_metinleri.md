@@ -114,23 +114,23 @@ Projenin amacı, Wang vd. (2024)'nin LOOCV testini geçen 14 sıcak Jüpiter ada
 
 Aşağıdaki tablo, yöntem bölümünde özetlenen ön çalışmanın sonucudur.
 
-**Tablo 1.** Bu çalışmada oluşturulan hedef seçim tablosu. Satırlar, Wang vd. (2024)'nin dönem değişimi bildirdiği 26 adaydan, aynı çalışmanın LOOCV testini geçen 14'üdür (Wang vd., 2024, Tablo 3). Sütunların kaynakları: |dP/dt|/σ (Wang vd.'nin bildirdiği dönem değişim hızının belirsizliğine oranı) ve TESS geçiş sayısı Wang vd. (2024)'nin VizieR'de yayımlanan tablolarından (J/ApJS/270/14) alınmıştır. σ_Rømer (uzak bir eşlikçinin ivmesinden kaynaklanabilecek dönem değişiminin arşiv radyal hız verisiyle öngörülebildiği belirsizlik, ms/yıl) bu çalışmada, yayımlanmış radyal hız ölçümlerinden (Knutson vd., 2014; Bonomo vd., 2017; Oberst vd., 2017; Bouma vd., 2020; DACE) hesaplanmış ve her aday için en hassas veri seti kullanılmıştır. Seçim ölçütleri: (1) TESS geçiş sayısı en az 30; (2) σ_Rømer, Wang vd.'nin bildirdiği |dP/dt| değerinin üçte birinden (“Eşik” sütunu) küçük. “–”: ilk ölçütte elendiği için hesaplanmadı.
+**Tablo 1.** Bu çalışmada oluşturulan hedef seçim tablosu. Satırlar, Wang vd. (2024)'nin dönem değişimi bildirdiği 26 adaydan, aynı çalışmanın LOOCV testini geçen 14'üdür (Wang vd., 2024, Tablo 3). Sütunların kaynakları: |dP/dt|/σ (Wang vd.'nin bildirdiği dönem değişim hızının belirsizliğine oranı) ve TESS geçiş sayısı Wang vd. (2024)'nin VizieR'de yayımlanan tablolarından (J/ApJS/270/14) alınmıştır. σ_Rømer (uzak bir eşlikçinin ivmesinden kaynaklanabilecek dönem değişiminin arşiv radyal hız verisiyle öngörülebildiği belirsizlik, ms/yıl) bu çalışmada, yayımlanmış radyal hız ölçümlerinden (Knutson vd., 2014; Bonomo vd., 2017; Oberst vd., 2017; Bouma vd., 2020; DACE) hesaplanmış ve her aday için en hassas veri seti kullanılmıştır. Seçim ölçütleri: (1) TESS geçiş sayısı en az 30; (2) σ_Rømer, Wang vd.'nin bildirdiği |dP/dt| değerinin üçte birinden (“Eşik” sütunu) küçük. “–”: aday ilk ölçütte (TESS geçiş sayısı) elendiği için radyal hız hesabı yapılmadı.
 
 | Aday | \|dP/dt\|/σ | TESS geçiş sayısı | σ_Rømer (ms/yıl) | Eşik (ms/yıl) | Sonuç |
 |---|---|---|---|---|---|
-| CoRoT-2 b | 7,3 | 5 | – | – | Elendi: TESS geçiş sayısı 30'dan az |
-| HAT-P-37 b | 5,1 | 8 | – | – | Elendi: TESS geçiş sayısı 30'dan az |
+| CoRoT-2 b | 7,3 | 5 | – | 7,2 | Elendi: TESS geçiş sayısı 30'dan az |
+| HAT-P-37 b | 5,1 | 8 | – | 11,4 | Elendi: TESS geçiş sayısı 30'dan az |
 | KELT-16 b | 5,8 | 65 | 39,3 | 9,3 | Elendi: arşiv radyal hız verisi yetersiz |
 | TrES-1 b | 6,3 | 34 | 2,2 | 4,9 | **Seçildi** |
 | TrES-5 b | 4,6 | 66 | 29,2 | 3,2 | Elendi: arşiv radyal hız verisi yetersiz |
 | WASP-4 b | 11,5 | 47 | 0,4 | 2,1 | **Seçildi** |
-| WASP-10 b | 7,9 | 8 | – | – | Elendi: TESS geçiş sayısı 30'dan az |
+| WASP-10 b | 7,9 | 8 | – | 9,2 | Elendi: TESS geçiş sayısı 30'dan az |
 | WASP-12 b | 32,8 | 81 | 1,6 | 10,1 | **Seçildi** |
-| WASP-22 b | 4,2 | 5 | – | – | Elendi: TESS geçiş sayısı 30'dan az |
-| WASP-45 b | 8,0 | 14 | – | – | Elendi: TESS geçiş sayısı 30'dan az |
-| XO-4 b | 3,6 | 16 | – | – | Elendi: TESS geçiş sayısı 30'dan az |
+| WASP-22 b | 4,2 | 5 | – | 23,9 | Elendi: TESS geçiş sayısı 30'dan az |
+| WASP-45 b | 8,0 | 14 | – | 56,4 | Elendi: TESS geçiş sayısı 30'dan az |
+| XO-4 b | 3,6 | 16 | – | 20,9 | Elendi: TESS geçiş sayısı 30'dan az |
 | HAT-P-7 b | 4,5 | 66 | 1,2 | 6,1 | **Seçildi** |
-| WASP-1 b | 4,3 | 9 | – | – | Elendi: TESS geçiş sayısı 30'dan az |
+| WASP-1 b | 4,3 | 9 | – | 7,5 | Elendi: TESS geçiş sayısı 30'dan az |
 | WASP-46 b | 18,1 | 32 | 56,3 | 17,2 | Elendi: arşiv radyal hız verisi yetersiz |
 
 # 6. Ekler — EK-1: Kaynaklar

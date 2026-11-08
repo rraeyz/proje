@@ -90,3 +90,10 @@ ve TrES-1 (1 sektör) için var.
 - Word: 10 sayfa, doğrulama geçti; 251 metin parçası Word'de birebir var; Yöntem sayfaları gözle kontrol edildi.
 - 2. tur okuma: dil ve içerik yeniden okundu; ek hata bulunmadı.
 - B araştırmasında bulunan Sodickson 2025 TrES-1 sonucu A'ya eklendi (1.1 ve kaynakça); kontrol.py yeniden çalıştırılacak.
+
+## İkinci kontrol turu (8 Kasım gecesi)
+- "yayımlanmamış TESS sektörleri" → "incelediğimiz yayınlarda kullanılmamış" (özet, hedef 1, İP2, risk).
+- Wang 2024 §5.3 mekanizmaları genel olarak tartışmış, sistem bazında sınamamış → cümle buna göre düzeltildi.
+- Applegate'e Watson ve Marsh (2010) enerji bağıntısı eklendi; L* ve dönme dönemi parametre listesine eklendi.
+- TrES-1 2025–26 yer gözlemleri ExoClock'ta doğrulandı; Kutluay 2026 TrES-1 −14,9 ± 0,6 doğrulandı.
+- Ayrıntı: ORTAK_KURALLAR.md §7.1.

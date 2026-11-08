@@ -62,3 +62,11 @@ Dikine hız: DACE 21 ölçüm, 8,5 yıl ama hassasiyet düşük.
   düzeltildi; ölçüt 1'e "kullanılabilir" eklendi.
 - Word: 10 sayfa, doğrulama geçti; 249 parça birebir; Tablo 1 sayfası gözle kontrol edildi.
 - 2. tur okuma: 1.1 ve Yöntem yeniden okundu; ek hata bulunmadı.
+
+## İkinci kontrol turu (8 Kasım gecesi)
+- WASP-45 S69 (Ağu–Eyl 2023) ExoClock IV'te (Kokori vd. 2026; ışık eğrileri 2023 sonuna kadar) kullanılmış → metinden
+  çıkarıldı. Kullanılmamış: 96, 106, 107 (~17 tam geçiş). Tablo 1'de WASP-45 için son çalışma: Kokori vd. (2026).
+- Yeh vd. 2024 (New Astron. 106, 102130): WASP-45 b 32 zamanla sınıflandırılamamış (iki modelin indirgenmiş χ²'si ~11) → 1.2'ye eklendi.
+- Zhang vd. 2026 (A&A 709, A35) CDS tablosu incelendi: WASP-4/45/46 için 2020 sonrası zaman yok → iddialar sağlam.
+- Applegate'e Watson ve Marsh (2010) enerji bağıntısı eklendi; parametre listesine L* ve dönme dönemi eklendi.
+- Ayrıntı: ORTAK_KURALLAR.md §7.1.

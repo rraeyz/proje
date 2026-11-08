@@ -1,14 +1,14 @@
-# Üç başvuru metninin karşılaştırması ve puanlaması (8 Kasım 2026)
+# Üç başvuru metninin karşılaştırması ve puanlaması (8 Kasım 2026, ikinci kontrol turundan sonra)
 
 | | A | B | C |
 |---|---|---|---|
 | Hedefler | WASP-12 b, WASP-4 b, HAT-P-7 b, TrES-1 b | WASP-4 b, WASP-45 b, WASP-46 b | WASP-45 b, WASP-46 b |
 | Seçim gerekçesi | TESS ≥ 30 geçiş + ışık-zaman etkisi RV ile sınanmış | ≥ 2 kullanılmamış TESS sektörü + literatürde çelişki | ≥ 2 kullanılmamış TESS sektörü + değişimin varlığı üzerine çelişki |
-| Kullanılmamış TESS verisi | 4 sektör (WASP-4: 3, TrES-1: 1) | 13 sektör (~155 tam geçiş) | 10 sektör (~114 tam geçiş) |
+| Kullanılmamış TESS verisi | 4 sektör (WASP-4: 3, TrES-1: 1) | 12 sektör (~148 tam geçiş) | 9 sektör (~107 tam geçiş) |
 | Dikine hız | Var (4 sistemde de yeterli) | Var (WASP-4 güçlü; WASP-45/46 zayıf) | Yok (ışık-zaman/Rømer kapsam dışı) |
 | Mekanizma sayısı | 6 | 6 | 5 |
-| Kaynak sayısı | 43 | 39 | 34 |
-| Özet (kelime) | 246 | 229 | 239 |
+| Kaynak sayısı | 43 | 41 | 36 |
+| Özet (kelime) | 247 | 229 | 239 |
 
 ## Hocanın notlarına uyum
 Üçü de 14 notun ve WhatsApp uyarılarının hepsini karşılıyor (otomatik kontrol + okuma). Tek fark not 3–4 (özgünlük):
@@ -34,3 +34,22 @@ Gerekçeler:
   hocanın ilk talimatındaki Rømer kapsam dışı; gelgit için en fazla "olası" denebiliyor.
 
 Öneri: Hoca onaylarsa B. Hoca "RV'ye girme, basit tut" derse C. A, yalnızca hedeflerin değişmemesi istenirse.
+
+## Lisans öğrencisi için zorluk (ikinci tur)
+| İş | A | B | C |
+|---|---|---|---|
+| Zaman derleme ve BJD_TDB dönüşümü (Astropy) | Orta (4 sistem, çok kaynak) | Orta | Kolay–orta |
+| TESS ışık eğrisi, batman, emcee | Kolay (4 sektör) | Orta (12 sektör) | Orta (9 sektör) |
+| O−C, en küçük kareler, BIC | Kolay | Kolay | Kolay |
+| Gelgit Q′*, Roche, Applegate enerjisi, Irwin kütle fonksiyonu | Kolay (formüle sayı koyma) | Kolay | Kolay |
+| Apsis | Kolay (RV'den e ile genlik karşılaştırma) | Kolay | Orta (5 parametreli modeli zamanlara uyumlama) |
+| Dikine hız Kepler modeli (çok tayfçeker, jitter, MCMC) | Zor (4 sistem) | Orta–zor (asıl iş WASP-4) | Yok |
+Sonuç: C en kolay, B orta, A en yüklü. Hiçbiri lisans düzeyini aşmıyor; en zor kısım (RV modeli) danışman desteğiyle yapılabilir.
+Yapılabilirlik ölçümü: tek geçiş zamanlama hassasiyeti WASP-45/46 ~75 s, WASP-4 ~37 s; tartışılan değişimler 2026'da
+7–10 dakikalık farklar üretiyor, yani yeni sektörler soruyu cevaplamaya yetiyor.
+
+## İkinci turda değişen
+- B ve C: WASP-45'in 69. sektörü ExoClock IV (Kokori vd., 2026) tarafından kullanılmış → çıkarıldı; Yeh vd. (2024) eklendi.
+- Üçü: Applegate'e enerji bağıntısı (Watson ve Marsh, 2010) eklendi.
+- A: "yayımlanmamış" ifadeleri düzeltildi.
+- Puanlar değişmedi (B'nin özgünlüğü bir sektör azaldı ama hâlâ tüm hedeflerde yeni veri var).

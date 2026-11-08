@@ -122,3 +122,48 @@ Kaynaklar (Türkçe metinleri indirilip okundu):
 | epoch | çevrim sayısı (E) | T ("çevrim"), O |
 | occultation / secondary eclipse | ikincil tutulma | genel |
 
+
+## 7. İkinci kontrol turu (8 Kasım akşamı) — literatür taraması kaynakları ve sonuçları
+Taranan: arXiv (özet/başlık), Crossref, Semantic Scholar atıf ağı (Connected Papers yerine; 19 tohum makaleye 2023+
+atıf yapan 145 tekil yayın, 47'si ilgili), ExoClock veritabanı (gezegen sayfaları; TESS gözlem tarihleri tek tek),
+web araması (Google Scholar, ResearchGate, Academia.edu, IEEE Xplore, DergiPark, TR Dizin, YÖK Açık Bilim üzerinden).
+Erişilemeyenler: NASA ADS API (anahtar gerekiyor), Scopus/ResearchGate/Academia/IEEE (403/418), OpenAlex (429),
+DergiPark arama (Cloudflare), YÖK Tez arama formu (betikle sorgulanamıyor). Bunlar web araması ile dolaylı tarandı.
+
+Yeni ve önemli bulgular:
+- ExoClock veritabanı WASP-45'in TESS sektör 69 (Ağu–Eyl 2023) geçişlerini içeriyor → B ve C'deki "69 kullanılmamış"
+  YANLIŞ; kullanılmamış sektörler 96, 106, 107. (WASP-46: ExoClock'ta son TESS = sektör 67 → 94, 95, 102–105 doğru.
+  WASP-4: son = 69 → 103, 105, 106 doğru. TrES-1: son = 54; Kutluay 74, 80 → 81 doğru.)
+- ExoClock Project IV (Kokori vd. 2026, ApJS 283, 5): HAT-P-7, WASP-4, WASP-12 için 3σ kuadratik terim; WASP-45/46 yok.
+- Yeh, Jiang ve A-thano 2024 (New Astronomy 106, 102130): 144 sıcak Jüpiter; WASP-45 (35 zaman) gelgit bozulması
+  adayı DEĞİL (adaylar: HAT-P-51, HAT-P-53, TrES-5, WASP-12) → WASP-45 çelişkisine eklenecek.
+- Jackson 2025 (arXiv 2512.09122, ön baskı): HAT-P-37 yeniden analiz (2011–2021 verisi, A-thano 2022); TESS yok.
+- ExoEcho I (2025, HST): WASP-4 ve WASP-12 HST zamanları; ExoEcho III (2026, JWST): WASP-12.
+- Nabbie 2026 TESS TTV kataloğu (sektör 1–69): yalnız çok-adaylı sistemler; adaylarımız yok.
+- OpenReview WASP-4 çalışması: dört TESS sektörü (2026 sektörleri değil); hakemli kayıt bulunamadı.
+- Türk veritabanları: adaylarla ilgili yalnızca Kutluay vd. 2023 (TJAA, WASP-12).
+
+### 7.1. İkinci turun devamı (8 Kasım gecesi) — TESS, formül ve metin denetimi
+TESS envanteri (MAST, yalnız tek-sektör SPOC 120 s ürünleri; "s0001-s0096" gibi çok-sektörlü özet ürünleri sektör sayılmaz):
+WASP-4 2,28,29,69,96,103,105,106 | WASP-45 2,29,69,96,106,107 | WASP-46 1,27,67,94,95,102–105 | TrES-1 14,40,41,53,54,74,80,81 |
+WASP-12 20,43–45,71,72 | HAT-P-7 14,15,40,41,54,55,74,75,81,82 | CoRoT-2 54,81 | KELT-16 15,41,55 | TrES-5 41,55–57,75,77,82,84 |
+WASP-10 56,83 | WASP-22 4,105–107 | XO-4 20,47,60,74 | WASP-1 57,84 | HAT-P-37 26,40,41,53–55,59,74,75,80,82.
+Kullanılan sektörler makalelerin kendi tablolarından doğrulandı: Kutluay 2026 Tablo A1 (CoRoT-2 54,81; KELT-16 15,41,55;
+TrES-1 14,41,53,54,74,80; WASP-12 hepsi; WASP-46 1,27,67), Rothmeier 2025 (TrES-5 sekiz sektörün hepsi), ExoClock IV
+(Kokori 2026: "tüm ışık eğrileri 2023 sonundan önce"; WASP-45 S69 dahil), Zhang vd. 2026 (A&A 709, A35; CDS tablosu:
+Wang 2024 ile aynı veri, WASP-4/45/46 son zamanlar 2020'de bitiyor → yeni sektörleri kullanmamış).
+Düzeltmeler: B ve C'de WASP-45 sektör 69 çıkarıldı (96, 106, 107); Tablo 1 WASP-45 "Son zamanlama çalışması" → Kokori vd.
+(2026); tablo açıklaması "en yeni TESS verisini kullanan çalışma" oldu; Kokori 2026 ve Yeh 2024 kaynakçaya eklendi.
+Yeh vd. 2024 kesin bilgi: WASP-45 b, 32 zamanla "unclassified-TTV" grubunda (Rχ² sabit 11,31 / bozulma 11,02).
+Zamanlama hassasiyeti (tek geçiş, batman + en küçük kareler, hatalar χ² ile ölçekli): WASP-45 ~75 s, WASP-46 ~74 s,
+WASP-4 ~37 s. Wang'ın WASP-45 için −169 ms/yıl'ı ile Sodickson'ın −55 ms/yıl'ı 2026'da ~10 dk fark üretir; WASP-46'da
++52 ms/yıl ile sıfır ~7 dk fark üretir → yeni verilerle rahatça sınanabilir (bu hesaplar forma yazılmadı).
+Formül denetimi: gelgit (Patra 2017), apsis (Patra 2017 denk. 2–5), ışık-zaman (Bouma 2020), RV modeli, BIC, Irwin (1952),
+Roche (Ford ve Rasio 2006) doğru. Applegate'te "enerji karşılaştırılacak" deniyor ama bağıntı yoktu → Watson ve Marsh (2010)
+denk. 8 eklendi: ΔE = (1/6)(M*/Ms)[G²M*³a⁴/(Ω²R*⁸)](ΔP/P)², Ms = 0,1 M*; ΔE > L*·P_mod ise dışlanır. Parametre listesine
+L* ve dönme dönemi eklendi (üç belgede).
+Metin düzeltmeleri: A'da "yayımlanmamış" → "incelediğimiz yayınlarda kullanılmamış" (özet, hedef 1, İP2, risk);
+"nedenleri sistem bazında incelememiştir" → "bu mekanizmaları sistem bazında sınamamıştır" (Wang 5.3 genel tartışma
+yapmış, sistem bazında sınama yok); B/C'de çift "ise" giderildi; risk satırı "(WASP-45 ve WASP-46)"; C apsis cümlesi sadeleşti.
+Doğrulanan diğer iddialar: Wang 2024 326/26/14 (12 başarısız); Kutluay 2026 TrES-1 −14,9 ± 0,6; TrES-1 2025–26 yer
+gözlemleri ExoClock'ta (12 gözlem, son 31.07.2026); HAT-P-37 "yedi sektörden ilk altısı kullanılamıyor" (Wang 4.1.4).

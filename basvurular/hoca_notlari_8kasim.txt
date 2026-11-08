@@ -1,0 +1,47 @@
+﻿1) Özet: Özette önce Wang vd. (2024) çalışmasındaki 326 sistemden 26 adaya, oradan LOOCV testini geçen 14 adaya ve nihayetinde 4 hedefe (WASP-12 b, WASP-4 b, HAT-P-7 b, TrES-1 b) inildiği belirtmişsin, ancak özetin sonuna doğru tekrar “Ön çalışmada 14 adayın TESS verileri ve radyal hız literatürü incelenerek hedef seçimi yapılmıştır" cümlesi eklemişsin. Projede 14 kaynak mı? 4 kaynak mı? Incelenecek kafa karışklığına yol açıyor. Burayı net bir şekilde vermelisin.
+
+2) Özette yer alan "Gözlenen ve doğrusal efemerisle hesaplanan zamanların farkı olan O−C diyagramlarına doğrusal, kuadratik ve kübik modeller uydurulacak; dönem değişiminin varlığı, değişim hızının anlamlılığı ve Bayes Bilgi Ölçütü ile sınanacaktır" cümlesi hem dilbilgisi açısından bozuktur hem de kavramsal olarak eksiktir. Bunlar bilgi ölçütü değil istatistiksel birer yöntemdir. 
+
+3) Projenin en büyük bilisel zaafı yazdıığn literatür ile çelişkidir. 4 kaynak seçtiğini düşünüyorum. (WASP4, HATP7 TRES1B, WASP12) bu kaynakları seçmişsin. Bu kaynakların hepsinin 2025 ve 2026 da makaleleri var. Bu makaleler tarafından tess verileri elde edilmiş ve makaleye eklenmiş. Senin bu projede onlardan yaptığın farklılık nedir?
+
+4) "Wang vd. sonrasında yayımlanan TESS sektörlerinden ölçülecek yeni geçiş zamanlarıyla zaman tabanı yaklaşık 2–6 yıl uzatılacaktır" demişsin. Bu sonuca nasıl ulaşabildin? TESS Database ine girip hangi sektörlerde veri var baktın mı? Ya da zamansal olarak ne kadarlık bir veri var. Ayrıca son yıllarda çıkan makaleler var ve onlarda TESS verilerini kullandılar.
+
+5) Proje metninde astronomi terminolojisine aykırı çok kelime var. İdris, astronomi de ya da yıldız-gezegen sistemleri üzerine yazılan hiçbir makale de Vaka, Hüküm, Karar ağacı, Görgül, Birini dışarıda bırak çapraz doğrulama (LOOCV)", Kalite bayraklı noktalar atılarak, yerel taban çizgisi, 5sigma yinelemeli kırpmayla, hata çubukları, alet başına ayrı sıfır noktası, yıldız kaynaklı saçılma, ışık yolu etkisi ve dahası bunlarbenim okurken denk geldiklerim. Belki gözümden kaçanlar da var ama ingilizce den türkçeye çeviri yaparken astronomi alanınauygun bir şekilde çeviri yapmak gerekiyor, bunların kesinlikle düzeltilmesi şart.
+
+6) Amaç ve Hedefler bölümünde hedefleri yazmışsın ancak sistematik bir hata var. O-C diyagramı oluşturulur, daha sonrasıda güncel ephemeris belirlenir, daha sonrasında ise belirlenen o-c diyagramı ile değişim var ise altında yatan mekanizmalar iredelenir.
+
+7) RV Modellemesi nasıl yapılacak (Romer ve Apsidal motion için) detaylı olarak açıklanmalı.
+
+8) Sıfır noktası ne demek anlamadım
+
+9) epok numarasının kesirli kısmı 0,02'yi aşan zamanlar ise ayrıca kontrol edilecektir. Bu ne demek
+
+10) “Wang vd.'nin zaten ölçtüğü bir sektör yeniden ölçülüp ortak geçişlerde iki sonuç karşılaştırılarak sınanacaktır.” Böyle bir şeyi neden yapacaksın? Yanlış buldun diyelim wang ın bulduğu sonuçları bulana kadar devam mı edeceksin? Öyleyse direkt wang dan al sen niye bir daha aynı verilerin fotometrisini yapıyorsun.
+
+11) Yöntem bölümü iç içe girmiş. Konu kapsamda literatür bilgisi  vermişsin, yöntem bölümünde yeniden vermişsin. Hep bir ön çalışma demişsin, ön çalışmadan kastın Wang mı?
+
+Yöntem bölümü daha basit ve daha anlaşılabilir yazılmalı.
+
+Literatür bilgisi, metot ve kaynak iç içe girmiş, yöntem bölümü okurken bir yandan literatürdeki bilgiler geliyor karşıma daha sonra bir formül neyin ne olduğunu anlamada zorluk yaşıyorum. 
+
+Başlıklara bölsen iyi olur.
+
+2.1 Veri (veriseti, vs.)
+
+2.3 TESS Verilerinin Analizi ve Orta Geçiş Zamanlarının Belirlenmesi
+
+2.3 O-C Diyagramlarının Oluşturulması
+
+2.4 Fiziksel Mekanizmalar
+
+2.4.1 Gelgit Bozulması (Orbital Decay)
+2.4.2 Apsis Hareketi (Apsidal motion ya da Precession)
+…
+
+
+
+12) Konunu önemi bölümünün en altında hipotez diyip soruları yazmışsın, bu şekilde bir yazım şekli olmaz, metin içerisine soruları entegre edersin.
+
+13) Yukarıdaki dediğim bilgiler ve düzeltilmesi gereken yerler, terimler, jargonlar ile özet ve konunun önemi yeniden yazılmalı
+
+14) İngilizce çeviriler birebir olmamalı, alana özgü çeviriler olmalı. Ve metni okuduğunda anlaşılabilir olmalı. Sen belki anlıyor olabilirsin kendin yazdığın için ama senin yazdıklarını karşı taraf okuyup anlamalı, ben yazarım karşı tarafta anlasın gibi bir düşünceye projelerde giremezsin, basit, sade ve anlaşılır bir dil kullanmalısın. 

@@ -19,7 +19,7 @@ for r in [l[2:] for l in md.splitlines() if l.startswith("- ")]:
     cilt = str(d.get("volume") or ""); sayfa = str(d.get("page") or d.get("article-number") or "").split("-")[0]
     baslik = sade(d.get("title", [""])[0])[:25]
     kontroller = {"yazar": soy and soy[:5] in sade(r.split(".")[0] + r[:40]), "yıl": (yil in r or yil2 in r),
-                  "cilt": (not cilt) or f", {cilt}," in r, "sayfa": (not sayfa) or sayfa in r, "başlık": baslik[:20] in sade(r)}
+                  "cilt": (not cilt) or bool(re.search(rf", {re.escape(cilt)}( \(\d+\))?,", r)), "sayfa": (not sayfa) or sayfa in r, "başlık": baslik[:20] in sade(r)}
     kotu = [k for k, v in kontroller.items() if not v]
     print(("TAMAM " if not kotu else "KONTROL ET " + str(kotu) + " ") + doi + (f"  | CR: {soy} {yil} {cilt} {sayfa}" if kotu else ""))
     sorun += bool(kotu); time.sleep(0.7)

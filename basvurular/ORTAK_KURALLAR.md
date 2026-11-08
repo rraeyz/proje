@@ -58,7 +58,7 @@
 
 ## 5. TÜBİTAK 2209-A 2026 kuralları (çağrı + bilgi notu)
 - Özet 25–450 kelime; 1.1, 1.2 ve 2 en az 350 karakter.
-- 1.1'de 12. Kalkınma Planı ve 2030 Sanayi ve Teknoloji Stratejisi ile ilişki (varsa) açıklanır.
+- 1.1'de 12. Kalkınma Planı ve 2030 Sanayi ve Teknoloji Stratejisi ile ilişki "ilişkili ise" açıklanır (bilgi notu). İdris kararı (8 Kasım): 2030 Stratejisi çıkarıldı; yalnız 12. KP madde 270, 271, 546.
 - Yöntem: araştırma tasarımı, değişkenler, istatistiksel yöntemler; ön çalışma varsa sunulur; takvimle ilişki.
 - Takvim: toplam ≤ 12 ay; literatür taraması, rapor yazımı, sonuç paylaşımı, malzeme alımı ayrı iş adımı olamaz;
   başarı ölçütü yüzdeleri toplamı 100.
@@ -167,3 +167,36 @@ Metin düzeltmeleri: A'da "yayımlanmamış" → "incelediğimiz yayınlarda kul
 yapmış, sistem bazında sınama yok); B/C'de çift "ise" giderildi; risk satırı "(WASP-45 ve WASP-46)"; C apsis cümlesi sadeleşti.
 Doğrulanan diğer iddialar: Wang 2024 326/26/14 (12 başarısız); Kutluay 2026 TrES-1 −14,9 ± 0,6; TrES-1 2025–26 yer
 gözlemleri ExoClock'ta (12 gözlem, son 31.07.2026); HAT-P-37 "yedi sektörden ilk altısı kullanılamıyor" (Wang 4.1.4).
+
+## 8. Üçüncü kontrol turu (8 Kasım gecesi) — TÜBİTAK belgeleri, 12. KP, hoca notları, yöntem
+Okunan TÜBİTAK belgeleri (2209 sayfası, 2026 çağrı duyurusu 12 s., başvuru içeriği bilgi notu 2 s., öncelikli alanlar,
+bibliyografik veriler sayfası, AYEK yönetmeliği):
+- Özet (1) bilimsel nitelik, (2) yöntem, (3) proje yönetimi, (4) yaygın etki içermeli → üç özete ekip/12 ay/dört iş paketi
+  cümlesi eklendi.
+- 1.1: araştırma sorusu tanımlanır, "varsa" hipotez (hoca: liste yok, soru metinde → uyumlu). 12. KP/2030 ilişkisi
+  "ilişkili ise" yazılır → 2030 çıkarıldı.
+- Kaynak biçimi: "Soyadı, A., Soyadı, B. Yıl. "Başlık", Dergi, Cilt (Sayı), Sayfa." → yazar arasındaki "ve" virgül oldu,
+  Crossref'te sayı numarası olan tüm kaynaklara "(Sayı)" eklendi (A&A, New Astronomy, eski ApJ gibi sayısı olmayanlara
+  tahmin yazılmadı); internet kaynakları "Kurum. "Başlık". URL, Son erişim tarihi" biçimine getirildi (DACE, MAST).
+- 3.3: "kurumda var olan" altyapı istenir → üniversite olanakları öne alındı, kişisel bilgisayar ikinci sırada.
+- 4.1.8 (kurum/marka öne çıkarma) kontrol edildi; arşiv ve yazılım adları yöntem gereği geçiyor, öne çıkarma yok.
+  Başlıkta "TESS" (B, C) bir uzay görevi adı; marka/kurum değil, bırakıldı.
+12. KP (253 s. PDF) okundu: madde 270 (temel bilimler, uzay araştırmaları kritik alan), 271 (genç nesiller uzay alanında,
+uzay araştırmalarının yaygınlaştırılması), 546 (temel bilimlerde araştırmacı insan gücü ve araştırma faaliyetleri) metinden
+doğrulandı. 544.2 (kamu destekli projelerde lisans bursiyeri) bursiyer dediği için kullanılmadı; 556 teknoloji üretimi.
+Hoca notları 1–14 ve WhatsApp maddeleri üç belgede tek tek kontrol edildi; yeni uyumsuzluk:
+- Not 10 ile çelişen risk satırı ("tablo yoksa TESS sektörleri yeniden ölçülecek") → yalnız hiçbir yayında/veritabanında
+  bulunmayan sektör ölçülür biçiminde düzeltildi.
+- Not 11 (yöntemde literatür) → 2.1'deki uzun kaynak listesi "1.1'de anılan sisteme özel zamanlama çalışmaları" oldu.
+Yöntem ve veri kontrolü:
+- WASP-4 dikine hızları: Winn ve Stefánsson 2025 Turner 2022 derlemesini (CORALIE, HARPS, HIRES) temizleyip yeni HIRES
+  ile yayımlamış (Tablo 2) ve sektör 96 zamanlarını vermiş (Tablo 3) → A ve B'de dikine hız kaynakları buna göre güncellendi.
+- Sodickson ve Grunblatt 2025 WASP-45: −55,11 ± 13,12 ms/yıl, ΔBIC 14; "seyrek veri, küçük verilmiş hatalar, ek yıldız →
+  büyük olasılıkla fiziksel değil" → B ve C cümlesi buna göre kesinleştirildi; B'ye ek yıldız riski eklendi.
+- Gelgit cümlesi: "dönemi uzayan sistemde gelgit dışlanır" yalnız yıldızın dönme dönemi yörünge döneminden uzunsa geçerli
+  (Wang 2024 §5.3) → koşul açıkça yazıldı.
+- Hata ölçekleme üç veri grubuna (TESS, yayımlanmış yer gözlemleri, ETD/ExoClock) ayrıldı (Adams 2024 uyarısıyla uyumlu).
+- A'ya B/C'deki "yeni zamanların eski efemerisle karşılaştırılması" testi eklendi (WASP-4 b, TrES-1 b).
+- Wang 2024 TESS zamanları makine-okunur tabloda (Tablo 1) → "yeniden ölçülmeyecek" yapılabilir.
+Açık kalan değerlendirme (forma yazılmadı): B'de WASP-4'ün yeni sektörleri (103, 105, 106) Winn ve Stefánsson'un
+kullandığı sektör 96'dan yalnızca ~10 ay sonrası; WASP-4 için yeni katkı sınırlı, B'nin asıl özgünlüğü WASP-45/46'da.

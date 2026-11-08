@@ -7,8 +7,8 @@
 | Kullanılmamış TESS verisi | 4 sektör (WASP-4: 3, TrES-1: 1) | 12 sektör (~148 tam geçiş) | 9 sektör (~107 tam geçiş) |
 | Dikine hız | Var (4 sistemde de yeterli) | Var (WASP-4 güçlü; WASP-45/46 zayıf) | Yok (ışık-zaman/Rømer kapsam dışı) |
 | Mekanizma sayısı | 6 | 6 | 5 |
-| Kaynak sayısı | 43 | 41 | 36 |
-| Özet (kelime) | 247 | 229 | 239 |
+| Kaynak sayısı | 42 | 40 | 35 |
+| Özet (kelime) | 262 | 244 | 254 |
 
 ## Hocanın notlarına uyum
 Üçü de 14 notun ve WhatsApp uyarılarının hepsini karşılıyor (otomatik kontrol + okuma). Tek fark not 3–4 (özgünlük):
@@ -53,3 +53,9 @@ Yapılabilirlik ölçümü: tek geçiş zamanlama hassasiyeti WASP-45/46 ~75 s, 
 - Üçü: Applegate'e enerji bağıntısı (Watson ve Marsh, 2010) eklendi.
 - A: "yayımlanmamış" ifadeleri düzeltildi.
 - Puanlar değişmedi (B'nin özgünlüğü bir sektör azaldı ama hâlâ tüm hedeflerde yeni veri var).
+
+## Üçüncü turda değişen (ayrıntı: ORTAK_KURALLAR.md §8)
+- 2030 Stratejisi çıkarıldı; 12. KP madde 270, 271, 546.
+- Özetlere proje yönetimi cümlesi; kaynakça TÜBİTAK biçimine (virgül, Cilt (Sayı), internet kaynakları).
+- Dikine hız kaynakları (Turner 2022, Winn ve Stefánsson 2025), Sodickson cümlesi, gelgit koşulu, hata grupları, risk satırı.
+- Puanlar değişmedi. B için not: WASP-4'ün katkısı sınırlı (~10 ay yeni veri); özgünlük WASP-45/46'dan geliyor.
